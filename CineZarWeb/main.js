@@ -7,7 +7,8 @@ window.onload = function (e) {
             data.forEach(p => {
                 let node = document.createElement('div')
                 node.innerHTML = `<h2>${p.titulo}</h1>
-                <p>${p.sinopsis}<p>
+                <p>${p.sinopsis}</p>
+                <img src="${p.portada}">
                 `
                 document.getElementById('resultado').appendChild(node)
             });
