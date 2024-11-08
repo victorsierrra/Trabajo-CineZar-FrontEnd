@@ -1,4 +1,4 @@
-namespace Models;
+namespace CineZarAPI.Models;
 
 public class Pelicula
 {

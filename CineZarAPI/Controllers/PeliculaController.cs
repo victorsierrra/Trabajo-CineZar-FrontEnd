@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using Models;
+using CineZarAPI.Models;
 
 namespace CineZarAPI.Controllers
 {

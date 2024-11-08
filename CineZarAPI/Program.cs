@@ -24,4 +24,5 @@ app.UseAuthorization();
 
 app.MapControllers();
 PeliculaController.InicializarDatos();
+AsientoController.InicializarDatos();
 app.Run();
