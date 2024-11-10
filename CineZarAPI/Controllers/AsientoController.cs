@@ -30,14 +30,22 @@ namespace CineZarAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateAsiento(int id, bool Comprado)
+        public IActionResult UpdateAsiento(int id, bool pComprado)
         {
             Asiento asiento = asientos.FirstOrDefault(a => a.Id == id);
             if (asiento == null)
             {
                 return NotFound();
             }
-            asiento.Comprado = Comprado;
+            else if (pComprado == false)
+            {
+                return BadRequest("No se puede devolver una entrada");
+            }
+            else if(asiento.Comprado == true)
+            {
+                return BadRequest("Este asiento ya está comprado");
+            }
+            asiento.Comprado = pComprado;
 
             return NoContent();
         }

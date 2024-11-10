@@ -15,4 +15,20 @@ window.onload = function (e) {
             });
         })
         .catch()
+
+    let fetchAsiento = fetch("https://localhost:7165/api/Asiento")
+    fetchAsiento.then(res => res.json())
+        .then(data => {
+            console.log(data)
+            data.forEach(a => {
+                let node = document.createElement('div')
+                node.innerHTML = `
+                    <p>${a.fila} ${a.numero} <br>
+                    ${a.comprado}</p>
+                    `
+                document.getElementById('resultado').appendChild(node)
+            });
+        })
+        .catch()
+
 }
