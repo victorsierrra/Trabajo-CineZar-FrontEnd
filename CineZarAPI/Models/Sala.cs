@@ -24,9 +24,9 @@ public class Sala
     {
         char[] Letras = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H' };
 
-        for (int y = 0; y < 8; y++)
+        for (int y = 0; y < Constantes.Columnas; y++)
         {
-            for (int x = 0; x < 15; x++)
+            for (int x = 0; x < Constantes.Filas; x++)
             {
                 pAsientos.Add(new Asiento(Letras[y], x + 1));
             }
