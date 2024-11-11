@@ -1,6 +1,17 @@
 using CineZarAPI.Controllers;
-
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        policy =>
+        {
+            policy.WithOrigins("https://localhost:7165/api",
+                                "http://127.0.0.1:5500")
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
+        });
+});
 
 // Add services to the container.
 
@@ -19,6 +30,8 @@ var app = builder.Build();
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors();
 
 app.UseAuthorization();
 

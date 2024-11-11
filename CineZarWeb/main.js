@@ -22,13 +22,24 @@ window.onload = function (e) {
             console.log(data)
             data.forEach(a => {
                 let node = document.createElement('div')
-                node.innerHTML = `
-                    <p>${a.fila} ${a.numero} <br>
-                    ${a.comprado}</p>
-                    `
+                node.innerHTML = `<svg  height="100" width="100" xmlns="http://www.w3.org/2000/svg">
+                        <circle id="${a.id}"  r="45" cx="50" cy="50" fill="red" />
+                    </svg>`
                 document.getElementById('resultado').appendChild(node)
+                let svg = document.getElementById(`${a.id}`)
+                console.log(svg)
+                if (a.comprado === true)
+                {
+                    svg.setAttribute("fill", "black")
+                }
             });
         })
         .catch()
+}
 
+function putAsiento() {
+    let fetchAsientoPut = fetch(`https://localhost:7165/api/Asiento/4?pComprado=true`,
+        { method: 'PUT' }
+    )
+    fetchAsientoPut.then(res => console.log(res))
 }
