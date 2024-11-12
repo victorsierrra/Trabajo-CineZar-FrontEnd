@@ -10,8 +10,8 @@ window.onload = function () {
             console.log(data);
 
             // Dividir películas entre el carrusel y la lista
-            const carouselMovies = data.slice(0, 5); // Primeras 5 películas para el carrusel
-            const movieList = data.slice(5);         // El resto para la lista de películas
+            const carouselMovies = data.slice(0, 8); // Primeras 5 películas para el carrusel
+            const movieList = data.slice(0);         // El resto para la lista de películas
 
             // Mostrar películas en el carrusel
             const carousel = document.getElementById('carousel');
