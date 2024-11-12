@@ -52,38 +52,46 @@ namespace CineZarAPI.Controllers
             return NoContent();
         }
 
-        [HttpPut("Asiento{id}")]
-        public IActionResult UpdateSala(int id, int idAsiento, bool comprado)
+
+        [HttpPut("ComprarEntrada{id}")]
+        public IActionResult ComprarEntrada(int id, int idAsiento, bool comprado)
         {
             Sala sala = salas.FirstOrDefault(s => s.Id == id);
-            Asiento asientoCambiar = sala.Asientos.FirstOrDefault(a => a.Id == idAsiento);
 
             if (sala == null)
             {
                 return NotFound();
             }
-            int posicion = sala.Asientos.IndexOf(asientoCambiar);
+
+            Asiento asientoEntrada = sala.Asientos.FirstOrDefault(a => a.Id == idAsiento);
+
+            int posicion = sala.Asientos.IndexOf(asientoEntrada);
+
             if (posicion != -1)
             {
-                if (asientoCambiar == null)
+                if (asientoEntrada == null)
                 {
                     return NotFound();
                 }
                 else if (comprado == false)
                 {
-                    return BadRequest("No se puede devolver una entrada");
+                    return BadRequest("No se puede cambiar a falso");
                 }
-                else if (asientoCambiar.Comprado == true)
+                else if (asientoEntrada.Comprado == true)
                 {
-                    return BadRequest("Este asiento ya está comprado");
+                    return BadRequest("El asiento ya ha sido comprado");
                 }
-                asientoCambiar.Comprado = true;
-                sala.Asientos[posicion] = asientoCambiar;
             }
+            else
+            {
+                return NotFound();
+            }
+            asientoEntrada.Comprado = true;
+            Entrada entrada = new Entrada(asientoEntrada, 4.50);
+            sala.Asientos[posicion] = asientoEntrada;
+            sala.Entradas.Add(entrada);
 
-
-
-            return NoContent();
+            return Ok(sala.Entradas);
         }
 
         [HttpDelete("{id}")]
@@ -116,10 +124,6 @@ namespace CineZarAPI.Controllers
            "Todd Phillips", 100, "https://pics.filmaffinity.com/Resacaon_en_Las_Vegas-825442102-large.jpg");
             Pelicula Purga = new Pelicula("The First Purge", "La crisis social y económica que atenaza a Estados Unidos ha llevado al poder al partido populista Nuevos Padres Fundadores de América y a su discurso del miedo. Una de sus primeras medidas será un experimento: una noche de crimen legalizado en la zona de Staten Island. ¡Que comience la purga!",
             "Gerard McMurray", 98, "https://es.web.img3.acsta.net/pictures/18/06/12/12/08/0619875.jpg");
-            List<Asiento> AsientosSala1 = new List<Asiento>();
-            List<Asiento> AsientosSala2 = new List<Asiento>();
-            List<Asiento> AsientosSala3 = new List<Asiento>();
-            List<Asiento> AsientosSala4 = new List<Asiento>();
 
 
 
