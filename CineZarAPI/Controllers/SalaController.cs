@@ -56,7 +56,7 @@ namespace CineZarAPI.Controllers
         public IActionResult UpdateSala(int id, int idAsiento, bool comprado)
         {
             Sala sala = salas.FirstOrDefault(s => s.Id == id);
-            Asiento asientoCambiar = sala.Asientos.FirstOrDefault(a => a.Id == id);
+            Asiento asientoCambiar = sala.Asientos.FirstOrDefault(a => a.Id == idAsiento);
 
             if (sala == null)
             {
