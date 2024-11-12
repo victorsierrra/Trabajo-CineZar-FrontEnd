@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0D3D3B;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.movie-details-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 1rem;
+    background-color: #1E2A47;
+    border-radius: 10px;
+    text-align: center;
+    color: #FFF;
+}
+
+// Título de la película
+#movie-title {
+    font-size: 1.5rem;
+    color: #FFB800;
+    margin-bottom: 1rem;
+}
+
+// Imagen del poster de la película
+#movie-poster {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+// Sección de ratings
+.ratings {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+
+    p {
+        font-size: 0.9rem;
+        color: #FFB800;
+        font-weight: bold;
+
+        span {
+            color: #FFF;
+        }
+    }
+}
+
+// Descripción de la película
+#movie-description {
+    font-size: 0.9rem;
+    color: #E0E0E0;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+// Información adicional de la película
+.movie-info {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+
+    p {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+
+        strong {
+            color: #9EB3B0;
+        }
+
+        span {
+            color: #FFF;
+        }
+    }
+}
+
+// Botón de volver
+button {
+    background-color: #FFB800;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #0D3D3B;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1rem;
+
+    &:hover {
+        background-color: #E5A800;
+    }
+}

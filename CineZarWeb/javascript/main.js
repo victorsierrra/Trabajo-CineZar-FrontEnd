@@ -45,7 +45,7 @@ window.onload = function () {
                     localStorage.setItem('selectedMovie', JSON.stringify(p));
 
                     // Redirige a la página de detalles
-                    window.location.href = 'detallesPelicula.html';
+                    window.location.href = '../html/detallesPelicula.html';
                 });
 
                 movieListContainer.appendChild(movieItem);
