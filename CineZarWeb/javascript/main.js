@@ -4,7 +4,7 @@ window.onload = function () {
     console.log("Documento Cargado");
 
     // Fetch de las películas
-    fetch("https://localhost:7165/api/Pelicula")
+    fetch("https://localhost:7165/api/Sala/Peliculas")
         .then(res => res.json())
         .then(data => {
             console.log(data);
@@ -36,7 +36,6 @@ window.onload = function () {
                 movieItem.innerHTML = `
                     <img src="${p.portada}" alt="${p.titulo}" class="movie-poster">
                     <p class="movie-title">${p.titulo}</p>
-                    <p class="movie-genre">${p.genero}</p>
                 `;
 
                 // Añade el evento de clic para abrir la página de detalles
