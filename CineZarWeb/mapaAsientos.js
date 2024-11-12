@@ -1,18 +1,19 @@
 
 window.onload = function (e) {
-    let filaA = document.getElementsByClassName('fila-A')
-    let filaB = document.getElementsByClassName('fila-B')
-    let filaC = document.getElementsByClassName('fila-C')
-    let filaD = document.getElementsByClassName('fila-D')
+    let filaA = document.getElementById('fila-A')
+    let filaB = document.getElementById('fila-B')
+    let filaC = document.getElementById('fila-C')
+    let filaD = document.getElementById('fila-D')
     console.log(filaA)
-    let fetchAsiento = fetch("https://localhost:7165/api/Asiento")
-    fetchAsiento.then(res => res.json())
+    let promise = fetch("https://localhost:7165/api/Asiento")
+
+    promise.then(res => res.json())
         .then(data => {
             console.log(data)
             data.forEach(a => {
                 let span = document.createElement('span')
-                span.innerHTML = `<svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
-            <circle id="${a.id}" r="7%" cx="50%" cy="50%" fill="red" />
+                span.innerHTML = `<svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
+            <circle id="${a.id}" r="4.5%" cx="50%" cy="50%" fill="red" />
         </svg>`
                 switch(a.fila)
                 {

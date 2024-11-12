@@ -7,7 +7,7 @@ builder.Services.AddCors(options =>
         policy =>
         {
             policy.WithOrigins("https://localhost:7165/api",
-                                "http://127.0.0.1:5500")
+                                "http://127.0.0.1")
                                 .AllowAnyHeader()
                                 .AllowAnyMethod();
         });
@@ -36,6 +36,7 @@ app.UseCors();
 app.UseAuthorization();
 
 app.MapControllers();
-PeliculaController.InicializarDatos();
-AsientoController.InicializarDatos();
+// PeliculaController.InicializarDatos();
+// AsientoController.InicializarDatos();
+SalaController.InicializarDatos();
 app.Run();
