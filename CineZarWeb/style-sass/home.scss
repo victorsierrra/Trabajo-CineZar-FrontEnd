@@ -145,3 +145,122 @@ body {
         }
     }
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0D3D3B;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 1rem;
+}
+
+// Header de la página de detalles de la película
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .login-btn {
+        background-color: #FFB800;
+        border: none;
+        border-radius: 5px;
+        padding: 0.5rem 1rem;
+        color: #0D3D3B;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}
+
+// Sección de detalles de la película
+.movie-details {
+    background-color: #1E2A47;
+    border-radius: 10px;
+    padding: 1rem;
+    color: #FFF;
+    text-align: center;
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .movie-poster {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 10px;
+        margin: 0 auto 1rem;
+    }
+
+    .ratings {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 1rem;
+
+        span {
+            font-size: 1rem;
+            color: #FFB800;
+            font-weight: bold;
+        }
+    }
+
+    .description {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        color: #E0E0E0;
+    }
+
+    .info-table {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+
+            .info-label {
+                color: #9EB3B0;
+                font-weight: bold;
+            }
+
+            .info-value {
+                color: #FFF;
+            }
+        }
+    }
+
+    .select-session-btn {
+        background-color: #FFB800;
+        border: none;
+        border-radius: 5px;
+        padding: 0.5rem;
+        font-size: 1rem;
+        color: #0D3D3B;
+        font-weight: bold;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 1rem;
+    }
+}
