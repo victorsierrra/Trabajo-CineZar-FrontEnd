@@ -5,7 +5,8 @@
     border-radius: 50%;
     margin: 5px;
     font-size: 7px;
-    align-items: center;
+    align-content: center;
+    text-align: center;
 }
 .circle :hover{
     background-color: red;
