@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +8,34 @@
 
     <title>Detalles de la Película</title>
 </head>
+
 <body>
     <div class="movie-details-container">
         <h1 id="movie-title">Título de la película</h1>
         <img id="movie-poster" src="" alt="Poster de la película">
-      
+
         <p id="movie-description">Descripción de la película...</p>
         <div class="movie-info">
-            
+
             <p><strong>Duración:</strong> <span id="movie-duration"></span></p>
             <p><strong>Estreno:</strong> <span id="movie-release"></span></p>
             <p><strong>Género:</strong> <span id="movie-genre"></span></p>
             <p><strong>Director:</strong> <span id="movie-director"></span></p>
         </div>
-        <button onclick="window.history.back()">Volver</button>
+        <button onclick="irASesiones()">Sesiones</button>
+
+
     </div>
+
+    <script>
+        // Esta función redirige a 'sesiones.html' pasando el nombre de la película como parámetro
+        function irASesiones() {
+            // Aquí debes obtener el título de la película o el identificador único
+            const peliculaSeleccionada = document.getElementById('movie-title').textContent;
+            window.location.href = 'sesiones.html?pelicula=' + encodeURIComponent(peliculaSeleccionada);
+        }
+    </script>
     <script src="/javascript/detallesPelicula.js"></script>
 </body>
+
 </html>
