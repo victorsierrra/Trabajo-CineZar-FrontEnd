@@ -17,11 +17,11 @@ function imprimirAsientos() {
     const filaG = document.getElementById('fila-G')
     const filaH = document.getElementById('fila-H')
     try {
-        let promise = fetch("https:localhost:7165/api/Sala")
+        let promise = fetch("https://localhost:7165/api/Sesion")
         promise.then(response => response.json())
             .then(data => {
                 console.log(data[0].asientos)
-                data[0].asientos.forEach(as => {
+                data[0].asientos.forEach(asiento => {
                     let circulo = document.createElement('div')
                     circulo.setAttribute("id", `asiento_${asiento.id}`)
                     circulo.setAttribute("class", "circle")
