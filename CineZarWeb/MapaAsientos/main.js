@@ -1,16 +1,10 @@
 window.onload = function (e) {
     imprimirAsientos()
-    let selectedDiv = null;
 
-    document.querySelectorAll('.circle').forEach(function (div) {
-        div.addEventListener('click', function () {
-            if (selectedDiv) {
-                selectedDiv.classList.remove('selected');
-            }
-            this.classList.add('selected');
-            selectedDiv = this;
-        });
-    });
+    var AsientosSeleccionas = null
+    document.addEventListener("click", {
+
+    })
 }
 
 function imprimirAsientos() {
@@ -18,6 +12,10 @@ function imprimirAsientos() {
     const filaB = document.getElementById('fila-B')
     const filaC = document.getElementById('fila-C')
     const filaD = document.getElementById('fila-D')
+    const filaE = document.getElementById('fila-E')
+    const filaF = document.getElementById('fila-F')
+    const filaG = document.getElementById('fila-G')
+    const filaH = document.getElementById('fila-H')
     try {
         let promise = fetch("https:localhost:7165/api/Sala")
         promise.then(response => response.json())
@@ -25,10 +23,10 @@ function imprimirAsientos() {
                 console.log(data[0].asientos)
                 data[0].asientos.forEach(as => {
                     let circulo = document.createElement('div')
-                    circulo.setAttribute("id", `${as.id}`)
+                    circulo.setAttribute("id", `asiento_${asiento.id}`)
                     circulo.setAttribute("class", "circle")
-                    circulo.innerText = as.numero
-                    switch (as.fila) {
+                    circulo.innerText = asiento.numero
+                    switch (asiento.fila) {
                         case 'A':
                             filaA.appendChild(circulo)
                             break;
@@ -41,10 +39,22 @@ function imprimirAsientos() {
                         case 'D':
                             filaD.appendChild(circulo)
                             break;
+                        case 'E':
+                            filaE.appendChild(circulo)
+                            break;
+                        case 'F':
+                            filaF.appendChild(circulo)
+                            break;
+                        case 'G':
+                            filaG.appendChild(circulo)
+                            break;
+                        case 'H':
+                            filaH.appendChild(circulo)
+                            break;
                         default:
                             console.log('No se encuentra la fila')
                     }
-                    if (as.comprado === true) {
+                    if (asiento.comprado === true) {
                         circulo.style.backgroundColor = "red"
                     }
                 });

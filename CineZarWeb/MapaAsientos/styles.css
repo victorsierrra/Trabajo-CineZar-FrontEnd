@@ -12,6 +12,6 @@
     background-color: red;
     cursor: pointer;
 }   
-#fila-A, #fila-B, #fila-C, #fila-D{
+#fila-A, #fila-B, #fila-C, #fila-D, #fila-E, #fila-F, #fila-G, #fila-H{
     display: flex;
 }
