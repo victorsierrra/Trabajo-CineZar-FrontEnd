@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using CineZarAPI.Models;
 using Newtonsoft.Json;
+using System.Net.Mail;
+using System.Net;
 
 namespace CineZarAPI.Controllers
 {
@@ -59,38 +61,47 @@ namespace CineZarAPI.Controllers
             return NoContent();
         }
 
-        [HttpPut("Asiento{id}")]
-        public IActionResult UpdateSala(int id, int idAsiento, bool comprado)
+
+        [HttpPut("ComprarEntrada{id}")]
+        public IActionResult ComprarEntrada(int id, int idAsiento, bool comprado)
         {
             Sala sala = salas.FirstOrDefault(s => s.Id == id);
-            Asiento asientoCambiar = sala.Asientos.FirstOrDefault(a => a.Id == idAsiento);
 
             if (sala == null)
             {
                 return NotFound();
             }
-            int posicion = sala.Asientos.IndexOf(asientoCambiar);
+
+            Asiento asientoEntrada = sala.Asientos.FirstOrDefault(a => a.Id == idAsiento);
+
+            int posicion = sala.Asientos.IndexOf(asientoEntrada);
+
             if (posicion != -1)
             {
-                if (asientoCambiar == null)
+                if (asientoEntrada == null)
                 {
                     return NotFound();
                 }
                 else if (comprado == false)
                 {
-                    return BadRequest("No se puede devolver una entrada");
+                    return BadRequest("No se puede cambiar a falso");
                 }
-                else if (asientoCambiar.Comprado == true)
+                else if (asientoEntrada.Comprado == true)
                 {
-                    return BadRequest("Este asiento ya está comprado");
+                    return BadRequest("El asiento ya ha sido comprado");
                 }
-                asientoCambiar.Comprado = true;
-                sala.Asientos[posicion] = asientoCambiar;
             }
+            else
+            {
+                return NotFound();
+            }
+            asientoEntrada.Comprado = true;
+            Entrada entrada = new Entrada(asientoEntrada, 4.50);
+            sala.Asientos[posicion] = asientoEntrada;
+            sala.Entradas.Add(entrada);
+            //EnviarEntrada();
 
-
-
-            return NoContent();
+            return Ok(sala.Entradas);
         }
 
         [HttpDelete("{id}")]
@@ -131,10 +142,7 @@ namespace CineZarAPI.Controllers
             Pelicula Purga = new Pelicula("The First Purge", "La crisis social y económica que atenaza a Estados Unidos ha llevado al poder al partido populista Nuevos Padres Fundadores de América y a su discurso del miedo. Una de sus primeras medidas será un experimento: una noche de crimen legalizado en la zona de Staten Island. ¡Que comience la purga!",
                 "Gerard McMurray", 98, "https://es.web.img3.acsta.net/pictures/18/06/12/12/08/0619875.jpg", "Terror, Suspense, Ciencia ficción", 2018);
 
-            List<Asiento> AsientosSala1 = new List<Asiento>();
-            List<Asiento> AsientosSala2 = new List<Asiento>();
-            List<Asiento> AsientosSala3 = new List<Asiento>();
-            List<Asiento> AsientosSala4 = new List<Asiento>();
+
 
             peliculas.Add(Cars);
             peliculas.Add(Torrente);
@@ -155,6 +163,39 @@ namespace CineZarAPI.Controllers
             salas.Add(Cars2);
             salas.Add(Torrente1);
             salas.Add(Torrente2);
+        }
+
+        static void EnviarEntrada()
+        {
+            try
+            {
+                Sala sala = salas.FirstOrDefault(s => s.Id == 1);
+                Entrada entrada = sala.Entradas.Last();
+                string to = "a27300@svalero.com";
+                string asunto = "Prueba";
+                string cuerpo = $"Enhorabuena por adquirir las entradas para ver {sala.pelicula.Titulo} a las {sala.Hora}.\n Ha seleccionado sentarse en la fila {entrada.asiento.fila} en el asiento {entrada.asiento.Numero} y tiene que acudir a la sala {sala.NumeroSala}, se le recomienda llegar con 30 minutos de antelación.\n ¡Que disfrute la experiencia cineZar!";
+                string host = "smtp.gmail.com";
+                int puerto = 587;
+                SmtpClient client = new SmtpClient(host);
+
+                client.Port = puerto;
+
+                client.Credentials = new NetworkCredential(Constantes.CorreoEntradas, Constantes.PasCorreoEntradas);
+
+                MailMessage mensaje = new MailMessage(Constantes.CorreoEntradas, to, asunto, cuerpo);
+
+                mensaje.IsBodyHtml = false;
+
+                client.Send(mensaje);
+                Console.WriteLine("Correo enviado correctamente");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+
+            }
+
+
         }
     }
 }
