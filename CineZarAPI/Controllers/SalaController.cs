@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using CineZarAPI.Models;
 using Newtonsoft.Json;
+using System.Net.Mail;
+using System.Net;
 
 namespace CineZarAPI.Controllers
 {
@@ -90,6 +92,7 @@ namespace CineZarAPI.Controllers
             Entrada entrada = new Entrada(asientoEntrada, 4.50);
             sala.Asientos[posicion] = asientoEntrada;
             sala.Entradas.Add(entrada);
+            //EnviarEntrada();
 
             return Ok(sala.Entradas);
         }
@@ -135,6 +138,39 @@ namespace CineZarAPI.Controllers
             salas.Add(Cars2);
             salas.Add(Torrente1);
             salas.Add(Torrente2);
+        }
+
+        static void EnviarEntrada()
+        {
+            try
+            {
+                Sala sala = salas.FirstOrDefault(s => s.Id == 1);
+                Entrada entrada = sala.Entradas.Last();
+                string to = "a27300@svalero.com";
+                string asunto = "Prueba";
+                string cuerpo = $"Enhorabuena por adquirir las entradas para ver {sala.pelicula.Titulo} a las {sala.Hora}.\n Ha seleccionado sentarse en la fila {entrada.asiento.fila} en el asiento {entrada.asiento.Numero} y tiene que acudir a la sala {sala.NumeroSala}, se le recomienda llegar con 30 minutos de antelación.\n ¡Que disfrute la experiencia cineZar!";
+                string host = "smtp.gmail.com";
+                int puerto = 587;
+                SmtpClient client = new SmtpClient(host);
+
+                client.Port = puerto;
+
+                client.Credentials = new NetworkCredential(Constantes.CorreoEntradas, Constantes.PasCorreoEntradas);
+
+                MailMessage mensaje = new MailMessage(Constantes.CorreoEntradas, to, asunto, cuerpo);
+
+                mensaje.IsBodyHtml = false;
+
+                client.Send(mensaje);
+                Console.WriteLine("Correo enviado correctamente");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+
+            }
+
+
         }
     }
 }

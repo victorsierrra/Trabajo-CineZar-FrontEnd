@@ -21,7 +21,7 @@ async function fetchAsientosSalaAsync() {
         data[0].asientos.forEach(a => {
             let span = document.createElement('span')
             span.innerHTML = `<svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
-        <circle id="${a.id}" r="4.5%" cx="50%" cy="50%" fill="red" />
+        <circle id="${a.id}" r="4.5%" cx="50%" cy="50%" fill="green" />
     </svg>`
             switch (a.fila) {
                 case 'A':
@@ -41,7 +41,7 @@ async function fetchAsientosSalaAsync() {
             }
             let svg = document.getElementById(`${a.id}`)
             if (a.comprado === true) {
-                svg.setAttribute("fill", "black")
+                svg.setAttribute("fill", "red")
             }
         })
     } catch (error) {

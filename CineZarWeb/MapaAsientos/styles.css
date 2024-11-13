@@ -1,0 +1,16 @@
+.circle {
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    border-radius: 50%;
+    margin: 5px;
+    font-size: 7px;
+    align-items: center;
+}
+.circle :hover{
+    background-color: red;
+    cursor: pointer;
+}   
+#fila-A, #fila-B, #fila-C, #fila-D{
+    display: flex;
+}
