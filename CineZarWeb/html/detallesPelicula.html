@@ -22,20 +22,21 @@
             <p><strong>Género:</strong> <span id="movie-genre"></span></p>
             <p><strong>Director:</strong> <span id="movie-director"></span></p>
         </div>
+
         <button onclick="irASesiones()">Sesiones</button>
 
+        <script>
+            function irASesiones() {
+                
+                // Guardamos el título de la película seleccionada en localStorage
+                let selectedMovie = localStorage.getItem("selectedMovie");
+                console.log("Película guardada en localStorage:", selectedMovie); // Para verificar
 
-    </div>
-
-    <script>
-        // Esta función redirige a 'sesiones.html' pasando el nombre de la película como parámetro
-        function irASesiones() {
-            // Aquí debes obtener el título de la película o el identificador único
-            const peliculaSeleccionada = document.getElementById('movie-title').textContent;
-            window.location.href = 'sesiones.html?pelicula=' + encodeURIComponent(peliculaSeleccionada);
-        }
-    </script>
-    <script src="/javascript/detallesPelicula.js"></script>
+                // Redirigimos a la página de sesiones
+                window.location.href = 'sesiones.html';
+            }
+        </script>
+        <script src="/javascript/detallesPelicula.js"></script>
 </body>
 
 </html>

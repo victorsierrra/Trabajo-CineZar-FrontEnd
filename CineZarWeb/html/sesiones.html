@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sesiones de Película</title>
-    <link rel="stylesheet" href="/build/sesiones.css"> <!-- Asegúrate de tener el CSS adecuado -->
+    <link rel="stylesheet" href="/build/sesiones.css">
 </head>
 <body>
     <div class="container">
@@ -27,24 +27,25 @@
     </div>
 
     <script>
-        // Aquí es donde definimos las sesiones de ejemplo (estos datos los puedes modificar para que provengan de un archivo JSON o una base de datos)
+        let aux = localStorage.getItem("selectedMovie");
+        let peliculaSeleccionada = JSON.parse(aux)
+        console.log('clog-----', aux)
+        console.log('clog-----', peliculaSeleccionada)
         const peliculas = {
             "Cars": {
                 titulo: "Cars",
-                imagen: "images/cars-poster.jpg", // Asegúrate de tener esta imagen
+                imagen: "images/cars-poster.jpg",
                 sesiones: {
                     "Lunes": ["10:00 AM", "1:30 PM", "4:00 PM", "7:00 PM"],
-                    "Martes": ["10:30 AM", "2:00 PM", "5:00 PM", "8:00 PM"],
-                    // Más días...
+                    "Martes": ["10:30 AM", "2:00 PM", "5:00 PM", "8:00 PM"]
                 }
             },
-            "Torrente": {
+            "Torrente, El brazo tonto de la ley": {
                 titulo: "Torrente, El brazo tonto de la ley",
-                imagen: "images/torrente-poster.jpg", // Asegúrate de tener esta imagen
+                imagen: "images/torrente-poster.jpg",
                 sesiones: {
                     "Lunes": ["11:00 AM", "2:30 PM", "6:00 PM"],
-                    "Martes": ["12:00 PM", "3:30 PM", "7:30 PM"],
-                    // Más días...
+                    "Martes": ["12:00 PM", "3:30 PM", "7:30 PM"]
                 }
             }
         };
@@ -52,15 +53,17 @@
         let dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
         let diaActual = 0;
 
-        // Obtener el parámetro de la película desde la URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const peliculaSeleccionada = urlParams.get("pelicula");
-
         function cargarPelicula() {
-            const pelicula = peliculas[peliculaSeleccionada];
+        console.log('clog----- cargarPelicula', peliculaSeleccionada.titulo)
+        
+        // Recuperamos el título de la película desde localStorage
+        const pelicula = peliculas[peliculaSeleccionada.titulo];
+        console.log('clog----- pelicula', pelicula)
+        console.log('clog----- peliculas', peliculas)
+            
             if (pelicula) {
                 document.getElementById("titulo-pelicula").textContent = pelicula.titulo;
-                document.getElementById("movie-poster").src = pelicula.imagen;  // Establecer la imagen de la película
+                document.getElementById("movie-poster").src = pelicula.imagen;
                 cargarSesiones(dias[diaActual]);
             } else {
                 document.getElementById("titulo-pelicula").textContent = "Película no encontrada";
@@ -69,12 +72,13 @@
         }
 
         function cargarSesiones(dia) {
+            const peliculaSeleccionada = localStorage.getItem("peliculaSeleccionada");
             const pelicula = peliculas[peliculaSeleccionada];
             const horarios = pelicula.sesiones[dia] || [];
-            document.getElementById("dia-seleccionado").textContent = dia;
 
+            document.getElementById("dia-seleccionado").textContent = dia;
             const sessionCards = document.getElementById("session-cards");
-            sessionCards.innerHTML = ""; // Limpiar las sesiones actuales
+            sessionCards.innerHTML = "";
 
             horarios.forEach(horario => {
                 const card = document.createElement("div");
@@ -89,7 +93,6 @@
             cargarSesiones(dias[diaActual]);
         }
 
-        // Cargar la película al cargar la página
         window.onload = cargarPelicula;
     </script>
 </body>
