@@ -17,7 +17,7 @@ window.onload = function () {
             const carousel = document.getElementById('carousel');
             carouselMovies.forEach(p => {
                 let slide = document.createElement('div');
-                slide.classList.add('carousel-slide');
+                slide.classList.add('banner__carousel-slide');
                 slide.innerHTML = `
                     <img src="${p.portada}" alt="${p.titulo}" class="movie-poster">
                     <p class="movie-title">${p.titulo}</p>
@@ -32,7 +32,7 @@ window.onload = function () {
             const movieListContainer = document.getElementById('movie-list');
             movieList.forEach(p => {
                 let movieItem = document.createElement('div');
-                movieItem.classList.add('movie');
+                movieItem.classList.add('movies-section__movie');
                 movieItem.innerHTML = `
                     <img src="${p.portada}" alt="${p.titulo}" class="movie-poster">
                     <p class="movie-title">${p.titulo}</p>
@@ -55,7 +55,7 @@ window.onload = function () {
 
 // Función para mostrar el slide del carrusel
 function showSlide(index) {
-    const slides = document.querySelectorAll('.carousel-slide');
+    const slides = document.querySelectorAll('.banner__carousel-slide');
     const totalSlides = slides.length;
     if (index >= totalSlides) currentIndex = 0;
     if (index < 0) currentIndex = totalSlides - 1;
@@ -68,32 +68,4 @@ function showSlide(index) {
 function moveSlide(direction) {
     currentIndex += direction;
     showSlide(currentIndex);
-}
-
-
-let fetchAsiento = fetch("https://localhost:7165/api/Asiento")
-fetchAsiento.then(res => res.json())
-    .then(data => {
-        console.log(data)
-        data.forEach(a => {
-            let node = document.createElement('div')
-            node.innerHTML = `<svg  height="100" width="100" xmlns="http://www.w3.org/2000/svg">
-                        <circle id="${a.id}"  r="45" cx="50" cy="50" fill="red" />
-                    </svg>`
-            document.getElementById('resultadoAsientos').appendChild(node)
-            let svg = document.getElementById(`${a.id}`)
-            console.log(svg)
-            if (a.comprado === true) {
-                svg.setAttribute("fill", "black")
-            }
-        });
-    })
-    .catch()
-
-
-function putAsiento() {
-    let fetchAsientoPut = fetch(`https://localhost:7165/api/Asiento/4?pComprado=true`,
-        { method: 'PUT' }
-    )
-    fetchAsientoPut.then(res => console.log(res))
 }

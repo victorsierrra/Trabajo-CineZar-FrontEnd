@@ -26,10 +26,10 @@ body {
   align-items: center;
   padding: 1rem 0;
 }
-.header .logo {
+.header__logo {
   font-size: 1.5rem;
 }
-.header .login-btn {
+.header__login-btn {
   background-color: #FFB800;
   border: none;
   border-radius: 5px;
@@ -43,73 +43,32 @@ body {
   text-align: center;
   margin: 1rem 0;
 }
-.banner h1 {
+.banner__title {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
-.banner .banner-image {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.movies-section h2 {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-.movies-section .movies {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
-.movies-section .movie {
-  text-align: center;
-}
-.movies-section .movie .movie-poster {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 0.5rem;
-}
-.movies-section .movie .movie-title {
-  font-weight: bold;
-}
-.movies-section .movie .movie-genre {
-  font-size: 0.85rem;
-  color: #9EB3B0;
-}
-
-.banner {
-  text-align: center;
-  margin: 1rem 0;
-  position: relative;
-  overflow: hidden;
-}
-.banner h1 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-.banner .carousel {
+.banner__carousel {
   display: flex;
   transition: transform 0.5s ease-in-out;
   width: 100%;
 }
-.banner .carousel .carousel-slide {
+.banner__carousel-slide {
   min-width: 100%;
   box-sizing: border-box;
   text-align: center;
 }
-.banner .carousel .carousel-slide .movie-poster {
+.banner__carousel-slide .movie-poster {
   width: 100%;
   max-width: 300px;
   border-radius: 10px;
   margin: 0 auto;
 }
-.banner .carousel .carousel-slide .movie-title {
+.banner__carousel-slide .movie-title {
   font-weight: bold;
   margin-top: 0.5rem;
   color: #FFF;
 }
-.banner .carousel-button {
+.banner__carousel-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -120,10 +79,85 @@ body {
   cursor: pointer;
   font-size: 1.5rem;
 }
-.banner .carousel-button.prev {
+.banner__carousel-button--prev {
   left: 10px;
 }
-.banner .carousel-button.next {
+.banner__carousel-button--next {
+  right: 10px;
+}
+
+.movies-section__title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.movies-section__movies-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.movies-section__movie {
+  text-align: center;
+}
+.movies-section__movie .movie-poster {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+.movies-section__movie .movie-title {
+  font-weight: bold;
+}
+.movies-section__movie .movie-genre {
+  font-size: 0.85rem;
+  color: #9EB3B0;
+}
+
+.banner {
+  text-align: center;
+  margin: 1rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.banner__title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.banner__carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+.banner__carousel-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+.banner__carousel-slide .movie-poster {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+.banner__carousel-slide .movie-title {
+  font-weight: bold;
+  margin-top: 0.5rem;
+  color: #FFF;
+}
+.banner__carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.banner__carousel-button--prev {
+  left: 10px;
+}
+.banner__carousel-button--next {
   right: 10px;
 }
 
