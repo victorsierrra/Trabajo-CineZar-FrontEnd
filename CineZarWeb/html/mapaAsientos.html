@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="../build/mapasAsientos.css">
+    <script src="../javascript/mapaAsientos.js"></script>
     <title>Mapa Asientos</title>
 </head>
 
 <body>
     <section id="mapa">
+        <div id ="leyenda"><div id = "disponible"> <div class="asiento"></div> Disponible</div></div>
         <div id="fila-A"></div>
         <div id="fila-B"></div>
         <div id="fila-C"></div>
@@ -37,9 +38,10 @@
         <div id="fila-X"></div>
         <div id="fila-Y"></div>
         <div id="fila-Z"></div>
-        
+
+        <button id="ComprarAsientos" onclick="ComprarAsientos()">COMPRAR</button>
     </section>
-    <button id="ComprarAsientos" onclick="ComprarAsientos()">COMPRAR</button>
+
 </body>
 
 </html>
