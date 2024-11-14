@@ -1,17 +1,67 @@
+* {
+    background-color: #005B52;
+}
+
 .asiento {
-    width: 10px;
-    height: 10px;
-    background-color: green;
+    width: 10px; /* Ajusta el porcentaje según tus necesidades */
+    height: 10px; /* Ajusta el porcentaje según tus necesidades */
+    background-color: #FFFFFF;
+    color: #FFFFFF;
     border-radius: 50%;
     margin: 5px;
     font-size: 7px;
     align-content: center;
     text-align: center;
+    box-shadow: 1px 1px 1px #000000;
 }
-div :hover{
-    background-color: red;
-    cursor: pointer;
-}   
-#fila-A, #fila-B, #fila-C, #fila-D, #fila-E, #fila-F, #fila-G, #fila-H{
+
+.asiento.selected {
+    background-color: #F2C94C;
+}
+
+#fila-A, #fila-B, #fila-C, #fila-D, #fila-E, #fila-F,
+#fila-G, #fila-H, #fila-I, #fila-J, #fila-K, #fila-L,
+#fila-M, #fila-N, #fila-O, #fila-P, #fila-Q, #fila-R,
+#fila-S, #fila-T, #fila-U, #fila-V, #fila-W, #fila-X,
+#fila-Y,#fila-Z{
+    width: 100%;
     display: flex;
+}
+
+#fila-A :hover,
+#fila-B :hover,
+#fila-C :hover,
+#fila-D :hover,
+#fila-E :hover,
+#fila-F :hover,
+#fila-G :hover,
+#fila-H :hover,
+#fila-I :hover,
+#fila-J :hover,
+#fila-K :hover,
+#fila-L :hover,
+#fila-M :hover,
+#fila-N :hover,
+#fila-O :hover,
+#fila-P :hover,
+#fila-Q :hover,
+#fila-R :hover,
+#fila-S :hover,
+#fila-T :hover,
+#fila-U :hover,
+#fila-V :hover,
+#fila-W :hover,
+#fila-X :hover,
+#fila-Y :hover,
+#fila-Z :hover {
+    background-color: #F2C94C;
+    cursor: pointer;
+}
+
+#ComprarAsientos {
+    background-color: #F2C94C;
+    border-radius: 5px;
+    color: #FFFFFF;
+    cursor: pointer;
+    border: none;
 }
