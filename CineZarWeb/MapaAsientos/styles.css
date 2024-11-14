@@ -1,4 +1,4 @@
-.circle {
+.asiento {
     width: 10px;
     height: 10px;
     background-color: green;
@@ -8,7 +8,7 @@
     align-content: center;
     text-align: center;
 }
-.circle :hover{
+div :hover{
     background-color: red;
     cursor: pointer;
 }   

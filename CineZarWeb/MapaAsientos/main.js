@@ -1,3 +1,4 @@
+let asientosSeleccionados = [];
 window.onload = function (e) {
     imprimirAsientos()
 
@@ -24,7 +25,9 @@ function imprimirAsientos() {
                 data[0].asientos.forEach(asiento => {
                     let circulo = document.createElement('div')
                     circulo.setAttribute("id", `asiento_${asiento.id}`)
-                    circulo.setAttribute("class", "circle")
+                    circulo.setAttribute("class", "asiento")
+                    circulo.setAttribute("onclick", `seleccionarAsiento('${circulo.id}')`);
+
                     circulo.innerText = asiento.numero
                     switch (asiento.fila) {
                         case 'A':
@@ -55,11 +58,39 @@ function imprimirAsientos() {
                             console.log('No se encuentra la fila')
                     }
                     if (asiento.comprado === true) {
-                        circulo.style.backgroundColor = "red"
+                        circulo.style.backgroundColor = "gray"
+                        circulo.style.cursor = "not-allowed"
                     }
                 });
             })
     } catch (error) {
         console.error('There has been a problem with your fetch operation:', error);
     }
+}
+function seleccionarAsiento(id) {
+    let variable = id.substring(8)
+    asientosSeleccionados.push(variable)
+
+    console.log(`Clog -------------    ${variable}`)
+    console.log(asientosSeleccionados)
+}
+
+function ComprarAsientos() {
+    let promise = fetch('https://localhost:7165/api/Sesion/ComprarEntrada/1', {
+        method: 'PUT',
+        headers: {
+            'Accept': '*/*',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(asientosSeleccionados)
+    })
+    promise.then(response => { response.json()})
+        .then(data => {
+            console.log('Success:', data);
+            asientosSeleccionados = []
+            window.location.reload()
+        })
+        .catch(error => {
+            console.error('Problema con el fetch para la seleccion de entradas', error);
+        });
 }
