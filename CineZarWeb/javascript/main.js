@@ -4,7 +4,7 @@ window.onload = function () {
     console.log("Documento Cargado");
 
     // Fetch de las películas
-    fetch("https://localhost:7165/api/Sala/Peliculas")
+    fetch("https://localhost:7165/api/Pelicula")
         .then(res => res.json())
         .then(data => {
             console.log(data);
@@ -68,32 +68,4 @@ function showSlide(index) {
 function moveSlide(direction) {
     currentIndex += direction;
     showSlide(currentIndex);
-}
-
-
-let fetchAsiento = fetch("https://localhost:7165/api/Asiento")
-fetchAsiento.then(res => res.json())
-    .then(data => {
-        console.log(data)
-        data.forEach(a => {
-            let node = document.createElement('div')
-            node.innerHTML = `<svg  height="100" width="100" xmlns="http://www.w3.org/2000/svg">
-                        <circle id="${a.id}"  r="45" cx="50" cy="50" fill="red" />
-                    </svg>`
-            document.getElementById('resultadoAsientos').appendChild(node)
-            let svg = document.getElementById(`${a.id}`)
-            console.log(svg)
-            if (a.comprado === true) {
-                svg.setAttribute("fill", "black")
-            }
-        });
-    })
-    .catch()
-
-
-function putAsiento() {
-    let fetchAsientoPut = fetch(`https://localhost:7165/api/Asiento/4?pComprado=true`,
-        { method: 'PUT' }
-    )
-    fetchAsientoPut.then(res => console.log(res))
 }

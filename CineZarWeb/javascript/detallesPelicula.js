@@ -1,6 +1,7 @@
 // Recuperar los detalles de la película desde localStorage
 document.addEventListener("DOMContentLoaded", function () {
     const movie = JSON.parse(localStorage.getItem('selectedMovie'));
+    console.log(movie)
 
     if (movie) {
         document.getElementById('movie-title').innerText = movie.titulo;

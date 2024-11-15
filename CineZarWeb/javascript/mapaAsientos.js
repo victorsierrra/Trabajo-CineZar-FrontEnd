@@ -37,7 +37,7 @@ function imprimirAsientos() {
     const filaZ = document.getElementById('fila-Z');
     
     try {
-        let promise = fetch("https://localhost:7165/api/Sesion")
+        let promise = fetch("https://localhost:7165/api/Pelicula/VerSesiones/1")
         promise.then(response => response.json())
             .then(data => {
                 console.log(data[0].asientos)
@@ -158,7 +158,7 @@ function seleccionarAsiento(id) {
 }
 
 function ComprarAsientos() {
-    let promise = fetch('https://localhost:7165/api/Sesion/ComprarEntrada/1', {
+    let promise = fetch('https://localhost:7165/api/Pelicula/ComprarEntradas/1?idSesion=1', {
         method: 'PUT',
         headers: {
             'Accept': '*/*',
