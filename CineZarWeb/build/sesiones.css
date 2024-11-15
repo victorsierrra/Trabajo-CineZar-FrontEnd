@@ -1,3 +1,5 @@
+@charset "UTF-8";
+/* Estilos generales */
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +16,7 @@ body {
   min-height: 100vh;
 }
 
+/* Contenedor principal de las sesiones */
 .container {
   width: 100%;
   max-width: 400px;
@@ -24,27 +27,32 @@ body {
   color: #FFF;
 }
 
+/* Estilo del header con título e imagen de la película */
 header {
   margin-bottom: 1.5rem;
 }
+
 header h1 {
   font-size: 1.5rem;
   color: #FFB800;
   margin-bottom: 1rem;
 }
-header #movie-poster {
+
+#movie-poster {
   width: 100%;
   max-width: 200px;
   border-radius: 10px;
   margin-bottom: 1rem;
 }
 
+/* Controles para cambiar de día */
 .session-controls {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 1.5rem;
 }
+
 .session-controls button {
   background-color: transparent;
   border: 2px solid #FFB800;
@@ -56,22 +64,26 @@ header #movie-poster {
   color: #FFB800;
   transition: background-color 0.3s, color 0.3s;
 }
+
 .session-controls button:hover {
   background-color: #FFB800;
   color: #0D3D3B;
 }
+
 .session-controls span {
   font-size: 1.2rem;
   margin: 0 1rem;
 }
 
+/* Estilo para las tarjetas de las sesiones */
 .sessions {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
   margin-bottom: 2rem;
 }
-.sessions .session-card {
+
+.session-card {
   background-color: #1A535C;
   padding: 1rem;
   text-align: center;
@@ -82,12 +94,14 @@ header #movie-poster {
   cursor: pointer;
   transition: transform 0.3s, background-color 0.3s;
 }
-.sessions .session-card:hover {
+
+.session-card:hover {
   transform: scale(1.05);
   background-color: #FFB800;
   color: #0D3D3B;
 }
 
+/* Botón de volver */
 .back-button {
   background-color: #FFB800;
   border: none;
@@ -101,6 +115,7 @@ header #movie-poster {
   margin-top: 2rem;
   transition: background-color 0.3s;
 }
+
 .back-button:hover {
   background-color: #E5A800;
 }

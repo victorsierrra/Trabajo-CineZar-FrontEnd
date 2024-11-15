@@ -14,7 +14,7 @@ body {
   min-height: 100vh;
 }
 
-.movie-details-container {
+.movie-details {
   width: 100%;
   max-width: 400px;
   padding: 1rem;
@@ -23,58 +23,24 @@ body {
   text-align: center;
   color: #FFF;
 }
-
-#movie-title {
+.movie-details__title {
   font-size: 1.5rem;
   color: #FFB800;
   margin-bottom: 1rem;
 }
-
-#movie-poster {
+.movie-details__poster {
   width: 100%;
   max-width: 200px;
   border-radius: 10px;
   margin-bottom: 1rem;
 }
-
-.ratings {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 1rem;
-}
-.ratings p {
-  font-size: 0.9rem;
-  color: #FFB800;
-  font-weight: bold;
-}
-.ratings p span {
-  color: #FFF;
-}
-
-#movie-description {
+.movie-details__description {
   font-size: 0.9rem;
   color: #E0E0E0;
   margin-bottom: 1rem;
   line-height: 1.4;
 }
-
-.movie-info {
-  font-size: 0.85rem;
-  margin-bottom: 1rem;
-}
-.movie-info p {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 0.5rem;
-}
-.movie-info p strong {
-  color: #9EB3B0;
-}
-.movie-info p span {
-  color: #FFF;
-}
-
-button {
+.movie-details__button {
   background-color: #FFB800;
   border: none;
   border-radius: 5px;
@@ -86,8 +52,24 @@ button {
   width: 100%;
   margin-top: 1rem;
 }
-button:hover {
+.movie-details__button:hover {
   background-color: #E5A800;
+}
+
+.movie-info {
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+.movie-info__item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.movie-info__label {
+  color: #9EB3B0;
+}
+.movie-info__value {
+  color: #FFF;
 }
 
 /*# sourceMappingURL=detallesPelicula.css.map */
