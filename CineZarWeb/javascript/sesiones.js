@@ -4,10 +4,11 @@ let diaActual = 0;
 
 window.onload = function () {
     const peliculaSeleccionada = JSON.parse(localStorage.getItem('selectedMovie'));
+    console.log("clog--------------" + peliculaSeleccionada.portada)
 
     if (peliculaSeleccionada) {
         document.getElementById("titulo-pelicula").innerText = peliculaSeleccionada.titulo;
-        document.getElementById("movie-poster").src = peliculaSeleccionada.imagen;
+        document.getElementById("movie-poster").src = peliculaSeleccionada.portada;
         fetchSesiones(peliculaSeleccionada.id);
     } else {
         document.getElementById("titulo-pelicula").textContent = "Película no encontrada";
