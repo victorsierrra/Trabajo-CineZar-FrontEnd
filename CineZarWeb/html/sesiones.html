@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sesiones de Película</title>
-    <link rel="stylesheet" href="/CineZarWeb/build/sesiones.css"> <!-- Asegúrate de tener el CSS adecuado -->
+    <link rel="stylesheet" href="../build/sesiones.css">
+    <script src="../javascript/sesiones.js"></script>
 </head>
 <body>
     <div class="container">
@@ -26,61 +27,6 @@
         <button class="back-button" onclick="window.history.back()">Volver</button>
     </div>
 
-    <script>
-        let dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
-        let diaActual = 0;
-    
-        function cargarPelicula() {
-            const peliculaSeleccionada = JSON.parse(localStorage.getItem('selectedMovie'));
-    
-            if (peliculaSeleccionada) {
-                document.getElementById("titulo-pelicula").textContent = peliculaSeleccionada.titulo;
-                document.getElementById("movie-poster").src = peliculaSeleccionada.portada;
-    
-                // Llama a cargarSesiones para cargar las sesiones del día actual
-                cargarSesiones(dias[diaActual], peliculaSeleccionada.id);
-            } else {
-                document.getElementById("titulo-pelicula").textContent = "Película no encontrada";
-                document.getElementById("session-cards").innerHTML = "<p>No hay sesiones disponibles.</p>";
-            }
-        }
-    
-        async function cargarSesiones(dia, peliculaId) {
-            try {
-                // Realiza la solicitud a la API para obtener las sesiones de la película
-                const response = await fetch(`https://localhost:7165/api/Sesiones?peliculaId=${peliculaId}&dia=${dia}`);
-                const sesiones = await response.json();
-    
-                document.getElementById("dia-seleccionado").textContent = dia;
-    
-                const sessionCards = document.getElementById("session-cards");
-                sessionCards.innerHTML = ""; // Limpiar las sesiones actuales
-    
-                if (sesiones.length > 0) {
-                    sesiones.forEach(horario => {
-                        const card = document.createElement("div");
-                        card.className = "session-card";
-                        card.textContent = horario.hora; // Asegúrate de que la propiedad del horario sea correcta
-                        sessionCards.appendChild(card);
-                    });
-                } else {
-                    sessionCards.innerHTML = "<p>No hay sesiones disponibles para este día.</p>";
-                }
-            } catch (error) {
-                console.error("Error al cargar las sesiones:", error);
-                document.getElementById("session-cards").innerHTML = "<p>Error al cargar las sesiones.</p>";
-            }
-        }
-    
-        function cambiarDia(direccion) {
-            diaActual = (diaActual + direccion + dias.length) % dias.length;
-            cargarPelicula();
-        }
-    
-        // Cargar la película al cargar la página
-        window.onload = cargarPelicula;
-    </script>
-    
-    
+
 </body>
 </html>

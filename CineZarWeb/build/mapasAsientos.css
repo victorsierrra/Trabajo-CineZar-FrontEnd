@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Allerta&display=swap");
+* {
+  background-color: #005B52;
+  font-family: "Allerta", sans-serif;
+}
+
+.asiento {
+  width: 15px;
+  height: 15px;
+  background-color: #FFFFFF;
+  color: #FFFFFF;
+  border-radius: 25%;
+  margin: 5px;
+  font-size: 7px;
+  align-content: center;
+  text-align: center;
+}
+.asiento.selected {
+  background-color: #F2C94C;
+}
+.asiento:hover {
+  background-color: #F2C94C;
+  cursor: pointer;
+}
+
+#leyenda {
+  display: flex;
+}
+
+#mapa {
+  justify-content: center;
+  text-align: center;
+}
+
+#fila-A, #fila-B, #fila-C, #fila-D, #fila-E, #fila-F,
+#fila-G, #fila-H, #fila-I, #fila-J, #fila-K, #fila-L,
+#fila-M, #fila-N, #fila-O, #fila-P, #fila-Q, #fila-R,
+#fila-S, #fila-T, #fila-U, #fila-V, #fila-W, #fila-X,
+#fila-Y, #fila-Z {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#fila-A {
+  margin-top: 20px;
+}
+
+#ComprarAsientos {
+  background-color: #F2C94C;
+  font-size: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  color: #FFFFFF;
+  cursor: pointer;
+  border: none;
+}
+
+/*# sourceMappingURL=mapasAsientos.css.map */
