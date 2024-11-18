@@ -37,11 +37,12 @@ function imprimirAsientos() {
     const filaZ = document.getElementById('fila-Z');
     
     try {
-        let promise = fetch("https://localhost:7165/api/Pelicula/VerSesiones/1")
+        let promise = fetch("https://localhost:7165/api/Sesion/1")
         promise.then(response => response.json())
             .then(data => {
-                console.log(data[0].asientos)
-                data[0].asientos.forEach(asiento => {
+                console.log(data)
+                console.log(data.asientos)
+                data.asientos.forEach(asiento => {
                     let circulo = document.createElement('div')
                     circulo.setAttribute("id", `asiento_${asiento.id}`)
                     circulo.setAttribute("class", "asiento")

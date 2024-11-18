@@ -4,7 +4,7 @@ let diaActual = 0;
 
 window.onload = function () {
     const peliculaSeleccionada = JSON.parse(localStorage.getItem('selectedMovie'));
-    console.log("clog--------------" + peliculaSeleccionada.portada)
+    console.log("clog--------------" + peliculaSeleccionada.sesiones.horaSesion)
 
     if (peliculaSeleccionada) {
         document.getElementById("titulo-pelicula").innerText = peliculaSeleccionada.titulo;
@@ -39,12 +39,14 @@ function cambiarDia(direccion) {
 function cargarSesiones(dia) {
     document.getElementById("dia-seleccionado").textContent = diasLetra[diaActual];
     const sessionCards = document.getElementById("session-cards");
-    sessionCards.innerHTML = ""; // Limpiar las sesiones actuales
+    sessionCards.innerHTML = "";
 
     dia.forEach(horario => {
         const card = document.createElement("div");
         card.className = "session-card";
+        card.id = 
         card.textContent = horario;
+        card.setAttribute("onclick", `seleccionarSesion('2')`)
         sessionCards.appendChild(card);
     });
 }
