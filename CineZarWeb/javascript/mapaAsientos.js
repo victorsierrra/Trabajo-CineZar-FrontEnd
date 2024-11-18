@@ -1,4 +1,5 @@
 let asientosSeleccionados = [];
+const idSesion = localStorage.getItem('idSesion')
 window.onload = function (e) {
     imprimirAsientos()
 
@@ -35,9 +36,10 @@ function imprimirAsientos() {
     const filaX = document.getElementById('fila-X');
     const filaY = document.getElementById('fila-Y');
     const filaZ = document.getElementById('fila-Z');
-    
+
+    console.log(idSesion)
     try {
-        let promise = fetch("https://localhost:7165/api/Sesion/1")
+        let promise = fetch(`https://localhost:7165/api/Sesion/${idSesion}`)
         promise.then(response => response.json())
             .then(data => {
                 console.log(data)
@@ -130,7 +132,7 @@ function imprimirAsientos() {
                             break;
                         default:
                             console.log('No se encuentra la fila');
-                    }                    
+                    }
                     if (asiento.comprado === true) {
                         circulo.style.backgroundColor = "#1F293D"
                         circulo.style.cursor = "not-allowed"
@@ -138,19 +140,18 @@ function imprimirAsientos() {
                 });
             })
     } catch (error) {
-        console.error('There has been a problem with your fetch operation:', error);
+        console.error('Error al intentar el fetch', error);
     }
 }
 function seleccionarAsiento(id) {
     let asientoSeleccionado = document.getElementById(id)
     let variable = id.substring(8)
-    if(asientosSeleccionados.includes(variable))
-    {
+    if (asientosSeleccionados.includes(variable)) {
         console.log('Dejar de seleccionar')
-        asientosSeleccionados = asientosSeleccionados.filter(asiento => asiento !=variable)
+        asientosSeleccionados = asientosSeleccionados.filter(asiento => asiento != variable)
     }
-    else{
-    asientosSeleccionados.push(variable)
+    else {
+        asientosSeleccionados.push(variable)
     }
     asientoSeleccionado.classList.toggle('selected')
 
@@ -159,7 +160,7 @@ function seleccionarAsiento(id) {
 }
 
 function ComprarAsientos() {
-    let promise = fetch('https://localhost:7165/api/Pelicula/ComprarEntradas/1?idSesion=1', {
+    let promise = fetch(`https://localhost:7165/api/Sesion/ComprarEntrada/${idSesion}`, {
         method: 'PUT',
         headers: {
             'Accept': '*/*',
@@ -167,7 +168,7 @@ function ComprarAsientos() {
         },
         body: JSON.stringify(asientosSeleccionados)
     })
-    promise.then(response => { response.json()})
+    promise.then(response => { response.json() })
         .then(data => {
             console.log('Success:', data);
             asientosSeleccionados = []
