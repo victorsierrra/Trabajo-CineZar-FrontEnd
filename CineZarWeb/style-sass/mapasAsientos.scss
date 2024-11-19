@@ -6,8 +6,8 @@
 }
 
 .asiento {
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     background-color: #FFFFFF;
     color: #FFFFFF;
     border-radius: 25%;
@@ -24,11 +24,17 @@
         cursor: pointer;
     }
 }
-
-#leyenda
-{
+#disponible, #ocupado, #seleccionado{
+    align-items: center;
     display: flex;
+    margin: 8px;
 }
+#asiento__ocupado
+{
+    cursor: not-allowed;
+    background-color: #1F293D;
+}
+
 
 #mapa{
     justify-content: center;
@@ -39,7 +45,7 @@
 #fila-G, #fila-H, #fila-I, #fila-J, #fila-K, #fila-L,
 #fila-M, #fila-N, #fila-O, #fila-P, #fila-Q, #fila-R,
 #fila-S, #fila-T, #fila-U, #fila-V, #fila-W, #fila-X,
-#fila-Y,#fila-Z{
+#fila-Y,#fila-Z, #leyenda{
     width: 100%;
     display: flex;
     justify-content: center;
