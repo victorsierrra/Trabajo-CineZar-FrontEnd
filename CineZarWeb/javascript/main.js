@@ -53,6 +53,44 @@ window.onload = function () {
         .catch(error => console.error("Error al cargar las películas:", error));
 };
 
+document.addEventListener("DOMContentLoaded", function () {
+    // Realizar un fetch al endpoint del backend para obtener las ofertas
+    fetch('http://localhost:5000/api/oferta')  // Para localhost
+
+        .then(response => response.json())
+        .then(data => {
+            // Verificar que se está recibiendo la respuesta correcta
+            console.log(data); // Verifica en la consola que lleguen las ofertas
+
+            // Obtener el contenedor donde se agregarán las ofertas
+            const ofertaContainer = document.getElementById('oferta');
+
+            // Verificar si hay datos de ofertas
+            if (data.length > 0) {
+                // Iterar sobre las ofertas y agregarlas al contenedor
+                data.forEach(oferta => {
+                    const ofertaElement = document.createElement('div');
+                    ofertaElement.classList.add('oferta-item'); // Agregar una clase para estilizar
+
+                    // Crear el contenido HTML para cada oferta
+                    ofertaElement.innerHTML = `
+                        <h3>${oferta.titulo}</h3>
+                        <img src="${oferta.imagenUrl}" alt="${oferta.titulo}">
+                        <p>${oferta.descripcion}</p>
+                    `;
+
+                    // Agregar la oferta al contenedor
+                    ofertaContainer.appendChild(ofertaElement);
+                });
+            } else {
+                // Si no hay ofertas, mostrar un mensaje
+                ofertaContainer.innerHTML = '<p>No hay ofertas disponibles.</p>';
+            }
+        })
+        .catch(error => console.error('Error al cargar las ofertas:', error));
+});
+
+
 // Función para mostrar el slide del carrusel
 function showSlide(index) {
     const slides = document.querySelectorAll('.banner__carousel-slide');

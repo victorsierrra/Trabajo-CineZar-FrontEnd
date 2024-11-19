@@ -189,42 +189,28 @@ body {
 }
 
 .container-oferta {
-  margin: 2rem 0 0;
+  margin-top: 2rem;
   padding: 1rem;
   text-align: center;
-  width: 100%;
-}
-.container-oferta .banner__title {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
 }
 .container-oferta .imagen__oferta {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-top: 1rem;
 }
 .container-oferta .imagen__oferta img {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 10px;
 }
-
-@media (min-width: 600px) {
-  .container-oferta .banner__title {
-    font-size: 1.5rem;
-  }
-  .container-oferta .imagen__oferta img {
-    max-width: 80%;
-  }
+.container-oferta .imagen__oferta h3 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #FFF;
 }
-@media (min-width: 768px) {
-  .container-oferta .banner__title {
-    font-size: 1.75rem;
-  }
-  .container-oferta .imagen__oferta img {
-    max-width: 60%;
-  }
+.container-oferta .imagen__oferta p {
+  color: #9EB3B0;
+  font-size: 1rem;
+  margin-top: 0.5rem;
 }
 
 /*# sourceMappingURL=index.css.map */

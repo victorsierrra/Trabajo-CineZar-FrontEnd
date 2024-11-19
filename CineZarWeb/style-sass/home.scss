@@ -233,57 +233,32 @@ body {
         }
     }
 }
-// Sección de oferta
 .container-oferta {
-    margin: 2rem 0 0; // Aseguramos que haya espacio adecuado debajo de la cartelera
+    margin-top: 2rem;
     padding: 1rem;
     text-align: center;
-    width: 100%; // Asegura que ocupe el 100% del ancho disponible
-
-    .banner__title {
-        font-size: 1.25rem;
-        margin-bottom: 1rem;
-    }
 
     .imagen__oferta {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         margin-top: 1rem;
-        
+
         img {
             max-width: 100%;
             height: auto;
-            border-radius: 8px;
+            border-radius: 10px;
+        }
+
+        h3 {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #FFF;
+        }
+
+        p {
+            color: #9EB3B0;
+            font-size: 1rem;
+            margin-top: 0.5rem;
         }
     }
 }
 
-// Estilos para pantallas más grandes (tablets, desktop)
-@media (min-width: 600px) {
-    .container-oferta {
-        .banner__title {
-            font-size: 1.5rem;
-        }
-
-        .imagen__oferta {
-            img {
-                max-width: 80%;
-            }
-        }
-    }
-}
-
-@media (min-width: 768px) {
-    .container-oferta {
-        .banner__title {
-            font-size: 1.75rem;
-        }
-
-        .imagen__oferta {
-            img {
-                max-width: 60%;
-            }
-        }
-    }
-}
