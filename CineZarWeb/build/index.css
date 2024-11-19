@@ -188,4 +188,43 @@ body {
   right: 10px;
 }
 
+.container-oferta {
+  margin: 2rem 0 0;
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+}
+.container-oferta .banner__title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+.container-oferta .imagen__oferta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+.container-oferta .imagen__oferta img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+@media (min-width: 600px) {
+  .container-oferta .banner__title {
+    font-size: 1.5rem;
+  }
+  .container-oferta .imagen__oferta img {
+    max-width: 80%;
+  }
+}
+@media (min-width: 768px) {
+  .container-oferta .banner__title {
+    font-size: 1.75rem;
+  }
+  .container-oferta .imagen__oferta img {
+    max-width: 60%;
+  }
+}
+
 /*# sourceMappingURL=index.css.map */
