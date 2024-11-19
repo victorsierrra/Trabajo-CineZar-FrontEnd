@@ -8,7 +8,8 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #0D3D3B;
+    background-color: #0F645C;
+    
     color: #FFF;
     display: flex;
     justify-content: center;
@@ -22,26 +23,63 @@ body {
     padding: 1rem;
 }
 
+// home.scss
+
+// Variables de colores (puedes definirlas aquí directamente o en un archivo _variables.scss si tienes uno)
+$header-background-color: #083D38;
+$header-text-color: #FFFFFF;
+$button-background-color: #FFB800;
+$button-text-color: #333;
+$button-hover-color: #e6a700;
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #125c4c;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+// Estilos para el header
 .header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: #083D38;
+    color: #FFFFFF;
+    width: 111%;
+    margin-left: -5%;
+    margin-top: -5%;
 
     &__logo {
-        font-size: 1.5rem;
+        font-size: 2rem;
+    }
+
+    &__title {
+        font-size: 1.8rem;
+        font-weight: bold;
     }
 
     &__login-btn {
-        background-color: #FFB800;
+        padding: 0.5rem 1rem;
+        background-color: $button-background-color;
+        color: $button-text-color;
         border: none;
         border-radius: 5px;
-        padding: 0.5rem 1rem;
-        color: #0D3D3B;
-        font-weight: bold;
         cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: $button-hover-color;
+        }
     }
 }
+
+
 
 .banner {
     text-align: center;
@@ -77,6 +115,9 @@ body {
         }
     }
 
+    // _banner.scss
+
+.banner {
     &__carousel-button {
         position: absolute;
         top: 50%;
@@ -87,6 +128,11 @@ body {
         padding: 0.5rem;
         cursor: pointer;
         font-size: 1.5rem;
+        margin-left: -7px;
+        margin-right: -6px;
+    }
+}
+
 
         &--prev {
             left: 10px;
@@ -96,7 +142,7 @@ body {
             right: 10px;
         }
     }
-}
+
 
 .movies-section {
     &__title {
