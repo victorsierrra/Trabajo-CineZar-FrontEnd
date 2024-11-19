@@ -2,13 +2,28 @@ let asientosSeleccionados = [];
 const idSesion = localStorage.getItem('idSesion')
 window.onload = function (e) {
     imprimirAsientos()
+    const pelicula = JSON.parse(localStorage.getItem('selectedMovie'))
+    let divTitulo = document.querySelector('.title-pelicula')
+    console.log(pelicula.titulo)
+    divTitulo.innerHTML = `<h2>${pelicula.titulo.toUpperCase()}</h2>`
+    verFecha(idSesion)
 
     var AsientosSeleccionas = null
     document.addEventListener("click", {
 
     })
 }
-
+function verFecha(id)
+{
+    let promise = fetch(`https://localhost:7165/api/Sesion/${id}`)
+    promise.then(res => res.json())
+    .then(data =>{
+        let fechaSesion = new Date(data.horaSesion)
+        fechaSesion = fechaSesion.toLocaleString('es-ES', {weekday: 'long', day: 'numeric', month: 'short' ,hour: 'numeric', minute: '2-digit'}).toUpperCase()
+        let divFecha = document.querySelector('.date-pelicula')
+        divFecha.innerHTML = `<h3>${fechaSesion}</h3>`
+    })
+}
 function imprimirAsientos() {
     const filaA = document.getElementById('fila-A');
     const filaB = document.getElementById('fila-B');

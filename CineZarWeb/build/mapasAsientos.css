@@ -4,6 +4,18 @@
   font-family: "Allerta", sans-serif;
 }
 
+.title-pelicula {
+  color: #FFFFFF;
+  font-size: 24px;
+  text-align: center;
+}
+
+.date-pelicula {
+  color: #FFFFFF;
+  font-size: 18px;
+  text-align: center;
+}
+
 .asiento {
   width: 20px;
   height: 20px;
@@ -24,8 +36,9 @@
 }
 
 #disponible, #ocupado, #seleccionado {
+  align-items: center;
   display: flex;
-  margin: 10px;
+  margin: 8px;
 }
 
 #asiento__ocupado {
