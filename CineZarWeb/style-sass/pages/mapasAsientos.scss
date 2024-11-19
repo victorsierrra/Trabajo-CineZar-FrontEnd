@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Allerta&display=swap');
-
+@import '../base/variables';
+@import '../components/buttons';
+@import '../layout/grid';
 * {
     background-color: #005B52;
     font-family: "Allerta", sans-serif;
