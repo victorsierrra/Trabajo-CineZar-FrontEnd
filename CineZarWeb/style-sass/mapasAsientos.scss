@@ -4,17 +4,19 @@
     background-color: #005B52;
     font-family: "Allerta", sans-serif;
 }
-.title-pelicula{
-    color: #FFFFFF;
+
+.title-pelicula {
+    color: #F2C94C;
     font-size: 24px;
     text-align: center;
 }
-.date-pelicula
-{
+
+.date-pelicula {
     color: #FFFFFF;
     font-size: 18px;
     text-align: center;
 }
+
 .asiento {
     width: 20px;
     height: 20px;
@@ -22,52 +24,84 @@
     color: #FFFFFF;
     border-radius: 25%;
     margin: 5px;
-    font-size: 7px;
+    font-size: 13px;
     align-content: center;
     text-align: center;
 
-    &.selected{
+    &.selected {
         background-color: #F2C94C;
     }
-    &:hover{
+
+    &:hover {
         background-color: #F2C94C;
         cursor: pointer;
     }
 }
-#disponible, #ocupado, #seleccionado{
+
+#disponible,
+#ocupado,
+#seleccionado {
     align-items: center;
     display: flex;
     margin: 8px;
+    color: #FFFFFF;
 }
-#asiento__ocupado
-{
+
+#asiento__ocupado {
     cursor: not-allowed;
     background-color: #1F293D;
 }
 
 
-#mapa{
+#mapa {
     justify-content: center;
     text-align: center;
 }
 
-#fila-A, #fila-B, #fila-C, #fila-D, #fila-E, #fila-F,
-#fila-G, #fila-H, #fila-I, #fila-J, #fila-K, #fila-L,
-#fila-M, #fila-N, #fila-O, #fila-P, #fila-Q, #fila-R,
-#fila-S, #fila-T, #fila-U, #fila-V, #fila-W, #fila-X,
-#fila-Y,#fila-Z, #leyenda{
+#fila-A,
+#fila-B,
+#fila-C,
+#fila-D,
+#fila-E,
+#fila-F,
+#fila-G,
+#fila-H,
+#fila-I,
+#fila-J,
+#fila-K,
+#fila-L,
+#fila-M,
+#fila-N,
+#fila-O,
+#fila-P,
+#fila-Q,
+#fila-R,
+#fila-S,
+#fila-T,
+#fila-U,
+#fila-V,
+#fila-W,
+#fila-X,
+#fila-Y,
+#fila-Z,
+#leyenda {
     width: 100%;
     display: flex;
     justify-content: center;
 }
-#fila-A{
+
+#fila-A {
     margin-top: 20px;
 }
 
 
-#ComprarAsientos {
+#ComprarAsientos,
+#volverAtras {
     background-color: #F2C94C;
+    margin: 10px;
     font-size: 15px;
+    width: 100px;
+    height: 30px;
     border-radius: 5px;
     margin-top: 20px;
     color: #FFFFFF;

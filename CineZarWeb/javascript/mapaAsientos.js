@@ -175,6 +175,7 @@ function seleccionarAsiento(id) {
 }
 
 function ComprarAsientos() {
+    localStorage.setItem('idAsientos', asientosSeleccionados)
     let promise = fetch(`https://localhost:7165/api/Sesion/ComprarEntrada/${idSesion}`, {
         method: 'PUT',
         headers: {

@@ -31,36 +31,36 @@ fetch(`https://localhost:7165/api/Pelicula/VerSesiones/${peliculaSeleccionada.id
         data.forEach(fecha => {
             let date = new Date(fecha.horaSesion)
             let dia = date.toLocaleString('es-ES', { weekday: 'long' }).toUpperCase();
-            let hora = date.toLocaleString('es-ES', { day: 'numeric' ,hour: '2-digit', minute: '2-digit' })
+            let diaNumerico = date.toLocaleString('es-ES', { day: 'numeric' })
+            let hora = date.toLocaleString('es-ES', {hour: '2-digit', minute: '2-digit' })
             // console.log(`${dia} a las ${hora}`);
+
+            let datosDia = {
+                idSesion: fecha.id,
+                    horaPelicula: hora,
+                    diaNumericoPelicula: diaNumerico
+            }
             switch (dia) {
                 case "LUNES":
-                    Lunes.push({idSesion: fecha.id,
-                        horaPelicula: hora})
+                    Lunes.push(datosDia)
                     break;
                 case "MARTES":
-                    Martes.push({idSesion: fecha.id,
-                        horaPelicula: hora})
+                    Martes.push(datosDia)
                     break;
                 case "MIÉRCOLES":
-                    Miercoles.push({idSesion: fecha.id,
-                        horaPelicula: hora})
+                    Miercoles.push(datosDia)
                     break;
                 case "JUEVES":
-                    Jueves.push({idSesion: fecha.id,
-                        horaPelicula: hora})
+                    Jueves.push(datosDia)
                     break;
                 case "VIERNES":
-                    Viernes.push({idSesion: fecha.id,
-                        horaPelicula: hora})
+                    Viernes.push(datosDia)
                     break;
                 case "SÁBADO":
-                    Sabado.push({idSesion: fecha.id,
-                        horaPelicula: hora})
+                    Sabado.push(datosDia)
                     break;
                 case "DOMINGO":
-                    Domingo.push({idSesion: fecha.id,
-                        horaPelicula: hora})
+                    Domingo.push(datosDia)
                     break;
                 default:
                     console.log("No se puede gestionar")
@@ -93,6 +93,7 @@ function cargarSesiones(dia) {
     const sessionCards = document.getElementById("session-cards");
     sessionCards.innerHTML = ""; // Limpiar las sesiones actuales
 
+    let diaActualHorario = "";
     horarios.forEach(horario => {
         const card = document.createElement("div");
         card.className = "session-card";
@@ -100,7 +101,10 @@ function cargarSesiones(dia) {
         card.textContent = horario.horaPelicula;
         card.setAttribute('onclick', `seleccionarSesion(${card.id})`)
         sessionCards.appendChild(card);
+        diaActualHorario = horario.diaNumericoPelicula;
     });
+
+    document.getElementById("dia-seleccionado").textContent = diaActualHorario + " - " + diasLetra[diaActual];
 }
 function seleccionarSesion(id)
 {
