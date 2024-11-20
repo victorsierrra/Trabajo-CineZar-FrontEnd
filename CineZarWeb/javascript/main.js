@@ -53,24 +53,25 @@ window.onload = function () {
         .catch(error => console.error("Error al cargar las películas:", error));
 };
 
+
+//fech para mostrar las ofertas
 document.addEventListener("DOMContentLoaded", function () {
-    // Realizar un fetch al endpoint del backend para obtener las ofertas
-    fetch('http://localhost:5000/api/oferta')  // Para localhost
+    fetch('https://localhost:7165/api/Oferta')
 
         .then(response => response.json())
         .then(data => {
-            // Verificar que se está recibiendo la respuesta correcta
+
             console.log(data); // Verifica en la consola que lleguen las ofertas
 
             // Obtener el contenedor donde se agregarán las ofertas
             const ofertaContainer = document.getElementById('oferta');
 
-            // Verificar si hay datos de ofertas
+
             if (data.length > 0) {
-                // Iterar sobre las ofertas y agregarlas al contenedor
+
                 data.forEach(oferta => {
                     const ofertaElement = document.createElement('div');
-                    ofertaElement.classList.add('oferta-item'); // Agregar una clase para estilizar
+                    ofertaElement.classList.add('oferta-item');
 
                     // Crear el contenido HTML para cada oferta
                     ofertaElement.innerHTML = `
@@ -83,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     ofertaContainer.appendChild(ofertaElement);
                 });
             } else {
-                // Si no hay ofertas, mostrar un mensaje
+
                 ofertaContainer.innerHTML = '<p>No hay ofertas disponibles.</p>';
             }
         })

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Allerta&display=swap");
+
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +10,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #0F645C;
-    
+
     color: #FFF;
     display: flex;
     justify-content: center;
@@ -117,31 +118,31 @@ body {
 
     // _banner.scss
 
-.banner {
-    &__carousel-button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        border: none;
-        padding: 0.5rem;
-        cursor: pointer;
-        font-size: 1.5rem;
-        margin-left: -7px;
-        margin-right: -6px;
+    .banner {
+        &__carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 0.5rem;
+            cursor: pointer;
+            font-size: 1.5rem;
+            margin-left: -7px;
+            margin-right: -6px;
+        }
+    }
+
+
+    &--prev {
+        left: 10px;
+    }
+
+    &--next {
+        right: 10px;
     }
 }
-
-
-        &--prev {
-            left: 10px;
-        }
-
-        &--next {
-            right: 10px;
-        }
-    }
 
 
 .movies-section {
@@ -233,6 +234,7 @@ body {
         }
     }
 }
+
 .container-oferta {
     margin-top: 2rem;
     padding: 1rem;
@@ -262,3 +264,61 @@ body {
     }
 }
 
+//FOOTER
+.footer {
+    background-color: #083D38; // Color de fondo
+    color: #FFFFFF; // Color de texto
+    padding: 2rem 1rem;
+    text-align: center;
+
+    &__credits {
+        display: flex;
+        flex-direction: column; // Apilado por defecto (mobile-first)
+        align-items: center;
+        gap: 1rem; // Espaciado entre columnas
+    }
+
+    &__column {
+        width: 100%; // Ancho completo en móvil
+        text-align: center;
+
+        &:not(:last-child) {
+            margin-bottom: 1rem; // Separación entre columnas
+        }
+    }
+
+    &__section {
+
+        &--contact,
+        &--legal {
+            text-align: center;
+        }
+    }
+
+    &__title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        &-item {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    &__link {
+        color: #FFB800; // Color dorado
+        text-decoration: none;
+        font-size: 0.9rem;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
