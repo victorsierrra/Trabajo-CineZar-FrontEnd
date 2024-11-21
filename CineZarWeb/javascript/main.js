@@ -18,10 +18,7 @@ window.onload = function () {
             carouselMovies.forEach(p => {
                 let slide = document.createElement('div');
                 slide.classList.add('banner__carousel-slide');
-                slide.innerHTML = `
-                    <img src="${p.portada}" alt="${p.titulo}" class="movie-poster">
-                    <p class="movie-title">${p.titulo}</p>
-                `;
+                slide.style.backgroundImage= `url(${p.portada})`
                 carousel.appendChild(slide);
             });
 
@@ -33,8 +30,10 @@ window.onload = function () {
             movieList.forEach(p => {
                 let movieItem = document.createElement('div');
                 movieItem.classList.add('movies-section__movie');
+                let movieFoto = document.createElement('div')
+                movieFoto.classList('movie-poster')
+
                 movieItem.innerHTML = `
-                    <img src="${p.portada}" alt="${p.titulo}" class="movie-poster">
                     <p class="movie-title">${p.titulo}</p>
                 `;
 
@@ -48,6 +47,8 @@ window.onload = function () {
                 });
 
                 movieListContainer.appendChild(movieItem);
+                movieFoto.style.backgroundImage= `url(${p.portada})`
+                movieItem.appendChild(movieFoto)
             });
         })
         .catch(error => console.error("Error al cargar las películas:", error));

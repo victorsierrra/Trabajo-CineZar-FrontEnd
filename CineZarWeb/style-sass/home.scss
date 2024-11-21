@@ -42,7 +42,13 @@ body {
         cursor: pointer;
     }
 }
-
+.banner__carousel-slide
+{
+    background-size: cover;
+    background-position: center;
+    width: 400px;
+    height: 600px;
+}
 .banner {
     text-align: center;
     margin: 1rem 0;
