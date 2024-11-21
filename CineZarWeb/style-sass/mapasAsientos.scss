@@ -16,6 +16,13 @@
     font-size: 18px;
     text-align: center;
 }
+.mapa-asientos
+{
+    display: grid;
+    grid-template-columns: repeat(10, 0fr);
+    justify-content: center;
+    margin-top: 15px;
+}
 
 .asiento {
     width: 20px;
