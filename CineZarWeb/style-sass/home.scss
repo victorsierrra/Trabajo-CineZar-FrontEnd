@@ -112,8 +112,11 @@ body {
     }
 
     &__movies-list {
+        justify-content: center;
+        justify-items: center;
+        width: 100%;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         gap: 1rem;
     }
 
@@ -125,8 +128,8 @@ body {
         .movie-poster {
             background-position: center;
             background-size: cover;
-            height: 160px;
-            width: 100px;
+            height: 220px;
+            width: 160px;
             border-radius: 10px;
             margin-bottom: 0.5rem;
         }
@@ -198,6 +201,17 @@ body {
 
         &--next {
             right: 10px;
+        }
+    }
+}
+
+@media screen and (min-width: 768px)
+{
+    .movies-section
+    {
+        &__movies-list
+        {
+            grid-template-columns: repeat(3, 1fr);
         }
     }
 }

@@ -8,21 +8,21 @@ window.onload = function (e) {
     divTitulo.innerHTML = `<h2>${pelicula.titulo.toUpperCase()}</h2>`
     verFecha(idSesion)
 
+
     var AsientosSeleccionas = null
     document.addEventListener("click", {
 
     })
 }
-function verFecha(id)
-{
+function verFecha(id) {
     let promise = fetch(`https://localhost:7165/api/Sesion/${id}`)
     promise.then(res => res.json())
-    .then(data =>{
-        let fechaSesion = new Date(data.horaSesion)
-        fechaSesion = fechaSesion.toLocaleString('es-ES', {weekday: 'long', day: 'numeric', month: 'short' ,hour: 'numeric', minute: '2-digit'}).toUpperCase()
-        let divFecha = document.querySelector('.date-pelicula')
-        divFecha.innerHTML = `<h3>${fechaSesion}</h3>`
-    })
+        .then(data => {
+            let fechaSesion = new Date(data.horaSesion)
+            fechaSesion = fechaSesion.toLocaleString('es-ES', { weekday: 'long', day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' }).toUpperCase()
+            let divFecha = document.querySelector('.date-pelicula')
+            divFecha.innerHTML = `<h3>${fechaSesion}</h3>`
+        })
 }
 function imprimirAsientos() {
     const mapa = document.querySelector('.mapa-asientos');
@@ -53,6 +53,8 @@ function imprimirAsientos() {
     }
 }
 function seleccionarAsiento(id) {
+    const asientosCards = document.getElementById('asientos-cards')
+    asientosCards.innerHTML = ""
     let asientoSeleccionado = document.getElementById(id)
     let variable = id.substring(8)
     if (asientosSeleccionados.includes(variable)) {
@@ -63,6 +65,7 @@ function seleccionarAsiento(id) {
         asientosSeleccionados.push(variable)
     }
     asientoSeleccionado.classList.toggle('selected')
+    asientosSeleccionados.forEach(id => verAsientosSeleccionados(id))
 
     console.log(`Clog -------------    ${variable}`)
     console.log(asientosSeleccionados)
@@ -87,4 +90,20 @@ function ComprarAsientos() {
         .catch(error => {
             console.error('Problema con el fetch para la seleccion de entradas', error);
         });
+}
+function verAsientosSeleccionados(idAsiento) {
+    let promise = fetch(`https://localhost:7165/api/Asiento/VerInfoAsiento/${idAsiento}`)
+    promise.then(response => response.json())
+        .then(data => {
+            const asientosCards = document.getElementById('asientos-cards')
+            const card = document.createElement("div");
+            card.className = "asiento-card";
+            card.id = `asiento_${data.id}`;
+            card.textContent = `Asiento situado en la fila ${data.fila} en el número ${data.numero}`;
+            card.setAttribute('onclick', `seleccionarSesion(${card.id})`)
+            asientosCards.appendChild(card)
+            console.log(data)
+        })
+        .catch(error => console.error("Problema con el fetch para ver los asientos seleccionados", error))
+
 }
