@@ -106,15 +106,22 @@ body {
   gap: 1rem;
 }
 .movies-section__movie {
-  text-align: center;
+  width: 200px;
+  text-align: -webkit-center;
 }
 .movies-section__movie .movie-poster {
-  width: 100%;
+  background-position: center;
+  background-size: cover;
+  height: 160px;
+  width: 100px;
   border-radius: 10px;
   margin-bottom: 0.5rem;
 }
 .movies-section__movie .movie-title {
+  place-content: center;
+  height: 42px;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 .movies-section__movie .movie-genre {
   font-size: 0.85rem;

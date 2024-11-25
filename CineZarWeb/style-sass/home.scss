@@ -118,16 +118,24 @@ body {
     }
 
     &__movie {
-        text-align: center;
+
+        width: 200px;
+        text-align: -webkit-center;
 
         .movie-poster {
-            width: 100%;
+            background-position: center;
+            background-size: cover;
+            height: 160px;
+            width: 100px;
             border-radius: 10px;
             margin-bottom: 0.5rem;
         }
 
         .movie-title {
+            place-content: center;
+            height: 42px;
             font-weight: bold;
+            margin-bottom: 10px;
         }
 
         .movie-genre {

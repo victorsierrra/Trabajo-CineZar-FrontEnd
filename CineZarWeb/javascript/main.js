@@ -31,7 +31,9 @@ window.onload = function () {
                 let movieItem = document.createElement('div');
                 movieItem.classList.add('movies-section__movie');
                 let movieFoto = document.createElement('div')
-                movieFoto.classList('movie-poster')
+                movieFoto.classList.add('movie-poster')
+                movieItem.appendChild(movieFoto)
+                movieFoto.style.backgroundImage= `url(${p.portada})`
 
                 movieItem.innerHTML = `
                     <p class="movie-title">${p.titulo}</p>
