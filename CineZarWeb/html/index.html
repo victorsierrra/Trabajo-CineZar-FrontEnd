@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../build/index.css">
-    <title>Fetch Peliculas</title>
+    <title>home</title>
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
+        <!-- Header (Navbar) -->
         <header class="header">
             <div class="header__logo">🎬</div>
             <h1 class="header__title">CineZar</h1>
@@ -26,12 +26,26 @@
             <button class="banner__carousel-button banner__carousel-button--next" onclick="moveSlide(1)">&#10095;</button>
         </section>
         
+        <!-- Movies Section -->
         <section class="movies-section">
             <h2 class="movies-section__title">Ahora en cines</h2>
             <div id="movie-list" class="movies-section__movies-list"></div>
         </section>
     </div>
     
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__column">
+            <h3>Aviso Legal</h3>
+            <p>Política de privacidad, términos y condiciones.</p>
+        </div>
+        <div class="footer__column">
+            <h3>Contacto</h3>
+            <p>Email: contacto@cinezar.com</p>
+            <p>Teléfono: +34 123 456 789</p>
+        </div>
+    </footer>
+
     <!-- JavaScript -->
     <script src="../javascript/main.js"></script>
 </body>
