@@ -73,21 +73,32 @@ body {
   flex-direction: column;
 }
 
-.container-home {
+.container {
   width: 100%;
+  max-width: 400px;
+  padding: 1rem;
 }
 
 .header {
-  background-color: #083D38;
+  background-color: #083D38; /* Tono oscuro */
   color: #fff;
   display: flex;
-  padding: 15px;
+  justify-content: space-between;
+  padding: 20px;
   width: 100%;
   box-sizing: border-box;
-  justify-content: center;
 }
 .header__logo {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
+}
+.header__login-btn {
+  background-color: #FFB800;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  color: #0D3D3B;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .banner__carousel-slide {
@@ -102,7 +113,7 @@ body {
   margin: 1rem 0;
 }
 .banner__title {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 .banner__carousel {
@@ -145,18 +156,17 @@ body {
 }
 
 .movies-section__title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin-bottom: 1rem;
   text-align: center;
-  margin-top: 4%;
 }
 .movies-section__movies-list {
+  justify-content: center;
   justify-items: center;
-  width: 75%;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 2rem;
-  margin: auto;
+  gap: 1rem;
 }
 .movies-section__movie {
   width: 200px;
@@ -165,17 +175,16 @@ body {
 .movies-section__movie .movie-poster {
   background-position: center;
   background-size: cover;
-  height: 330px;
-  width: 210px;
+  height: 220px;
+  width: 160px;
   border-radius: 10px;
   margin-bottom: 0.5rem;
 }
 .movies-section__movie .movie-title {
   place-content: center;
-  height: 48px;
+  height: 42px;
   font-weight: bold;
   margin-bottom: 10px;
-  font-size: 18px;
 }
 .movies-section__movie .movie-genre {
   font-size: 0.85rem;
@@ -190,7 +199,7 @@ body {
 }
 .banner__title {
   font-size: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .banner__carousel {
   display: flex;
@@ -238,16 +247,13 @@ body {
 
 /* Estilo para el footer */
 .footer {
-  background-color: #083D38;
-  /* Tono oscuro */
+  background-color: #083D38; /* Tono oscuro */
   color: #fff;
   display: flex;
   justify-content: space-between;
   padding: 20px;
   width: 100%;
   box-sizing: border-box;
-  margin-top: 10%;
-  font-size: 14px;
 }
 
 .footer__column {
@@ -262,24 +268,6 @@ body {
 @media screen and (min-width: 768px) {
   .movies-section__movies-list {
     grid-template-columns: repeat(4, 1fr);
-  }
-  #boton {
-    display: none;
-  }
-  .banner__carousel-slide {
-    min-width: 0%;
-  }
-  .banner__title {
-    font-size: 2.5rem;
-    margin: 4%;
-  }
-  .movies-section__title {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    margin-top: 4%;
-    margin-bottom: 4%;
-    font-size: 40px;
   }
 }
 * {
@@ -300,6 +288,7 @@ body {
 
 .movie-details {
   width: 100%;
+  max-width: 400px;
   padding: 1rem;
   background-color: #0F645C;
   border-radius: 10px;
@@ -307,47 +296,46 @@ body {
   color: #FFF;
 }
 .movie-details__title {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: #FFB800;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
 }
 .movie-details__poster {
   width: 100%;
-  max-width: 250px;
+  max-width: 200px;
   border-radius: 10px;
   margin-bottom: 1rem;
 }
 .movie-details__description {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #E0E0E0;
-  margin-bottom: 1.2rem;
-  line-height: 1.6;
+  margin-bottom: 1rem;
+  line-height: 1.4;
 }
 .movie-details__button {
   background-color: #FFB800;
   border: none;
   border-radius: 5px;
-  padding: 0.8rem 1.2rem;
-  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
   color: #0D3D3B;
   font-weight: bold;
   cursor: pointer;
-  width: 80%;
-  margin-top: 1.2rem;
-  margin-bottom: 10px;
+  width: 100%;
+  margin-top: 1rem;
 }
 .movie-details__button:hover {
   background-color: #E5A800;
 }
 
 .movie-info {
-  font-size: 1rem;
-  margin-bottom: 1.2rem;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
 }
 .movie-info__item {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.5rem;
 }
 .movie-info__label {
   color: #9EB3B0;
@@ -356,45 +344,8 @@ body {
   color: #FFF;
 }
 
-/* Estilos para escritorio */
-@media (min-width: 768px) {
-  .movie-details {
-    display: flex;
-    align-items: flex-start;
-    text-align: left;
-    padding: 5rem;
-  }
-  .movie-details__poster {
-    max-width: 400px;
-    margin-right: 2rem;
-    margin-bottom: 0;
-  }
-  .movie-details__title {
-    font-size: 2.2rem;
-    /* Aumentar tamaño de fuente */
-  }
-  .movie-details__description {
-    font-size: 25px;
-  }
-  .movie-details__button {
-    width: auto;
-    padding: 1rem 1.5rem;
-    font-size: 1.2rem;
-    position: relative;
-    bottom: 155px;
-  }
-  .movie-info {
-    font-size: 1.1rem;
-    /* Aumentar tamaño de fuente */
-    width: 100%;
-    margin-top: 100px;
-    margin-right: 125px;
-  }
-  .movie-info__label {
-    margin-right: 30px;
-  }
-}
 * {
+  background-color: #0F645C;
   font-family: "Allerta", sans-serif;
 }
 
@@ -523,7 +474,7 @@ body {
 }
 
 /* Contenedor principal de las sesiones */
-.container-sesiones {
+.container {
   width: 100%;
   max-width: 400px;
   padding: 1rem;
@@ -539,8 +490,15 @@ header {
 }
 
 header h1 {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   color: #FFB800;
+  margin-bottom: 1rem;
+}
+
+#movie-poster {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 10px;
   margin-bottom: 1rem;
 }
 
@@ -619,4 +577,4 @@ header h1 {
   background-color: #E5A800;
 }
 
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=styles.css.map */

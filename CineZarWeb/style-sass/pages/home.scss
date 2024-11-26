@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Allerta&display=swap");
+@import '../base/variables';
+
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +10,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color:#0F645C;
+    background-color: #0F645C;
     color: #FFF;
     display: flex;
     justify-content: center;
@@ -17,48 +19,41 @@ body {
     flex-direction: column;
 }
 
-.container {
+.container-home {
     width: 100%;
-    max-width: 400px;
-    padding: 1rem;
+    // max-width: 400px;
+    // padding: 1rem;
 }
 
 .header {
-    background-color: #083D38; /* Tono oscuro */
+    background-color: #083D38;
     color: #fff;
     display: flex;
-    justify-content: space-between;
-    padding: 20px;
+    padding: 15px;
     width: 100%;
     box-sizing: border-box;
+    justify-content: center;
 
     &__logo {
-        font-size: 1.5rem;
+        font-size: 2.5rem;
     }
 
-    &__login-btn {
-        background-color: #FFB800;
-        border: none;
-        border-radius: 5px;
-        padding: 0.5rem 1rem;
-        color: #0D3D3B;
-        font-weight: bold;
-        cursor: pointer;
-    }
+
 }
-.banner__carousel-slide
-{
+
+.banner__carousel-slide {
     background-size: cover;
     background-position: center;
     width: 400px;
     height: 600px;
 }
+
 .banner {
     text-align: center;
     margin: 1rem 0;
 
     &__title {
-        font-size: 1.5rem;
+        font-size: 2.5rem;
         margin-bottom: 1rem;
     }
 
@@ -110,18 +105,19 @@ body {
 
 .movies-section {
     &__title {
-        font-size: 1.25rem;
+        font-size: 1.50rem;
         margin-bottom: 1rem;
         text-align: center;
+        margin-top: 4%;
     }
 
     &__movies-list {
-        justify-content: center;
         justify-items: center;
-        width: 100%;
+        width: 75%;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        gap: 1rem;
+        gap: 2rem;
+        margin: auto;
     }
 
     &__movie {
@@ -132,17 +128,19 @@ body {
         .movie-poster {
             background-position: center;
             background-size: cover;
-            height: 220px;
-            width: 160px;
+            height: 330px;
+            width: 210px;
             border-radius: 10px;
             margin-bottom: 0.5rem;
+
         }
 
         .movie-title {
             place-content: center;
-            height: 42px;
+            height: 48px;
             font-weight: bold;
             margin-bottom: 10px;
+            font-size: 18px;
         }
 
         .movie-genre {
@@ -160,7 +158,7 @@ body {
 
     &__title {
         font-size: 1.5rem;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
     }
 
     &__carousel {
@@ -218,13 +216,16 @@ body {
 
 /* Estilo para el footer */
 .footer {
-    background-color: #083D38; /* Tono oscuro */
+    background-color: #083D38;
+    /* Tono oscuro */
     color: #fff;
     display: flex;
     justify-content: space-between;
     padding: 20px;
     width: 100%;
     box-sizing: border-box;
+    margin-top: 10%;
+    font-size: 14px;
 }
 
 .footer__column {
@@ -237,13 +238,35 @@ body {
 }
 
 
-@media screen and (min-width: 768px)
-{
-    .movies-section
-    {
-        &__movies-list
-        {
+@media screen and (min-width: 768px) {
+    .movies-section {
+        &__movies-list {
             grid-template-columns: repeat(4, 1fr);
         }
     }
+
+    #boton {
+        display: none;
+    }
+
+    .banner__carousel-slide {
+        min-width: 0%;
+    }
+
+    .banner__title {
+        font-size: 2.5rem;
+        margin: 4%;
+
+    }
+
+    .movies-section__title {
+
+        font-size: 2.50rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        margin-top: 4%;
+        margin-bottom: 4%;
+        font-size: 40px;
+    }
+
 }

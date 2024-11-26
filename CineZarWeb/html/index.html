@@ -7,12 +7,12 @@
     <title>home</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container-home">
         <!-- Header (Navbar) -->
         <header class="header">
             <div class="header__logo">🎬</div>
             <h1 class="header__title">CineZar</h1>
-            <button class="header__login-btn">Log in</button>
+           
         </header>
 
         <!-- Main Banner -->
@@ -22,8 +22,8 @@
                 <!-- Las películas para el carrusel se agregarán aquí dinámicamente -->
             </div>
             <!-- Botones de navegación para el carrusel -->
-            <button class="banner__carousel-button banner__carousel-button--prev" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="banner__carousel-button banner__carousel-button--next" onclick="moveSlide(1)">&#10095;</button>
+            <button class="banner__carousel-button banner__carousel-button--prev" id="boton" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="banner__carousel-button banner__carousel-button--next" id="boton" onclick="moveSlide(1)">&#10095;</button>
         </section>
         
         <!-- Movies Section -->

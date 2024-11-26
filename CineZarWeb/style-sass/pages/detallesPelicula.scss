@@ -1,0 +1,134 @@
+@import '../base/variables';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0F645C;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.movie-details {
+    width: 100%;
+    //max-width: 400px;
+    padding: 1rem;
+    background-color: #0F645C;
+    border-radius: 10px;
+    text-align: center;
+    color: #FFF;
+
+    &__title {
+        font-size: 1.8rem;
+        color: #FFB800;
+        margin-bottom: 1.2rem;
+    }
+
+    &__poster {
+        width: 100%;
+        max-width: 250px;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+    }
+
+    &__description {
+        font-size: 1rem;
+        color: #E0E0E0;
+        margin-bottom: 1.2rem;
+        line-height: 1.6;
+    }
+
+    &__button {
+        background-color: #FFB800;
+        border: none;
+        border-radius: 5px;
+        padding: 0.8rem 1.2rem;
+        font-size: 1.1rem;
+        color: #0D3D3B;
+        font-weight: bold;
+        cursor: pointer;
+        width: 80%;
+        margin-top: 1.2rem;
+        margin-bottom: 10px;
+        
+
+        &:hover {
+            background-color: #E5A800;
+        }
+    }
+}
+
+.movie-info {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.7rem;
+    }
+
+    &__label {
+        color: #9EB3B0;
+    }
+
+    &__value {
+        color: #FFF;
+    }
+}
+
+/* Estilos para escritorio */
+@media (min-width: 768px) {
+    .movie-details {
+        display: flex;
+        align-items: flex-start;
+        text-align: left;
+        padding: 5rem;
+
+        &__poster {
+            max-width: 400px;
+            margin-right: 2rem;
+            margin-bottom: 0;
+        }
+
+        &__title {
+            font-size: 2.2rem;
+            /* Aumentar tamaño de fuente */
+        }
+
+        &__description {
+            font-size: 25px;
+        }
+
+        &__button {
+            width: auto;
+            padding: 1rem 1.5rem;
+            font-size: 1.2rem;
+            position: relative;
+            bottom: 155px;
+        }
+    }
+
+    .movie-info {
+        font-size: 1.1rem;
+        /* Aumentar tamaño de fuente */
+        width: 100%;
+        margin-top: 100px;
+        margin-right: 125px;
+
+        &__label {
+
+            margin-right: 30px;
+        }
+    }
+
+
+
+}
