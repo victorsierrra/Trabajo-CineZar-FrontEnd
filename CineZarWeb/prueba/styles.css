@@ -56,20 +56,21 @@ header #movie-poster {
 }
 
 * {
-  /*  margin: 5px; */
+  margin: 0;
   padding: 0;
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
   font-family: "Allerta", sans-serif;
 }
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #125c4c;
+  background-color: #0F645C;
   color: #FFF;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  flex-direction: column;
 }
 
 .container {
@@ -78,41 +79,33 @@ body {
   padding: 1rem;
 }
 
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  /* padding: 1rem 2rem; */
-  background-color: #083D38;
+.header {
+  background-color: #083D38; /* Tono oscuro */
   color: #fff;
-  width: 105%;
-  height: 108%;
-  /* margin: 0px; */
-  margin-left: -9px;
-  margin-top: -22px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
-
-.navbar__logo {
-  font-size: 2rem;
+.header__logo {
+  font-size: 1.5rem;
 }
-
-.navbar__title {
-  font-size: 1.8rem;
-  font-weight: bold;
-}
-
-.navbar__login-btn {
-  padding: 0.5rem 1rem;
+.header__login-btn {
   background-color: #FFB800;
-  color: #333;
   border: none;
   border-radius: 5px;
+  padding: 0.5rem 1rem;
+  color: #0D3D3B;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-.navbar__login-btn:hover {
-  background-color: #e6a700;
+.banner__carousel-slide {
+  background-size: cover;
+  background-position: center;
+  width: 400px;
+  height: 600px;
 }
 
 .banner {
@@ -168,20 +161,30 @@ body {
   text-align: center;
 }
 .movies-section__movies-list {
+  justify-content: center;
+  justify-items: center;
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 1rem;
 }
 .movies-section__movie {
-  text-align: center;
+  width: 200px;
+  text-align: -webkit-center;
 }
 .movies-section__movie .movie-poster {
-  width: 100%;
+  background-position: center;
+  background-size: cover;
+  height: 220px;
+  width: 160px;
   border-radius: 10px;
   margin-bottom: 0.5rem;
 }
 .movies-section__movie .movie-title {
+  place-content: center;
+  height: 42px;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 .movies-section__movie .movie-genre {
   font-size: 0.85rem;
@@ -237,6 +240,36 @@ body {
   right: 10px;
 }
 
+/* Banner principal */
+.banner {
+  text-align: center;
+}
+
+/* Estilo para el footer */
+.footer {
+  background-color: #083D38; /* Tono oscuro */
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer__column {
+  width: 45%;
+  margin-left: 15%;
+}
+
+.footer__column h3 {
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .movies-section__movies-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -245,7 +278,7 @@ body {
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #0D3D3B;
+  background-color: #0F645C;
   color: #FFF;
   display: flex;
   justify-content: center;
@@ -257,7 +290,7 @@ body {
   width: 100%;
   max-width: 400px;
   padding: 1rem;
-  background-color: #0D3D3B;
+  background-color: #0F645C;
   border-radius: 10px;
   text-align: center;
   color: #FFF;
@@ -312,18 +345,37 @@ body {
 }
 
 * {
-  background-color: #005B52;
+  background-color: #0F645C;
   font-family: "Allerta", sans-serif;
 }
 
+.title-pelicula {
+  color: #F2C94C;
+  font-size: 24px;
+  text-align: center;
+}
+
+.date-pelicula {
+  color: #FFFFFF;
+  font-size: 18px;
+  text-align: center;
+}
+
+.mapa-asientos {
+  display: grid;
+  grid-template-columns: repeat(10, 0fr);
+  justify-content: center;
+  margin-top: 15px;
+}
+
 .asiento {
-  width: 15px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
   background-color: #FFFFFF;
   color: #FFFFFF;
   border-radius: 25%;
   margin: 5px;
-  font-size: 7px;
+  font-size: 13px;
   align-content: center;
   text-align: center;
 }
@@ -335,8 +387,18 @@ body {
   cursor: pointer;
 }
 
-#leyenda {
+#disponible,
+#ocupado,
+#seleccionado {
+  align-items: center;
   display: flex;
+  margin: 8px;
+  color: #FFFFFF;
+}
+
+#asiento__ocupado {
+  cursor: not-allowed;
+  background-color: #1F293D;
 }
 
 #mapa {
@@ -344,11 +406,33 @@ body {
   text-align: center;
 }
 
-#fila-A, #fila-B, #fila-C, #fila-D, #fila-E, #fila-F,
-#fila-G, #fila-H, #fila-I, #fila-J, #fila-K, #fila-L,
-#fila-M, #fila-N, #fila-O, #fila-P, #fila-Q, #fila-R,
-#fila-S, #fila-T, #fila-U, #fila-V, #fila-W, #fila-X,
-#fila-Y, #fila-Z {
+#fila-A,
+#fila-B,
+#fila-C,
+#fila-D,
+#fila-E,
+#fila-F,
+#fila-G,
+#fila-H,
+#fila-I,
+#fila-J,
+#fila-K,
+#fila-L,
+#fila-M,
+#fila-N,
+#fila-O,
+#fila-P,
+#fila-Q,
+#fila-R,
+#fila-S,
+#fila-T,
+#fila-U,
+#fila-V,
+#fila-W,
+#fila-X,
+#fila-Y,
+#fila-Z,
+#leyenda {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -358,9 +442,13 @@ body {
   margin-top: 20px;
 }
 
-#ComprarAsientos {
+#ComprarAsientos,
+#volverAtras {
   background-color: #F2C94C;
+  margin: 10px;
   font-size: 15px;
+  width: 100px;
+  height: 30px;
   border-radius: 5px;
   margin-top: 20px;
   color: #FFFFFF;
@@ -377,7 +465,7 @@ body {
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #0D3D3B;
+  background-color: #0F645C;
   color: #FFF;
   display: flex;
   justify-content: center;
@@ -390,7 +478,7 @@ body {
   width: 100%;
   max-width: 400px;
   padding: 1rem;
-  background-color: #0D3D3B;
+  background-color: #0F645C;
   border-radius: 10px;
   text-align: center;
   color: #FFF;

@@ -4,17 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../build/detallesPelicula.css">
+    <link rel="stylesheet" href="../build/index.css">
     <title>Detalles de la Película</title>
 </head>
 
 <body>
+
+    <h1 class="movie-details__title" id="movie-title">Título de la película</h1>
     <div class="movie-details">
-        <h1 class="movie-details__title" id="movie-title">Título de la película</h1>
+
         <img class="movie-details__poster" id="movie-poster" src="" alt="Poster de la película">
 
-        <p class="movie-details__description" id="movie-description">Descripción de la película...</p>
+
         <div class="movie-details__info movie-info">
+            <p class="movie-details__description" id="movie-description">Descripción de la película...</p>
             <p class="movie-info__item"><strong class="movie-info__label">Duración:</strong> <span id="movie-duration"
                     class="movie-info__value"></span></p>
             <p class="movie-info__item"><strong class="movie-info__label">Estreno:</strong> <span id="movie-release"
@@ -24,9 +27,8 @@
             <p class="movie-info__item"><strong class="movie-info__label">Director:</strong> <span id="movie-director"
                     class="movie-info__value"></span></p>
         </div>
-        <button class="movie-details__button" onclick="irASesiones()">Sesiones</button>
     </div>
-
+    <button class="movie-details__button" onclick="irASesiones()">Sesiones</button>
     <script>
         function irASesiones() {
             const peliculaSeleccionada = document.getElementById('movie-title').textContent;

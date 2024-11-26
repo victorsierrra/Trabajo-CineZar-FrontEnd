@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/CineZarWeb/prueba/styles.css">
-    <title>Fetch Peliculas</title>
+    <link rel="stylesheet" href="../build/index.css">
+    <title>home</title>
 </head>
-
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header class="navbar">
-            <div class="navbar__logo">🎬</div>
-            <h1 class="navbar__title">CineZar</h1>
-            <button class="navbar__login-btn">Log in</button>
+    <div class="container-home">
+        <!-- Header (Navbar) -->
+        <header class="header">
+            <div class="header__logo">🎬</div>
+            <h1 class="header__title">CineZar</h1>
+           
         </header>
-
 
         <!-- Main Banner -->
         <section class="banner">
@@ -25,10 +22,8 @@
                 <!-- Las películas para el carrusel se agregarán aquí dinámicamente -->
             </div>
             <!-- Botones de navegación para el carrusel -->
-            <button class="banner__carousel-button banner__carousel-button--prev"
-                onclick="moveSlide(-1)">&#10094;</button>
-            <button class="banner__carousel-button banner__carousel-button--next"
-                onclick="moveSlide(1)">&#10095;</button>
+            <button class="banner__carousel-button banner__carousel-button--prev" id="boton" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="banner__carousel-button banner__carousel-button--next" id="boton" onclick="moveSlide(1)">&#10095;</button>
         </section>
         
         <!-- Movies Section -->
@@ -54,5 +49,4 @@
     <!-- JavaScript -->
     <script src="../javascript/main.js"></script>
 </body>
-
 </html>
