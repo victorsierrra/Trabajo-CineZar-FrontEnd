@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Allerta&display=swap");
 * {
-  background-color: #005B52;
+  background-color: #0F645C;
   font-family: "Allerta", sans-serif;
 }
 
@@ -45,9 +45,10 @@
 #disponible,
 #ocupado,
 #seleccionado {
+  font-size: 15px;
   align-items: center;
   display: flex;
-  margin: 8px;
+  margin: 10px;
   color: #FFFFFF;
 }
 
@@ -61,44 +62,13 @@
   text-align: center;
 }
 
-#fila-A,
-#fila-B,
-#fila-C,
-#fila-D,
-#fila-E,
-#fila-F,
-#fila-G,
-#fila-H,
-#fila-I,
-#fila-J,
-#fila-K,
-#fila-L,
-#fila-M,
-#fila-N,
-#fila-O,
-#fila-P,
-#fila-Q,
-#fila-R,
-#fila-S,
-#fila-T,
-#fila-U,
-#fila-V,
-#fila-W,
-#fila-X,
-#fila-Y,
-#fila-Z,
 #leyenda {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
-#fila-A {
-  margin-top: 20px;
-}
-
-#ComprarAsientos,
-#volverAtras {
+#ComprarAsientos {
   background-color: #F2C94C;
   margin: 10px;
   font-size: 15px;
@@ -109,6 +79,58 @@
   color: #FFFFFF;
   cursor: pointer;
   border: none;
+}
+
+#volverAtras {
+  margin: 10px;
+  font-size: 15px;
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  margin-top: 20px;
+  color: #FFFFFF;
+  cursor: pointer;
+  border: none;
+  background-color: #1F293D;
+}
+
+.asiento-card {
+  background-color: #F2C94C;
+  color: #1F293D;
+  align-content: center;
+  margin: 5px;
+  width: 200px;
+  height: 30px;
+  border-radius: 40px;
+}
+
+.mapa-asientos__datos {
+  width: 100%;
+}
+
+.mapa-asientos__seleccionados {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  display: grid;
+  width: 100%;
+  justify-content: center;
+  justify-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .mapa-asientos__datos {
+    display: flex;
+    justify-content: center;
+  }
+  .mapa-asientos__seleccionados {
+    width: 350px;
+  }
+  .mapa-asientos {
+    height: 300px;
+  }
+  .mapa-asientos, .mapa-asientos__seleccionados {
+    margin: 30px;
+  }
 }
 
 /*# sourceMappingURL=mapasAsientos.css.map */
