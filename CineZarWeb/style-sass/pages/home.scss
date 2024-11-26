@@ -1,20 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Allerta&display=swap");
+@import '../base/variables';
+
 * {
-    margin: 0;
+    /*  margin: 5px; */
     padding: 0;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     font-family: "Allerta", sans-serif;
 }
 
 body {
     font-family: Arial, sans-serif;
-    background-color:#0F645C;
+    background-color: #125c4c;
     color: #FFF;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    flex-direction: column;
 }
 
 .container {
@@ -23,36 +24,44 @@ body {
     padding: 1rem;
 }
 
-.header {
-    background-color: #083D38; /* Tono oscuro */
-    color: #fff;
+.navbar {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 20px;
-    width: 100%;
-    box-sizing: border-box;
-
-    &__logo {
-        font-size: 1.5rem;
-    }
-
-    &__login-btn {
-        background-color: #FFB800;
-        border: none;
-        border-radius: 5px;
-        padding: 0.5rem 1rem;
-        color: #0D3D3B;
-        font-weight: bold;
-        cursor: pointer;
-    }
+    /* padding: 1rem 2rem; */
+    background-color: #083D38;
+    color: #fff;
+    width: 105%;
+    height: 108%;
+    /* margin: 0px; */
+    margin-left: -9px;
+    margin-top: -22px;
 }
-.banner__carousel-slide
-{
-    background-size: cover;
-    background-position: center;
-    width: 400px;
-    height: 600px;
+
+.navbar__logo {
+    font-size: 2rem;
 }
+
+.navbar__title {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.navbar__login-btn {
+    padding: 0.5rem 1rem;
+    background-color: #FFB800;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.navbar__login-btn:hover {
+    background-color: #e6a700;
+}
+
+
 .banner {
     text-align: center;
     margin: 1rem 0;
@@ -116,33 +125,22 @@ body {
     }
 
     &__movies-list {
-        justify-content: center;
-        justify-items: center;
-        width: 100%;
         display: grid;
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
     }
 
     &__movie {
-
-        width: 200px;
-        text-align: -webkit-center;
+        text-align: center;
 
         .movie-poster {
-            background-position: center;
-            background-size: cover;
-            height: 220px;
-            width: 160px;
+            width: 100%;
             border-radius: 10px;
             margin-bottom: 0.5rem;
         }
 
         .movie-title {
-            place-content: center;
-            height: 42px;
             font-weight: bold;
-            margin-bottom: 10px;
         }
 
         .movie-genre {
@@ -205,45 +203,6 @@ body {
 
         &--next {
             right: 10px;
-        }
-    }
-}
-
-
-
-/* Banner principal */
-.banner {
-    text-align: center;
-}
-
-/* Estilo para el footer */
-.footer {
-    background-color: #083D38; /* Tono oscuro */
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.footer__column {
-    width: 45%;
-    margin-left: 15%;
-}
-
-.footer__column h3 {
-    margin-bottom: 10px;
-}
-
-
-@media screen and (min-width: 768px)
-{
-    .movies-section
-    {
-        &__movies-list
-        {
-            grid-template-columns: repeat(4, 1fr);
         }
     }
 }

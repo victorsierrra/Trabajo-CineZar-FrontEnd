@@ -1,0 +1,492 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Allerta&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Allerta&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.back-button {
+  background-color: #0D3D3B;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #0D3D3B;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 2rem;
+  transition: background-color 0.3s;
+}
+.back-button:hover {
+  background-color: #E5A800;
+}
+
+.session-controls button {
+  background-color: transparent;
+  border: 2px solid #FFB800;
+  padding: 0.5rem;
+  margin: 0 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  color: #FFB800;
+  transition: background-color color;
+}
+.session-controls button:hover {
+  background-color: #FFB800;
+  color: #0D3D3B;
+}
+
+header {
+  margin-bottom: 1.5rem;
+}
+header h1 {
+  font-size: 1.5rem;
+  color: #FFB800;
+  margin-bottom: 1rem;
+}
+header #movie-poster {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+* {
+  /*  margin: 5px; */
+  padding: 0;
+  /* box-sizing: border-box; */
+  font-family: "Allerta", sans-serif;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #125c4c;
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  padding: 1rem;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 1rem 2rem; */
+  background-color: #083D38;
+  color: #fff;
+  width: 105%;
+  height: 108%;
+  /* margin: 0px; */
+  margin-left: -9px;
+  margin-top: -22px;
+}
+
+.navbar__logo {
+  font-size: 2rem;
+}
+
+.navbar__title {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.navbar__login-btn {
+  padding: 0.5rem 1rem;
+  background-color: #FFB800;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navbar__login-btn:hover {
+  background-color: #e6a700;
+}
+
+.banner {
+  text-align: center;
+  margin: 1rem 0;
+}
+.banner__title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.banner__carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+.banner__carousel-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+.banner__carousel-slide .movie-poster {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+.banner__carousel-slide .movie-title {
+  font-weight: bold;
+  margin-top: 0.5rem;
+  color: #FFF;
+}
+.banner__carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.banner__carousel-button--prev {
+  left: 10px;
+}
+.banner__carousel-button--next {
+  right: 10px;
+}
+
+.movies-section__title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.movies-section__movies-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.movies-section__movie {
+  text-align: center;
+}
+.movies-section__movie .movie-poster {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+.movies-section__movie .movie-title {
+  font-weight: bold;
+}
+.movies-section__movie .movie-genre {
+  font-size: 0.85rem;
+  color: #9EB3B0;
+}
+
+.banner {
+  text-align: center;
+  margin: 1rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.banner__title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.banner__carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+.banner__carousel-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+.banner__carousel-slide .movie-poster {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+.banner__carousel-slide .movie-title {
+  font-weight: bold;
+  margin-top: 0.5rem;
+  color: #FFF;
+}
+.banner__carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.banner__carousel-button--prev {
+  left: 10px;
+}
+.banner__carousel-button--next {
+  right: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0D3D3B;
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.movie-details {
+  width: 100%;
+  max-width: 400px;
+  padding: 1rem;
+  background-color: #0D3D3B;
+  border-radius: 10px;
+  text-align: center;
+  color: #FFF;
+}
+.movie-details__title {
+  font-size: 1.5rem;
+  color: #FFB800;
+  margin-bottom: 1rem;
+}
+.movie-details__poster {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+.movie-details__description {
+  font-size: 0.9rem;
+  color: #E0E0E0;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+.movie-details__button {
+  background-color: #FFB800;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #0D3D3B;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1rem;
+}
+.movie-details__button:hover {
+  background-color: #E5A800;
+}
+
+.movie-info {
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+.movie-info__item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.movie-info__label {
+  color: #9EB3B0;
+}
+.movie-info__value {
+  color: #FFF;
+}
+
+* {
+  background-color: #005B52;
+  font-family: "Allerta", sans-serif;
+}
+
+.asiento {
+  width: 15px;
+  height: 15px;
+  background-color: #FFFFFF;
+  color: #FFFFFF;
+  border-radius: 25%;
+  margin: 5px;
+  font-size: 7px;
+  align-content: center;
+  text-align: center;
+}
+.asiento.selected {
+  background-color: #F2C94C;
+}
+.asiento:hover {
+  background-color: #F2C94C;
+  cursor: pointer;
+}
+
+#leyenda {
+  display: flex;
+}
+
+#mapa {
+  justify-content: center;
+  text-align: center;
+}
+
+#fila-A, #fila-B, #fila-C, #fila-D, #fila-E, #fila-F,
+#fila-G, #fila-H, #fila-I, #fila-J, #fila-K, #fila-L,
+#fila-M, #fila-N, #fila-O, #fila-P, #fila-Q, #fila-R,
+#fila-S, #fila-T, #fila-U, #fila-V, #fila-W, #fila-X,
+#fila-Y, #fila-Z {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#fila-A {
+  margin-top: 20px;
+}
+
+#ComprarAsientos {
+  background-color: #F2C94C;
+  font-size: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  color: #FFFFFF;
+  cursor: pointer;
+  border: none;
+}
+
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0D3D3B;
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Contenedor principal de las sesiones */
+.container {
+  width: 100%;
+  max-width: 400px;
+  padding: 1rem;
+  background-color: #0D3D3B;
+  border-radius: 10px;
+  text-align: center;
+  color: #FFF;
+}
+
+/* Estilo del header con título e imagen de la película */
+header {
+  margin-bottom: 1.5rem;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: #FFB800;
+  margin-bottom: 1rem;
+}
+
+#movie-poster {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+/* Controles para cambiar de día */
+.session-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.session-controls button {
+  background-color: transparent;
+  border: 2px solid #FFB800;
+  padding: 0.5rem;
+  margin: 0 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  color: #FFB800;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.session-controls button:hover {
+  background-color: #FFB800;
+  color: #0D3D3B;
+}
+
+.session-controls span {
+  font-size: 1.2rem;
+  margin: 0 1rem;
+}
+
+/* Estilo para las tarjetas de las sesiones */
+.sessions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.session-card {
+  background-color: #1A535C;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+  color: #FFF;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.session-card:hover {
+  transform: scale(1.05);
+  background-color: #FFB800;
+  color: #0D3D3B;
+}
+
+/* Botón de volver */
+.back-button {
+  background-color: #FFB800;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #0D3D3B;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 2rem;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: #E5A800;
+}
+
+/*# sourceMappingURL=styles.css.map */
