@@ -545,21 +545,26 @@ body {
 /* Contenedor principal de las sesiones */
 .container-sesiones {
   width: 100%;
+  max-width: 1200px; /* Tamaño máximo para desktop */
+  padding: 1rem;
   background-color: #0F645C;
   border-radius: 10px;
-  text-align: center;
   color: #FFF;
 }
 
-/* Estilo del header con título e imagen de la película */
+/* Header (imagen y título) */
 header {
+  text-align: center;
   margin-bottom: 1.5rem;
 }
-
 header h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #FFB800;
   margin-bottom: 1rem;
+}
+header img {
+  max-width: 100%;
+  border-radius: 10px;
 }
 
 /* Controles para cambiar de día */
@@ -569,7 +574,6 @@ header h1 {
   align-items: center;
   margin-bottom: 1.5rem;
 }
-
 .session-controls button {
   background-color: transparent;
   border: 2px solid #FFB800;
@@ -581,26 +585,23 @@ header h1 {
   color: #FFB800;
   transition: background-color 0.3s, color 0.3s;
 }
-
 .session-controls button:hover {
   background-color: #FFB800;
   color: #0D3D3B;
 }
-
 .session-controls span {
   font-size: 1.2rem;
   margin: 0 1rem;
 }
 
-/* Estilo para las tarjetas de las sesiones */
+/* Tarjetas de sesiones */
 .sessions {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
   margin-bottom: 2rem;
 }
-
-.session-card {
+.sessions .session-card {
   background-color: #1A535C;
   padding: 1rem;
   text-align: center;
@@ -611,8 +612,7 @@ header h1 {
   cursor: pointer;
   transition: transform 0.3s, background-color 0.3s;
 }
-
-.session-card:hover {
+.sessions .session-card:hover {
   transform: scale(1.05);
   background-color: #FFB800;
   color: #0D3D3B;
@@ -631,35 +631,41 @@ header h1 {
   width: 120px;
   margin-top: 2rem;
   transition: background-color 0.3s;
+  margin-left: 30%;
 }
-
 .back-button:hover {
   background-color: #E5A800;
 }
 
-@media screen and (min-width: 768px) {
+/* Estilo para desktop */
+@media (min-width: 768px) {
   .container-sesiones {
     display: flex;
-    max-width: unset;
-    justify-content: center;
+    gap: 2rem;
+    align-items: start;
+    text-align: left;
+    margin-right: 25%;
   }
-  #movie-poster {
-    max-width: 400px;
-    margin-right: 7%;
-    margin-bottom: 9%;
-    margin-left: -20%;
+  header {
+    grid-column: 1; /* Imagen y título en la izquierda */
+  }
+  .session-controls,
+  .sessions {
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 12%;
   }
   .sessions {
-    width: 150%;
+    grid-template-columns: repeat(1, 1fr); /* Mostrar tarjetas en dos columnas */
+    width: 200%;
+    margin-left: -50%;
   }
-  .session-controls {
-    margin-left: 50%;
+  .columna-derecha {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
   }
   .back-button {
-    margin-left: 25%;
-  }
-  .container-sesiones-botones {
-    margin-top: 6%;
+    margin-left: 20%;
   }
 }
 

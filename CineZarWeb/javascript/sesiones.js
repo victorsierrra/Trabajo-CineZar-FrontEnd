@@ -31,7 +31,7 @@ fetch(`https://localhost:7165/api/Pelicula/VerSesiones/${peliculaSeleccionada.id
         data.forEach(fecha => {
             let date = new Date(fecha.horaSesion)
             let dia = date.toLocaleString('es-ES', { weekday: 'long' }).toUpperCase();
-            let diaNumerico = date.toLocaleString('es-ES', { day: 'numeric' })
+            let diaNumerico = date.toLocaleString('es-ES', { day: 'numeric', month: 'short' })
             let hora = date.toLocaleString('es-ES', {hour: '2-digit', minute: '2-digit' })
             // console.log(`${dia} a las ${hora}`);
 

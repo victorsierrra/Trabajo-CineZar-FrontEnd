@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (movie) {
         document.getElementById('movie-title').innerText = movie.titulo;
-        document.getElementById('movie-poster').src = movie.portada;
+        document.getElementById('movie-details__poster').src = movie.portada;
         document.getElementById('movie-description').innerText = movie.sinopsis;
         document.getElementById('movie-duration').innerText = movie.duracion;
         document.getElementById('movie-release').innerText = movie.estreno;
