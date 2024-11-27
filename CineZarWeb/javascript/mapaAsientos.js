@@ -15,24 +15,18 @@ window.onload = function (e) {
 
     })
 }
-function verFecha(id) {
-    let promise = fetch(`http://localhost:8080/api/Sesion/${id}`)
-    promise.then(res => res.json())
-        .then(data => {
-            let fechaSesion = new Date(data.horaSesion)
-            fechaSesion = fechaSesion.toLocaleString('es-ES', { weekday: 'long', day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' }).toUpperCase()
-            let divFecha = document.querySelector('.date-pelicula')
-            divFecha.innerHTML = `<h3>${fechaSesion}</h3>`
-        })
-}
 function imprimirAsientos() {
     const mapa = document.querySelector('.mapa-asientos');
 
     console.log(idSesion)
     try {
-        let promise = fetch(`http://localhost:8080/api/Sesion/${idSesion}`)
+        let promise = fetch(`https://localhost:7165/api/Sesion/${idSesion}`)
         promise.then(response => response.json())
             .then(data => {
+                let fechaSesion = new Date(data.horaSesion)
+                fechaSesion = fechaSesion.toLocaleString('es-ES', { weekday: 'long', day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' }).toUpperCase()
+                let divFecha = document.querySelector('.date-pelicula')
+                divFecha.innerHTML = `<h3>${fechaSesion}</h3>`
                 console.log(data)
                 console.log(data.asientos)
                 dataAsientos = data.asientos
@@ -47,6 +41,9 @@ function imprimirAsientos() {
                     if (asiento.comprado === true) {
                         circulo.style.backgroundColor = "#1F293D"
                         circulo.style.cursor = "not-allowed"
+                        circulo.style.color = "#FFFFFF"
+                        circulo.style.pointerEvents = "none"
+
                     }
                 });
             })
@@ -75,7 +72,7 @@ function seleccionarAsiento(id) {
 
 function ComprarAsientos() {
     localStorage.setItem('idAsientos', asientosSeleccionados)
-    let promise = fetch(`http://localhost:8080/api/Sesion/ComprarEntrada/${idSesion}`, {
+    let promise = fetch(`https://localhost:7165/api/Sesion/${idSesion}/ComprarEntrada`, {
         method: 'PUT',
         headers: {
             'Accept': '*/*',

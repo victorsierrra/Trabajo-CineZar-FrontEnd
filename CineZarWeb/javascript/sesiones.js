@@ -24,7 +24,7 @@ window.onload = function () {
     }
 }
 
-fetch(`http://localhost:8080/api/Pelicula/VerSesiones/${peliculaSeleccionada.id}`)
+fetch(`https://localhost:7165/api/Pelicula/${peliculaSeleccionada.id}/VerSesiones`)
     .then(res => res.json())
     .then(data => {
         console.log(data);
@@ -33,7 +33,6 @@ fetch(`http://localhost:8080/api/Pelicula/VerSesiones/${peliculaSeleccionada.id}
             let dia = date.toLocaleString('es-ES', { weekday: 'long' }).toUpperCase();
             let diaNumerico = date.toLocaleString('es-ES', { day: 'numeric' })
             let hora = date.toLocaleString('es-ES', {hour: '2-digit', minute: '2-digit' })
-            // console.log(`${dia} a las ${hora}`);
 
             let datosDia = {
                 idSesion: datosSesion.id,
