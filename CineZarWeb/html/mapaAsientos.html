@@ -10,6 +10,12 @@
 </head>
 
 <body>
+    <!-- Header (Navbar) -->
+    <header class="header">
+        <div class="header__logo">🎬</div>
+        <h1 class="header__title">CineZar</h1>
+
+    </header>
     <div class="title-pelicula"></div>
     <div class="date-pelicula"></div>
     <section id="mapa">
@@ -24,14 +30,28 @@
                 <div id="asiento__ocupado" class="asiento"></div> Ocupado
             </div>
         </div>
-        <div class="mapa-asientos"></div>
-        <section class="mapa-asientos__seleccionados" id="asientos-cards">
-            <!-- Los asientos seleccionados se ponen aquí -->
-        </section>
+        <div class="mapa-asientos__datos">
+            <div class="mapa-asientos"></div>
+            <section class="mapa-asientos__seleccionados" id="asientos-cards">
+                <!-- Los asientos seleccionados se ponen aquí -->
+            </section>
+        </div>
 
         <button id="volverAtras" onclick="window.history.back()">VOLVER</button>
         <button id="ComprarAsientos" onclick="ComprarAsientos()">COMPRAR</button>
     </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__column">
+            <h3>Aviso Legal</h3>
+            <p>Política de privacidad, términos y condiciones.</p>
+        </div>
+        <div class="footer__column">
+            <h3>Contacto</h3>
+            <p>Email: contacto@cinezar.com</p>
+            <p>Teléfono: +34 123 456 789</p>
+        </div>
+    </footer>
 
 </body>
 

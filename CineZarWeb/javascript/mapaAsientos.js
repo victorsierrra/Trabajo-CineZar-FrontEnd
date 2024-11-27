@@ -99,7 +99,7 @@ function verAsientosSeleccionados(idAsiento) {
             const card = document.createElement("div");
             card.className = "asiento-card";
             card.id = `asiento_${data.id}`;
-            card.textContent = `Asiento situado en la fila ${data.fila} en el número ${data.numero}`;
+            card.textContent = `Fila ${data.fila}, número ${data.numero}`;
             card.setAttribute('onclick', `seleccionarSesion(${card.id})`)
             asientosCards.appendChild(card)
             console.log(data)
