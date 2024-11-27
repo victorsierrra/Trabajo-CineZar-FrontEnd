@@ -20,7 +20,7 @@ body {
 /* Contenedor principal de las sesiones */
 .container-sesiones {
     width: 100%;
-    max-width: 400px;
+    // max-width: 400px;
     // padding: 1rem;
     background-color:#0F645C;
     border-radius: 10px;
@@ -105,7 +105,7 @@ header h1 {
     color: #0D3D3B;
     font-weight: bold;
     cursor: pointer;
-    width: 100%;
+    width: 120px;
     margin-top: 2rem;
     transition: background-color 0.3s;
 }
