@@ -1,5 +1,6 @@
 let asientosSeleccionados = [];
 const idSesion = localStorage.getItem('idSesion')
+let dataAsientos = []
 window.onload = function (e) {
     imprimirAsientos()
     const pelicula = JSON.parse(localStorage.getItem('selectedMovie'))
@@ -34,6 +35,7 @@ function imprimirAsientos() {
             .then(data => {
                 console.log(data)
                 console.log(data.asientos)
+                dataAsientos = data.asientos
                 data.asientos.forEach(asiento => {
                     let circulo = document.createElement('div')
                     circulo.setAttribute("id", `asiento_${asiento.id}`)
@@ -92,18 +94,13 @@ function ComprarAsientos() {
         });
 }
 function verAsientosSeleccionados(idAsiento) {
-    let promise = fetch(`http://localhost:8080/api/Asiento/VerInfoAsiento/${idAsiento}`)
-    promise.then(response => response.json())
-        .then(data => {
-            const asientosCards = document.getElementById('asientos-cards')
-            const card = document.createElement("div");
-            card.className = "asiento-card";
-            card.id = `asiento_${data.id}`;
-            card.textContent = `Fila ${data.fila}, número ${data.numero}`;
-            card.setAttribute('onclick', `seleccionarSesion(${card.id})`)
-            asientosCards.appendChild(card)
-            console.log(data)
-        })
-        .catch(error => console.error("Problema con el fetch para ver los asientos seleccionados", error))
-
+    const asientoSeleccionado = dataAsientos.find(function (asiento) { return asiento.id == idAsiento; });
+    console.log(asientoSeleccionado)
+    const asientosCards = document.getElementById('asientos-cards')
+    const card = document.createElement("div");
+    card.className = "asiento-card";
+    card.id = `asiento_${asientoSeleccionado.id}`;
+    card.textContent = `Fila ${asientoSeleccionado.fila}, número ${asientoSeleccionado.numero}`;
+    card.setAttribute('onclick', `seleccionarSesion(${card.id})`)
+    asientosCards.appendChild(card)
 }
