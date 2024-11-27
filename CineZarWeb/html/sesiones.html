@@ -1,23 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sesiones de Película</title>
     <link rel="stylesheet" href="../build/index.css">
 </head>
+
 <body>
     <div class="container-sesiones">
+        <!-- Header (Navbar) -->
+        <header class="header">
+            <div class="header__logo">🎬</div>
+            <h1 class="header__title">CineZar</h1>
+
+        </header>
         <header>
             <h1 id="titulo-pelicula">Sesiones de la película</h1>
             <img id="movie-poster" alt="Poster de la película">
         </header>
 
         <section class="session-controls">
-            <button class="button-sesiones__prev" onclick="cambiarDia(-1)"><svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="26" height="26"><g id="_01_align_center" data-name="01 align center"><path d="M16.752,23.994,6.879,14.121a3,3,0,0,1,0-4.242L16.746.012,18.16,1.426,8.293,11.293a1,1,0,0,0,0,1.414l9.873,9.873Z"/></g></svg>
-              </button>
+            <button class="button-sesiones__prev" onclick="cambiarDia(-1)"><svg xmlns="http://www.w3.org/2000/svg"
+                    fill="white" viewBox="0 0 24 24" width="26" height="26">
+                    <g id="_01_align_center" data-name="01 align center">
+                        <path
+                            d="M16.752,23.994,6.879,14.121a3,3,0,0,1,0-4.242L16.746.012,18.16,1.426,8.293,11.293a1,1,0,0,0,0,1.414l9.873,9.873Z" />
+                    </g>
+                </svg>
+            </button>
             <span id="dia-seleccionado">Lunes</span>
-            <button class="button-sesiones__next" onclick="cambiarDia(1)"><svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="26" height="26"><g id="_01_align_center" data-name="01 align center"><path d="M7.412,24,6,22.588l9.881-9.881a1,1,0,0,0,0-1.414L6.017,1.431,7.431.017l9.862,9.862a3,3,0,0,1,0,4.242Z"/></g></svg></button>
+            <button class="button-sesiones__next" onclick="cambiarDia(1)"><svg xmlns="http://www.w3.org/2000/svg"
+                    fill="white" viewBox="0 0 24 24" width="26" height="26">
+                    <g id="_01_align_center" data-name="01 align center">
+                        <path
+                            d="M7.412,24,6,22.588l9.881-9.881a1,1,0,0,0,0-1.414L6.017,1.431,7.431.017l9.862,9.862a3,3,0,0,1,0,4.242Z" />
+                    </g>
+                </svg></button>
         </section>
 
         <section class="sessions" id="session-cards">
@@ -26,7 +46,20 @@
 
         <button class="back-button" onclick="window.history.back()">Volver</button>
     </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__column">
+            <h3>Aviso Legal</h3>
+            <p>Política de privacidad, términos y condiciones.</p>
+        </div>
+        <div class="footer__column">
+            <h3>Contacto</h3>
+            <p>Email: contacto@cinezar.com</p>
+            <p>Teléfono: +34 123 456 789</p>
+        </div>
+    </footer>
 
     <script src="../javascript/sesiones.js"></script>
 </body>
+
 </html>

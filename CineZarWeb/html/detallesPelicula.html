@@ -9,7 +9,12 @@
 </head>
 
 <body>
+    <!-- Header (Navbar) -->
+    <header class="header">
+        <div class="header__logo">🎬</div>
+        <h1 class="header__title">CineZar</h1>
 
+    </header>
     <h1 class="movie-details__title" id="movie-title">Título de la película</h1>
     <div class="movie-details">
 
@@ -29,6 +34,18 @@
         </div>
     </div>
     <button class="movie-details__button" onclick="irASesiones()">Sesiones</button>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__column">
+            <h3>Aviso Legal</h3>
+            <p>Política de privacidad, términos y condiciones.</p>
+        </div>
+        <div class="footer__column">
+            <h3>Contacto</h3>
+            <p>Email: contacto@cinezar.com</p>
+            <p>Teléfono: +34 123 456 789</p>
+        </div>
+    </footer>
     <script>
         function irASesiones() {
             const peliculaSeleccionada = document.getElementById('movie-title').textContent;
