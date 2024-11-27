@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sesiones de Película</title>
     <link rel="stylesheet" href="../build/index.css">
 </head>
+
+
+
+<header>
+    <h1 id="titulo-pelicula">Sesiones de la película</h1>
+   
+</header>
 <body>
     <div class="container-sesiones">
-        <header>
-            <h1 id="titulo-pelicula">Sesiones de la película</h1>
-            <img id="movie-poster" alt="Poster de la película">
-        </header>
+        
+        <img id="movie-poster" alt="Poster de la película">
+        <div class="container-sesiones-botones">
+            <section class="session-controls">
+                <button onclick="cambiarDia(-1)">◀️</button>
+                <span id="dia-seleccionado">Lunes</span>
+                <button onclick="cambiarDia(1)">▶️</button>
+            </section>
 
-        <section class="session-controls">
-            <button onclick="cambiarDia(-1)">◀️</button>
-            <span id="dia-seleccionado">Lunes</span>
-            <button onclick="cambiarDia(1)">▶️</button>
-        </section>
+            <section class="sessions" id="session-cards">
+                <!-- Las tarjetas de horarios se cargarán aquí -->
+            </section>
 
-        <section class="sessions" id="session-cards">
-            <!-- Las tarjetas de horarios se cargarán aquí -->
-        </section>
-
-        <button class="back-button" onclick="window.history.back()">Volver</button>
+            <button class="back-button" onclick="window.history.back()">Volver</button>
+        </div>
     </div>
 
     <script src="../javascript/sesiones.js"></script>
 </body>
+
 </html>
