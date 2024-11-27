@@ -15,7 +15,7 @@ window.onload = function (e) {
     })
 }
 function verFecha(id) {
-    let promise = fetch(`https://localhost:7165/api/Sesion/${id}`)
+    let promise = fetch(`http://localhost:8080/api/Sesion/${id}`)
     promise.then(res => res.json())
         .then(data => {
             let fechaSesion = new Date(data.horaSesion)
@@ -29,7 +29,7 @@ function imprimirAsientos() {
 
     console.log(idSesion)
     try {
-        let promise = fetch(`https://localhost:7165/api/Sesion/${idSesion}`)
+        let promise = fetch(`http://localhost:8080/api/Sesion/${idSesion}`)
         promise.then(response => response.json())
             .then(data => {
                 console.log(data)
@@ -73,7 +73,7 @@ function seleccionarAsiento(id) {
 
 function ComprarAsientos() {
     localStorage.setItem('idAsientos', asientosSeleccionados)
-    let promise = fetch(`https://localhost:7165/api/Sesion/ComprarEntrada/${idSesion}`, {
+    let promise = fetch(`http://localhost:8080/api/Sesion/ComprarEntrada/${idSesion}`, {
         method: 'PUT',
         headers: {
             'Accept': '*/*',
@@ -92,7 +92,7 @@ function ComprarAsientos() {
         });
 }
 function verAsientosSeleccionados(idAsiento) {
-    let promise = fetch(`https://localhost:7165/api/Asiento/VerInfoAsiento/${idAsiento}`)
+    let promise = fetch(`http://localhost:8080/api/Asiento/VerInfoAsiento/${idAsiento}`)
     promise.then(response => response.json())
         .then(data => {
             const asientosCards = document.getElementById('asientos-cards')

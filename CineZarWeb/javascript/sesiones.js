@@ -24,7 +24,7 @@ window.onload = function () {
     }
 }
 
-fetch(`https://localhost:7165/api/Pelicula/VerSesiones/${peliculaSeleccionada.id}`)
+fetch(`http://localhost:8080/api/Pelicula/VerSesiones/${peliculaSeleccionada.id}`)
     .then(res => res.json())
     .then(data => {
         console.log(data);
