@@ -20,7 +20,8 @@ body {
 /* Contenedor principal de las sesiones */
 .container-sesiones {
     width: 100%;
-    max-width: 1200px; /* Tamaño máximo para desktop */
+    max-width: 1200px;
+    /* Tamaño máximo para desktop */
     padding: 1rem;
     background-color: #0F645C;
     border-radius: 10px;
@@ -42,6 +43,25 @@ header {
         max-width: 100%;
         border-radius: 10px;
     }
+}
+
+.columna__izq__session {
+    img {
+        max-width: 50%;
+        border-radius: 10px;
+        margin-left: 25%;
+    }
+}
+
+
+
+#titulo-pelicula {
+    color: #FFB800;
+    margin-bottom: 1rem;
+    font-size: 26px;
+    margin-left: 2%;
+    max-width: 100%;
+    text-align: center;;
 }
 
 /* Controles para cambiar de día */
@@ -113,7 +133,7 @@ header {
     width: 120px;
     margin-top: 2rem;
     transition: background-color 0.3s;
-    margin-left: 30%;
+    margin-left: 34%;
 
     &:hover {
         background-color: #E5A800;
@@ -131,7 +151,8 @@ header {
     }
 
     header {
-        grid-column: 1; /* Imagen y título en la izquierda */
+        grid-column: 1;
+        /* Imagen y título en la izquierda */
     }
 
     .session-controls,
@@ -141,19 +162,39 @@ header {
     }
 
     .sessions {
-        grid-template-columns: repeat(1, 1fr); /* Mostrar tarjetas en dos columnas */
+        grid-template-columns: repeat(1, 1fr);
+        /* Mostrar tarjetas en dos columnas */
         width: 200%;
-        margin-left: -50%;
+        //margin-left: -50%;
     }
 
-    .columna-derecha{
+    .columna-derecha {
         display: flex;
         flex-direction: column;
         margin-top: 10%;
+        text-align: center;
+        align-items: center;
     }
 
     .back-button {
-        margin-left: 20%;
+        margin-left: 30%;
+    }
+
+
+    #titulo-pelicula {
+        color: #FFB800;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        margin-left: 50%;
+    }
+
+
+    .columna__izq__session {
+        img {
+            max-width: 50%;
+            border-radius: 10px;
+            margin-left: 30%;
+        }
     }
 }
 

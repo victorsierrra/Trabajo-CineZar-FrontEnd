@@ -1,0 +1,78 @@
+@import '../base/variables' as ;   // Variables globales
+@import '../base/mixins' as ;      // Mixins reutilizables
+@import '../base/reset';            // Reset de estilos
+@import '../layout/footer';         // Estilos del footer, si es necesario
+
+.footer-section {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a3c40; // Fondo oscuro
+    color: #ffffff;           // Texto blanco
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 1rem auto;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #FFB800; // Color dorado para los títulos
+      text-align: center;
+    }
+  
+    h4 {
+      font-size: 1.3rem;
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+      color: #9EB3B0; // Gris claro para subtítulos
+    }
+  
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+  
+      strong {
+        color: #FFB800; // Resaltar palabras clave con dorado
+      }
+  
+      a {
+        color: #FFB800;
+        text-decoration: underline;
+  
+        &:hover {
+          color: #FFFFFF; // Blanco al pasar el cursor
+        }
+      }
+    }
+  
+    ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+  
+      li {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+  
+  // Diseño responsivo
+  @media (min-width: 768px) {
+    .footer-section {
+      padding: 3rem;
+      max-width: 60%;
+      h3 {
+        font-size: 2.5rem;
+      }
+      h4 {
+        font-size: 1.5rem;
+      }
+      p, li {
+        font-size: 1.1rem;
+      }
+    }
+  }
+  

@@ -15,12 +15,15 @@ window.onload = function () {
 
 
     if (peliculaSeleccionada) {
-        document.getElementById("titulo-pelicula").innerText = peliculaSeleccionada.titulo;
-        document.getElementById("movie-poster").src = peliculaSeleccionada.portada;
+        console.log(peliculaSeleccionada)
+        document.getElementById('titulo-pelicula').innerText = peliculaSeleccionada.titulo
+        document.getElementById('movie-poster').src = peliculaSeleccionada.portada
+        // document.getElementsByClassName("titulo-pelicula").innerText = peliculaSeleccionada.titulo;
+        // document.getElementByClassName("movie-poster").src = peliculaSeleccionada.portada;
 
     } else {
-        document.getElementById("titulo-pelicula").textContent = "Película no encontrada";
-        document.getElementById("session-cards").innerHTML = "<p>No hay sesiones disponibles.</p>";
+        document.getElementByClassName("titulo-pelicula").textContent = "Película no encontrada";
+        document.getElementByClassName("session-cards").innerHTML = "<p>No hay sesiones disponibles.</p>";
     }
 }
 
