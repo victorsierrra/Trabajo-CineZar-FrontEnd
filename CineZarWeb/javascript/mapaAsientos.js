@@ -1,6 +1,7 @@
 let asientosSeleccionados = [];
 const idSesion = localStorage.getItem('idSesion')
 let dataAsientos = []
+let arrayAsientosComprados = []
 window.onload = function (e) {
     imprimirAsientos()
     const pelicula = JSON.parse(localStorage.getItem('selectedMovie'))
@@ -23,6 +24,8 @@ function imprimirAsientos() {
         let promise = fetch(`https://localhost:7165/api/Sesion/${idSesion}`)
         promise.then(response => response.json())
             .then(data => {
+                localStorage.setItem('sesionSeleccionada', JSON.stringify(data));
+                console.log(data)
                 let fechaSesion = new Date(data.horaSesion)
                 fechaSesion = fechaSesion.toLocaleString('es-ES', { weekday: 'long', day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' }).toUpperCase()
                 let divFecha = document.querySelector('.date-pelicula')
@@ -52,6 +55,7 @@ function imprimirAsientos() {
     }
 }
 function seleccionarAsiento(id) {
+    arrayAsientosComprados = []
     const asientosCards = document.getElementById('asientos-cards')
     asientosCards.innerHTML = ""
     let asientoSeleccionado = document.getElementById(id)
@@ -62,6 +66,12 @@ function seleccionarAsiento(id) {
     }
     else {
         asientosSeleccionados.push(variable)
+        if(asientosSeleccionados.length > 7)
+        {
+            const asientoADeseleccionar = document.getElementById(`asiento_${asientosSeleccionados[0]}`)
+            asientoADeseleccionar.classList.toggle('selected')
+            asientosSeleccionados.shift()
+        }
     }
     asientoSeleccionado.classList.toggle('selected')
     asientosSeleccionados.forEach(id => verAsientosSeleccionados(id))
@@ -82,9 +92,10 @@ function ComprarAsientos() {
     })
     promise.then(response => { response.json() })
         .then(data => {
+            localStorage.setItem('asientosComprados', JSON.stringify(arrayAsientosComprados))
             console.log('Success:', data);
             asientosSeleccionados = []
-            window.location.reload()
+            window.location.href="../html/infoEntrada.html"
         })
         .catch(error => {
             console.error('Problema con el fetch para la seleccion de entradas', error);
@@ -92,6 +103,7 @@ function ComprarAsientos() {
 }
 function verAsientosSeleccionados(idAsiento) {
     const asientoSeleccionado = dataAsientos.find(function (asiento) { return asiento.id == idAsiento; });
+    arrayAsientosComprados.push(asientoSeleccionado)
     console.log(asientoSeleccionado)
     const asientosCards = document.getElementById('asientos-cards')
     const card = document.createElement("div");
