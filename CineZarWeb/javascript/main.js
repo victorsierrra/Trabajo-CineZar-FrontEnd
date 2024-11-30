@@ -18,7 +18,7 @@ window.onload = function () {
             carouselMovies.forEach(p => {
                 let slide = document.createElement('div');
                 slide.classList.add('banner__carousel-slide');
-                slide.style.backgroundImage= `url(${p.portada})`
+                slide.style.backgroundImage = `url(${p.portada})`
                 carousel.appendChild(slide);
             });
 
@@ -33,7 +33,7 @@ window.onload = function () {
                 let movieFoto = document.createElement('div')
                 movieFoto.classList.add('movie-poster')
                 movieItem.appendChild(movieFoto)
-                movieFoto.style.backgroundImage= `url(${p.portada})`
+                movieFoto.style.backgroundImage = `url(${p.portada})`
 
                 movieItem.innerHTML = `
                     <p class="movie-title">${p.titulo}</p>
@@ -49,7 +49,7 @@ window.onload = function () {
                 });
 
                 movieListContainer.appendChild(movieItem);
-                movieFoto.style.backgroundImage= `url(${p.portada})`
+                movieFoto.style.backgroundImage = `url(${p.portada})`
                 movieItem.appendChild(movieFoto)
             });
         })
@@ -72,3 +72,45 @@ function moveSlide(direction) {
     currentIndex += direction;
     showSlide(currentIndex);
 }
+
+//funcion para modal oferta
+document.addEventListener("DOMContentLoaded", () => {
+    const ofertas = document.querySelectorAll(".imagen__oferta img");
+    const modal = document.getElementById("modalOferta");
+    const modalTitle = document.getElementById("modal-title");
+    const modalDescription = document.getElementById("modal-description");
+    const closeButton = document.querySelector(".close-button");
+
+    // Información de las ofertas
+    const ofertaInfo = [
+        {
+            title: "Descuento del 50%",
+            description: "Disfruta de un increíble descuento del 50% en tus entradas este fin de semana.",
+        },
+        {
+            title: "Combo Especial",
+            description: "Obtén un combo de palomitas y bebida gratis al comprar 2 entradas.",
+        },
+    ];
+
+    // Agrega evento de clic a cada imagen
+    ofertas.forEach((img, index) => {
+        img.addEventListener("click", () => {
+            modalTitle.textContent = ofertaInfo[index].title;
+            modalDescription.textContent = ofertaInfo[index].description;
+            modal.style.display = "block";
+        });
+    });
+
+    // Cerrar el modal
+    closeButton.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+    // Cerrar el modal al hacer clic fuera de él
+    window.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+});
