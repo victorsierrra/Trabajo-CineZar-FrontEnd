@@ -84,12 +84,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Información de las ofertas
     const ofertaInfo = [
         {
-            title: "Descuento del 50%",
-            description: "Disfruta de un increíble descuento del 50% en tus entradas este fin de semana.",
+            title: "Cine a precio de locura",
+            description: "De lunes a jueves, disfruta de tus películas favoritas al precio más bajo. ¡Porque el buen cine también puede ser económico!",
         },
         {
-            title: "Combo Especial",
-            description: "Obtén un combo de palomitas y bebida gratis al comprar 2 entradas.",
+            title: "Miércoles de película",
+            description: "El miércoles es tu día: entradas al precio más espectacular de la semana. Vive la magia del cine como nunca antes y ¡al mejor precio!",
         },
     ];
 

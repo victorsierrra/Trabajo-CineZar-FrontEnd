@@ -5,81 +5,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../build/index.css">
+    
     <title>home</title>
 </head>
 
 <body>
-    <div class="container-home">
-        <!-- Header (Navbar) -->
-        <header class="header">
-            <div class="header__logo">🎬</div>
-            <h1 class="header__title" onclick="window.location.href='../html/index.html'">CineZar</h1>
 
-        </header>
+    <body>
+        <div class="container-home">
+            <!-- Header (Navbar) -->
+            <header class="header">
+                <div class="header__logo">🎬</div>
+                <h1 class="header__title" onclick="window.location.href='../html/index.html'">CineZar</h1>
 
-        <!-- Main Banner -->
-        <section class="banner">
-            <h1 class="banner__title">DISFRUTA DE LAS MEJORES PELICULAS EN NUESTRAS MEJORES SALAS</h1>
-            <div class="banner__carousel" id="carousel">
-                <!-- Las películas para el carrusel se agregarán aquí dinámicamente -->
+            </header>
+
+            <!-- Main Banner -->
+            <section class="banner">
+                <h1 class="banner__title">DISFRUTA DE LAS MEJORES PELICULAS EN NUESTRAS MEJORES SALAS</h1>
+                <div class="banner__carousel" id="carousel">
+                    <!-- Las películas para el carrusel se agregarán aquí dinámicamente -->
+                </div>
+                <!-- Botones de navegación para el carrusel -->
+                <button class="banner__carousel-button banner__carousel-button--prev" id="boton"
+                    onclick="moveSlide(-1)">&#10094;</button>
+                <button class="banner__carousel-button banner__carousel-button--next" id="boton"
+                    onclick="moveSlide(1)">&#10095;</button>
+            </section>
+
+            <!-- Movies Section -->
+            <section class="movies-section">
+                <h2 class="movies-section__title">Ahora en cines</h2>
+                <div id="movie-list" class="movies-section__movies-list"></div>
+            </section>
+        </div>
+
+        <h1 class="banner__title">NUESTRAS ESPECTACULARES OFERTAS</h1>
+        <div class="container-oferta">
+            <div class="imagen__oferta" id="oferta">
+                <img src="../img/OfertaLunesJueves.png" alt="Oferta">
             </div>
-            <!-- Botones de navegación para el carrusel -->
-            <button class="banner__carousel-button banner__carousel-button--prev" id="boton"
-                onclick="moveSlide(-1)">&#10094;</button>
-            <button class="banner__carousel-button banner__carousel-button--next" id="boton"
-                onclick="moveSlide(1)">&#10095;</button>
-        </section>
-
-        <!-- Movies Section -->
-        <section class="movies-section">
-            <h2 class="movies-section__title">Ahora en cines</h2>
-            <div id="movie-list" class="movies-section__movies-list"></div>
-        </section>
-    </div>
-
-    <h1 class="banner__title">NUESTRAS ESPECTACULARES OFERTAS</h1>
-    <div class="container-oferta">
-
-
-        <div class="imagen__oferta" id="oferta">
-            <img src="https://spaziocines.es/wp-content/uploads/2023/01/Diseno-sin-titulo-5.png" alt="Oferta">
-        </div>
-        <div class="imagen__oferta" id="oferta">
-            <img src="https://spaziocines.es/wp-content/uploads/2023/01/Diseno-sin-titulo-5.png" alt="Oferta">
-        </div>
-
-        <!-- Modal oferta -->
-        <div id="modalOferta" class="modal">
-            <div class="modal-content">
-                <span class="close-button">&times;</span>
-                <h2 id="modal-title">Descripción de la oferta</h2>
-                <p id="modal-description">Esta es una oferta espectacular que no te puedes perder.</p>
+            <div class="imagen__oferta" id="oferta">
+                <img src="../img/OfertaMiercoles.png" alt="Oferta">
             </div>
         </div>
-    </div>
+        
+            <!-- Modal oferta -->
+            <div id="modalOferta" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h2 id="modal-title">Descripción de la oferta</h2>
+                    <p id="modal-description">Esta es una oferta espectacular que no te puedes perder.</p>
+                </div>
+            </div>
+        </div>
 
 
-    <!-- Footer -->
-    <footer class="footer">
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer__column footer__column--legal">
+                <ul class="list-group">
+                    <li class="list-group-item" onclick="window.location.href='../html/AvisoLegal.html'">Aviso Legal</li>
+                    <li class="list-group-item" onclick="window.location.href='../html/TerminosyCondiciones.html'">Términos y condiciones</li>
+                    <li class="list-group-item" onclick="window.location.href='../html/PolPrivacidad.html'">Política de privacidad</li>
+                </ul>
+            </div>
+            <div class="footer__column footer__column--contact">
+                <ul class="list-group">
+                    <li class="list-group-item">Teléfono: +123456789</li>
+                    <li class="list-group-item">Email: contacto@ejemplo.com</li>
+                </ul>
+            </div>
+        </div>
 
-        <ul class="footer__column">
-            <li class="list-group-item" onclick="window.location.href='../html/AvisoLegal.html'">Aviso Legal</li>
-            <li class="list-group-item" onclick="window.location.href='../html/TerminosyCondiciones.html'">términos y
-                condiciones</li>
-            <li class="list-group-item" onclick="window.location.href='../html/PolPrivacidad.html'">Politica de
-                privacidad</li>
-        </ul>
-
-        <ul class="footer__column">
-            <li class="list-group-item">Contacto</li>
-            <li class="list-group-item">Email: contacto@cinezar.com</li>
-            <li class="list-group-item">Teléfono: +34 123 456 789</li>
-        </ul>
-
-    </footer>
-
-    <!-- JavaScript -->
-    <script src="../javascript/main.js"></script>
-</body>
+        <!-- JavaScript -->
+        <script src="../javascript/main.js"></script>
+    </body>
 
 </html>
