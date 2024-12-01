@@ -5,16 +5,16 @@ let entradas = []
 
 
 fetch(`https://localhost:7165/api/Sesion/${sesion.id}`)
-.then (res => res.json())
-.then(data => {
-    asientosComprados.forEach( element => {
-        let entradaAsientoComprado = data.entradas.find(function(item) {
-            return item.asiento.id === element.id
+    .then(res => res.json())
+    .then(data => {
+        asientosComprados.forEach(element => {
+            let entradaAsientoComprado = data.entradas.find(function (item) {
+                return item.asiento.id === element.id
+            })
+            entradas.push(entradaAsientoComprado)
         })
-        entradas.push(entradaAsientoComprado)
     })
-})
-.catch(error=> alert(error))
+    .catch(error => alert(error))
 
 
 window.onload = function () {
@@ -23,28 +23,48 @@ window.onload = function () {
     divPelicula.innerHTML = `
 <h2 class = "info-pelicula__title">${movie.titulo}</h2>
 <h3 class = "info-pelicula__sesion">${fechaSesion}    -   Sala ${sesion.numeroSala}</h3>
-<img class ="info-entradas__image-pelicula" src="${movie.portada}">
+<div class ="info-entradas__image-pelicula"></div>
 `
-document.querySelector('.info-coste').innerHTML= cargarPrecioTotal()    
-recogidaInfoEntradas()
+    document.querySelector(".info-entradas__image-pelicula").style.backgroundImage = `url(${movie.portada})`
+    recogidaInfoEntradas()
+    cargarPrecioTotal()
+}
+function recogidaInfoEntradas() {
+    entradas.forEach(entrada => {
+        let tablaEntradas = document.createElement('table')
+        tablaEntradas.className = "info-entradas__entradas-table"
+        tablaEntradas.innerHTML = `                <tr class="info-entradas__entradas-table__info">
+                    <td class="info-entradas__entradas-table__ref"><b>Cod Entrada</b></td>
+                    <td class="info-entradas__entradas-table__dato">${entrada.id}</td>
+                </tr>
+                <tr class="info-entradas__entradas-table__info">
+                    <td class="info-entradas__entradas-table__ref"><b>Fila del Asiento</b></td>
+                    <td class="info-entradas__entradas-table__dato">${entrada.asiento.fila}</td>
+                </tr>
+                <tr class="info-entradas__entradas-table__info">
+                    <td class="info-entradas__entradas-table__ref"><b>Numero de Asiento</b></td>
+                    <td class="info-entradas__entradas-table__dato">${entrada.asiento.numero}</td>
+                </tr>
+                <tr class="info-entradas__entradas-table__info" style="border: none;">
+                    <td class="info-entradas__entradas-table__ref"><b>Precio de la entrada</b></td>
+                    <td class="info-entradas__entradas-table__dato">${entrada.precio}</td>
+                </tr>`
+        document.querySelector('.info-entradas__entradas').appendChild(tablaEntradas)
+    })
 }
 
-
-function recogidaInfoEntradas(){entradas.forEach(entrada => {
-    let divAsiento = document.querySelector('.info-asientos')
-    let divInfoAsiento = document.createElement('div')
-    divInfoAsiento.innerHTML = `
-    <p>Fila: ${entrada.asiento.fila}  -  Numero: ${entrada.asiento.numero}  -  Precio: ${entrada.precio.toFixed(2)}€</p>
-    `
-    console.log(divInfoAsiento)
-    divAsiento.appendChild(divInfoAsiento)
-})}
 function cargarPrecioTotal() {
     let precioTotal = 0;
 
     entradas.forEach(entrada =>
-       precioTotal += entrada.precio
+        precioTotal += entrada.precio
     )
 
-    return precioTotal
+    precioTotal = precioTotal.toFixed(2) + "€"
+
+    let divCosteTotal = document.createElement('div')
+    divCosteTotal.className = "info-entradas__entradas-total"
+    divCosteTotal.innerText = `TOTAL:  ${precioTotal}`
+    document.querySelector('.info-entradas__entradas').appendChild(divCosteTotal)
+
 }

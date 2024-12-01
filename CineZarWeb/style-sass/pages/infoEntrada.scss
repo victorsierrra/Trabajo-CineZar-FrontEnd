@@ -8,3 +8,49 @@
 {
     text-align: center;
 }
+.info-entradas__image-pelicula{
+    background-size: cover;
+    background-position: center;
+    justify-self: center;
+    width: 300px;
+    height: 500px;
+}
+.info-pelicula{
+    display: grid;
+    justify-content: center;
+}
+.info-entradas__entradas{
+    display: grid;
+    justify-content: center;
+}
+.info-entradas__entradas-table__ref{
+    padding: 10px;
+    text-align: start;
+}
+.info-entradas__entradas-table__dato{
+    padding: 10px;
+    text-align: end;
+    width: 70px;
+
+}
+.info-entradas__entradas-table{
+    margin: 10px;
+    font-weight: bold;
+    background-color: #F2C94C;
+    color: #1F293D;
+    padding: 10px;
+    border-radius: 10px;
+    border-collapse: collapse;
+    tr{
+        border-radius: 3px;
+        border-bottom: 2px solid #1F293D;
+    }
+}
+.info-entradas__entradas-total{
+    background-color: #1F293D;
+    border-radius: 10px;
+    padding: 3px;
+    font-size: 20px;
+    color: #F2C94C;
+    font-weight: bold;
+}
