@@ -16,12 +16,22 @@
     font-size: 18px;
     text-align: center;
 }
-.mapa-asientos
+.mapa-asientos__asientos
 {
     display: grid;
     grid-template-columns: repeat(10, 0fr);
     justify-content: center;
     margin-top: 15px;
+}
+.mapa-asientos__pantalla{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 12px;
+    background-color: #1F293D;
+    height: 20px;
 }
 
 .asiento {

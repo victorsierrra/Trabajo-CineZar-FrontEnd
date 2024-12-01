@@ -2,18 +2,20 @@ const movie = JSON.parse(localStorage.getItem('selectedMovie'));
 const sesion = JSON.parse(localStorage.getItem('sesionSeleccionada'))
 const asientosComprados = JSON.parse(localStorage.getItem('asientosComprados'))
 let entradas = []
-// console.log(sesion.entradas[0])
-asientosComprados.forEach(element => {
-    let entradaAsientoComprado = sesion.entradas.find(function (item) { return item.asiento.id === element.id })
-    entradas.push(entradaAsientoComprado)
-});
 
-console.log(sesion)
-// console.log(entradas)
-// console.log(asientosComprados)
-// console.log(sesion)
 
-console.log(movie.titulo)
+fetch(`https://localhost:7165/api/Sesion/${sesion.id}`)
+.then (res => res.json())
+.then(data => {
+    asientosComprados.forEach( element => {
+        let entradaAsientoComprado = data.entradas.find(function(item) {
+            return item.asiento.id === element.id
+        })
+        entradas.push(entradaAsientoComprado)
+    })
+})
+.catch(error=> alert(error))
+
 
 window.onload = function () {
     const divPelicula = document.querySelector('.info-pelicula')
@@ -23,11 +25,10 @@ window.onload = function () {
 <h3 class = "info-pelicula__sesion">${fechaSesion}    -   Sala ${sesion.numeroSala}</h3>
 <img class ="info-entradas__image-pelicula" src="${movie.portada}">
 `
-
+document.querySelector('.info-coste').innerHTML= cargarPrecioTotal()    
 recogidaInfoEntradas()
-cargarPrecioTotal()
 }
-// var divAsiento = null;
+
 
 function recogidaInfoEntradas(){entradas.forEach(entrada => {
     let divAsiento = document.querySelector('.info-asientos')
@@ -39,10 +40,11 @@ function recogidaInfoEntradas(){entradas.forEach(entrada => {
     divAsiento.appendChild(divInfoAsiento)
 })}
 function cargarPrecioTotal() {
-    let prueba = 0;
+    let precioTotal = 0;
 
-    prueba = entradas.reduce(
-        (accumulator, currentValue) => accumulator + currentValue,
-        initialValue,
-      )
+    entradas.forEach(entrada =>
+       precioTotal += entrada.precio
+    )
+
+    return precioTotal
 }

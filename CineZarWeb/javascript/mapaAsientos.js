@@ -17,7 +17,7 @@ window.onload = function (e) {
     })
 }
 function imprimirAsientos() {
-    const mapa = document.querySelector('.mapa-asientos');
+    const mapa = document.querySelector('.mapa-asientos__asientos');
 
     console.log(idSesion)
     try {
