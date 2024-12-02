@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../build/index.css">
+    <script src="../javascript/detallesPelicula.js"></script>
     <title>Detalles de la Película</title>
 </head>
 
-<body>
+<body class="detalles-pelicula">
     <!-- Header (Navbar) -->
     <header class="header">
         <div class="header__logo">🎬</div>
@@ -31,9 +32,10 @@
                     class="movie-info__value"></span></p>
             <p class="movie-info__item"><strong class="movie-info__label">Director:</strong> <span id="movie-director"
                     class="movie-info__value"></span></p>
+            <button class="movie-details__button" onclick="irASesiones()">Sesiones</button>
         </div>
     </div>
-    <button class="movie-details__button" onclick="irASesiones()">Sesiones</button>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="footer__column">
@@ -46,13 +48,7 @@
             <p>Teléfono: +34 123 456 789</p>
         </div>
     </footer>
-    <script>
-        function irASesiones() {
-            const peliculaSeleccionada = document.getElementById('movie-title').textContent;
-            window.location.href = 'sesiones.html';
-        }
-    </script>
-    <script src="../javascript/detallesPelicula.js"></script>
+
 </body>
 
 </html>

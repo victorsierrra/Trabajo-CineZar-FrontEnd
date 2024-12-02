@@ -438,7 +438,6 @@ body {
   .footer {
     font-size: 14px;
     padding: 10px;
-    width: 104%;
     margin-bottom: -3%;
   }
   .footer .footer__column {
@@ -462,11 +461,11 @@ body {
   box-sizing: border-box;
 }
 
-body {
+.detalles-pelicula {
   font-family: Arial, sans-serif;
   background-color: #0F645C;
   color: #FFF;
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -499,6 +498,7 @@ body {
   line-height: 1.6;
 }
 .movie-details__button {
+  justify-self: center;
   background-color: #FFB800;
   border: none;
   border-radius: 5px;
@@ -507,8 +507,7 @@ body {
   color: #0D3D3B;
   font-weight: bold;
   cursor: pointer;
-  width: 80%;
-  margin-top: 1.2rem;
+  width: 200px;
   margin-bottom: 10px;
 }
 .movie-details__button:hover {
@@ -518,6 +517,7 @@ body {
 .movie-info {
   font-size: 1rem;
   margin-bottom: 1.2rem;
+  display: grid;
 }
 .movie-info__item {
   display: flex;
@@ -551,27 +551,24 @@ body {
     font-size: 25px;
   }
   .movie-details__button {
-    width: auto;
     padding: 1rem 1.5rem;
     font-size: 1.2rem;
-    position: relative;
+    margin-top: 1.2rem;
     bottom: 155px;
   }
   .movie-info {
     font-size: 1.1rem;
     width: 100%;
     margin-top: 100px;
-    margin-right: 125px;
   }
   .movie-info__label {
     margin-right: 30px;
   }
 }
-@media (min-width: 600px) and (max-width: 1024px) {
+@media (min-width: 600px) {
   .movie-details {
     padding: 2rem;
     text-align: center;
-    flex-direction: column;
     align-items: center;
   }
   .movie-details__poster {
@@ -589,11 +586,8 @@ body {
     margin-left: 10%;
   }
   .movie-details__button {
-    width: 90%;
     font-size: 1rem;
     padding: 0.8rem 1.2rem;
-    width: 50%;
-    margin-top: 20%;
   }
   .movie-info {
     font-size: 1rem;

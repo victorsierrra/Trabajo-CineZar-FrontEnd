@@ -11,4 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('movie-genre').innerText = movie.genero;
         document.getElementById('movie-director').innerText = movie.director;
     }
+
 });
+function irASesiones() {
+    const peliculaSeleccionada = document.getElementById('movie-title').textContent;
+    window.location.href = 'sesiones.html';
+}
