@@ -148,6 +148,10 @@ body {
   right: 10px;
 }
 
+.movie-title {
+  width: 250px;
+}
+
 .movies-section__title {
   font-size: 1.5rem;
   margin-bottom: 1rem;
@@ -163,20 +167,20 @@ body {
   margin: auto;
 }
 .movies-section__movie {
-  width: 200px;
-  text-align: -webkit-center;
+  width: 100%;
+  display: grid;
+  justify-content: center;
 }
 .movies-section__movie .movie-poster {
   background-position: center;
   background-size: cover;
   height: 360px;
-  width: 280px;
+  width: 240px;
   border-radius: 10px;
   margin-bottom: 0.5rem;
-  margin-left: -20%;
 }
 .movies-section__movie .movie-title {
-  place-content: center;
+  text-align: center;
   height: 48px;
   font-weight: bold;
   margin-bottom: 10px;
@@ -346,7 +350,7 @@ body {
 
 @media screen and (min-width: 768px) {
   .movies-section__movies-list {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
   #boton {
     display: none;
@@ -390,22 +394,25 @@ body {
     display: block;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) {
+  /*
   body {
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 1rem;
-  }
-  .header {
-    justify-content: center;
-    padding: 10px 20px;
-    width: 106%;
-    margin-left: -2%;
-    margin-top: -2%;
-  }
-  .header__logo {
-    font-size: 2rem;
-  }
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 1rem;
+  }*/
+  /*
+      .header {
+          justify-content: center;
+          padding: 10px 20px;
+          width: 106%;
+          margin-left: -2%;
+          margin-top: -2%;
+
+          &__logo {
+              font-size: 2rem;
+          }
+      }*/
   .banner__carousel-slide {
     width: 100%;
     height: 400px;
@@ -438,6 +445,12 @@ body {
   }
   .banner__title {
     font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .movies-section__movies-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
   }
 }
 * {
@@ -530,7 +543,6 @@ body {
   }
   .movie-details__title {
     font-size: 2.2rem;
-    /* Aumentar tamaño de fuente */
   }
   .movie-details__description {
     font-size: 25px;
@@ -544,7 +556,6 @@ body {
   }
   .movie-info {
     font-size: 1.1rem;
-    /* Aumentar tamaño de fuente */
     width: 100%;
     margin-top: 100px;
     margin-right: 125px;
@@ -556,26 +567,26 @@ body {
 @media (min-width: 600px) and (max-width: 1024px) {
   .movie-details {
     padding: 2rem;
-    text-align: center; /* Alinear elementos centrados en tablets */
-    flex-direction: column; /* Cambiar disposición a columnas */
+    text-align: center;
+    flex-direction: column;
     align-items: center;
   }
   .movie-details__poster {
-    max-width: 300px; /* Ajuste intermedio para tablets */
+    max-width: 300px;
     margin-bottom: 1rem;
   }
   .movie-details__title {
-    font-size: 1.8rem; /* Reducir un poco para tablets */
+    font-size: 1.8rem;
     margin-bottom: 1.5rem;
   }
   .movie-details__description {
     font-size: 1rem;
     margin-bottom: 1.5rem;
-    line-height: 1.5; /* Ajuste para mejor legibilidad */
+    line-height: 1.5;
     margin-left: 10%;
   }
   .movie-details__button {
-    width: 90%; /* Más ancho para tablet */
+    width: 90%;
     font-size: 1rem;
     padding: 0.8rem 1.2rem;
     width: 50%;
@@ -584,14 +595,14 @@ body {
   .movie-info {
     font-size: 1rem;
     margin-top: 2rem;
-    width: 90%; /* Ocupa casi todo el ancho */
+    width: 90%;
     text-align: left;
   }
   .movie-info__item {
     margin-left: 10%;
   }
   .movie-info__label {
-    margin-bottom: 0.5rem; /* Espacio adicional entre label y value */
+    margin-bottom: 0.5rem;
     color: #9EB3B0;
     font-size: 0.9rem;
   }
@@ -753,7 +764,6 @@ body {
 .container-sesiones {
   width: 100%;
   max-width: 1200px;
-  /* Tamaño máximo para desktop */
   padding: 1rem;
   background-color: #0F645C;
   border-radius: 10px;
@@ -871,7 +881,6 @@ header img {
   }
   header {
     grid-column: 1;
-    /* Imagen y título en la izquierda */
   }
   .session-controls,
   .sessions {
@@ -880,7 +889,6 @@ header img {
   }
   .sessions {
     grid-template-columns: repeat(1, 1fr);
-    /* Mostrar tarjetas en dos columnas */
     width: 200%;
   }
   .columna-derecha {
@@ -913,13 +921,13 @@ header img {
     text-align: center;
   }
   header h1 {
-    font-size: 1.8rem; /* Reducir el tamaño para tablets */
+    font-size: 1.8rem;
   }
   header img {
     max-width: 80%;
   }
   #titulo-pelicula {
-    font-size: 1.6rem; /* Ajuste para tablets */
+    font-size: 1.6rem;
     margin: 1rem auto;
     text-align: center;
   }
@@ -932,7 +940,7 @@ header img {
     padding: 0.5rem 1rem;
   }
   .sessions {
-    grid-template-columns: repeat(2, 1fr); /* Mostrar dos columnas en tablet */
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
   .session-card {
@@ -940,7 +948,7 @@ header img {
     font-size: 1rem;
   }
   .back-button {
-    margin: 0 auto; /* Centrar en tablets */
+    margin: 0 auto;
     width: 100px;
     font-size: 0.9rem;
   }

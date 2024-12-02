@@ -100,6 +100,9 @@ body {
         }
     }
 }
+.movie-title{
+    width: 250px;
+}
 
 .movies-section {
     &__title {
@@ -120,22 +123,22 @@ body {
 
     &__movie {
 
-        width: 200px;
-        text-align: -webkit-center;
+        width: 100%;
+        display: grid;
+        justify-content: center;
 
         .movie-poster {
             background-position: center;
             background-size: cover;
             height: 360px;
-            width: 280px;
+            width: 240px;
             border-radius: 10px;
             margin-bottom: 0.5rem;
-            margin-left: -20%;
 
         }
 
         .movie-title {
-            place-content: center;
+            text-align: center;
             height: 48px;
             font-weight: bold;
             margin-bottom: 10px;
@@ -331,7 +334,7 @@ body {
 @media screen and (min-width: 768px) {
     .movies-section {
         &__movies-list {
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 
@@ -389,13 +392,14 @@ body {
     }
     
 }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px){
+    /*
     body {
         flex-direction: column;
         justify-content: flex-start;
         padding: 1rem;
-    }
-
+    }*/
+/*
     .header {
         justify-content: center;
         padding: 10px 20px;
@@ -406,7 +410,7 @@ body {
         &__logo {
             font-size: 2rem;
         }
-    }
+    }*/
 
     .banner__carousel-slide {
         width: 100%;
@@ -449,5 +453,13 @@ body {
 
     .banner__title {
         font-size: 2rem;
+    }
+}
+@media screen and (min-width: 1024px){
+    .movies-section {
+        &__movies-list {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
     }
 }
