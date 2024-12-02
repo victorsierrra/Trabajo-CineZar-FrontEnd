@@ -171,6 +171,9 @@ body {
   display: grid;
   justify-content: center;
 }
+.movies-section__movie:hover {
+  cursor: pointer;
+}
 .movies-section__movie .movie-poster {
   background-position: center;
   background-size: cover;
