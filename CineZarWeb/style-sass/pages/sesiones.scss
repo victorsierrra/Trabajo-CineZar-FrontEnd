@@ -196,6 +196,61 @@ header {
             margin-left: 30%;
         }
     }
+
+}
+@media (min-width: 600px) and (max-width: 1024px) {
+    .container-sesiones {
+        padding: 1.5rem;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    header {
+        h1 {
+            font-size: 1.8rem; /* Reducir el tamaño para tablets */
+        }
+
+        img {
+            max-width: 80%;
+        }
+    }
+
+    #titulo-pelicula {
+        font-size: 1.6rem; /* Ajuste para tablets */
+        margin: 1rem auto;
+        text-align: center;
+    }
+
+    .session-controls {
+        flex-direction: row;
+        justify-content: space-between;
+        button {
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+        }
+    }
+
+    .sessions {
+        grid-template-columns: repeat(2, 1fr); /* Mostrar dos columnas en tablet */
+        gap: 1rem;
+    }
+
+    .session-card {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    .back-button {
+        margin: 0 auto; /* Centrar en tablets */
+        width: 100px;
+        font-size: 0.9rem;
+    }
+
+    .columna__izq__session img {
+        max-width: 70%;
+        margin: 0 auto;
+    }
 }
 
 

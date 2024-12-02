@@ -129,7 +129,60 @@ body {
             margin-right: 30px;
         }
     }
+}
+@media (min-width: 600px) and (max-width: 1024px) {
+    .movie-details {
+        padding: 2rem;
+        text-align: center; /* Alinear elementos centrados en tablets */
+        flex-direction: column; /* Cambiar disposición a columnas */
+        align-items: center;
 
+        &__poster {
+            max-width: 300px; /* Ajuste intermedio para tablets */
+            margin-bottom: 1rem;
+        }
 
+        &__title {
+            font-size: 1.8rem; /* Reducir un poco para tablets */
+            margin-bottom: 1.5rem;
+        }
 
+        &__description {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.5; /* Ajuste para mejor legibilidad */
+            margin-left: 10%;
+        }
+
+        &__button {
+            width: 90%; /* Más ancho para tablet */
+            font-size: 1rem;
+            padding: 0.8rem 1.2rem;
+            width: 50%;
+            margin-top: 20%;
+    
+        }
+    }
+
+    .movie-info {
+        font-size: 1rem;
+        margin-top: 2rem;
+        width: 90%; /* Ocupa casi todo el ancho */
+        text-align: left;
+
+        &__item {
+            margin-left: 10%;
+        }
+
+        &__label {
+            margin-bottom: 0.5rem; /* Espacio adicional entre label y value */
+            color: #9EB3B0;
+            font-size: 0.9rem;
+        }
+
+        &__value {
+            color: #FFF;
+            font-size: 1rem;
+        }
+    }
 }
