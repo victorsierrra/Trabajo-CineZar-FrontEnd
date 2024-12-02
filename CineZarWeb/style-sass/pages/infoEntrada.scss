@@ -16,8 +16,12 @@
     height: 500px;
 }
 .info-pelicula{
+    margin: 30px;
     display: grid;
     justify-content: center;
+    &__title, &__sesion, &__image-pelicula{
+        margin: 15px;
+    }
 }
 .info-entradas__entradas{
     display: grid;
@@ -46,11 +50,38 @@
         border-bottom: 2px solid #1F293D;
     }
 }
+.info-entradas__tablas{
+    display: grid;
+}
 .info-entradas__entradas-total{
     background-color: #1F293D;
     border-radius: 10px;
+    margin: 20px;
     padding: 3px;
     font-size: 20px;
     color: #F2C94C;
+    align-content: center;
     font-weight: bold;
+    height: 50px;
+}
+@media screen and (min-width: 768px)
+{
+    /*
+    .info-entradas__detalles{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }*/
+}
+@media screen and (min-width: 992px)
+{
+    .info-entradas__detalles{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .info-entradas__tablas{
+        grid-template-columns: repeat(2,1fr);
+        margin-top: 100px;
+    }
 }

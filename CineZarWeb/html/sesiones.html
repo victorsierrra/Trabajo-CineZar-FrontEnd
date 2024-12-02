@@ -9,18 +9,19 @@
 </head>
 
 <body>
+            <!-- Header (Navbar) -->
+            <header class="header">
+                <div class="header__logo">🎬</div>
+                <h1 class="header__title">CineZar</h1>
+    
+            </header>
     <div class="container-sesiones">
-        <!-- Header (Navbar) -->
-        <header class="header">
-            <div class="header__logo">🎬</div>
-            <h1 class="header__title">CineZar</h1>
 
-        </header>
-        <header>
+        <header class="sesiones-pelicula">
             <h1 id="titulo-pelicula">Sesiones de la película</h1>
             <img id="movie-poster" alt="Poster de la película">
         </header>
-
+        <section class="sesiones-info">
         <section class="session-controls">
             <button class="button-sesiones__prev" onclick="cambiarDia(-1)"><svg xmlns="http://www.w3.org/2000/svg"
                     fill="white" viewBox="0 0 24 24" width="26" height="26">
@@ -45,6 +46,7 @@
         </section>
 
         <button class="back-button" onclick="window.location.href='../html/detallesPelicula.html'">Volver</button>
+    </section>
     </div>
     <!-- Footer -->
     <footer class="footer">

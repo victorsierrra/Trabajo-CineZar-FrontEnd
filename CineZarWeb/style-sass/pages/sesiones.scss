@@ -11,7 +11,7 @@ body {
     font-family: Arial, sans-serif;
     background-color:#0F645C;
     color: #FFF;
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -29,14 +29,18 @@ body {
 }
 
 /* Estilo del header con título e imagen de la película */
-header {
+.sesiones-pelicula {
     margin-bottom: 1.5rem;
 }
 
-header h1 {
+.sesiones-pelicula h1 {
     font-size: 2.5rem;
     color: #FFB800;
     margin-bottom: 1rem;
+}
+.sesiones-info{
+    display: grid;
+    justify-items: center;
 }
 
 /* Controles para cambiar de día */
@@ -74,12 +78,14 @@ header h1 {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
-    margin-bottom: 2rem;
+    // margin-bottom: 2rem;
 }
-
+#session-cards{
+justify-items: center;}
 .session-card {
     background-color: #1A535C;
     padding: 1rem;
+    width: 300px;
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -112,4 +118,25 @@ header h1 {
 
 .back-button:hover {
     background-color: #E5A800;
+}
+@media screen and (min-width: 768px){
+    .session-card{
+        width: 320px;
+    }
+    #titulo-pelicula{
+        font-size: 2em;
+        width: 350px;
+    }
+    .container-sesiones{
+        display: flex;
+        justify-content: center;
+        margin: 20px;
+    }
+
+}
+@media screen and (min-width: 998px){
+    .session-card{
+        width: 550px;
+    }
+
 }

@@ -112,7 +112,7 @@
     background-color: #F2C94C;
     color: #1F293D;
     align-content: center;
-    margin: 5px;
+    margin: 10px;
     width: 200px;
     height: 30px;
     border-radius: 40px;
@@ -132,6 +132,9 @@
     justify-items: center;
     align-content: baseline;
 }
+#asientos-cards{
+    display: grid;
+}
 @media screen and (min-width: 768px)
 {
     .mapa-asientos__datos{
@@ -146,5 +149,6 @@
     }
     .mapa-asientos, .mapa-asientos__seleccionados{
         margin: 30px;
+        place-content: center;
     }
 }

@@ -18,6 +18,10 @@ window.onload = function (e) {
 }
 function imprimirAsientos() {
     const mapa = document.querySelector('.mapa-asientos__asientos');
+    if (asientosSeleccionados.length < 1) {
+        let asientosSeleccionadosDiv = document.getElementById('asientos-cards')
+        asientosSeleccionadosDiv.style.display = 'none'
+    }
 
     console.log(idSesion)
     try {
@@ -56,6 +60,8 @@ function imprimirAsientos() {
 }
 function seleccionarAsiento(id) {
     arrayAsientosComprados = []
+        let asientosSeleccionadosDiv = document.getElementById('asientos-cards')
+        asientosSeleccionadosDiv.style.display = 'grid'
     const asientosCards = document.getElementById('asientos-cards')
     asientosCards.innerHTML = ""
     let asientoSeleccionado = document.getElementById(id)
@@ -66,8 +72,7 @@ function seleccionarAsiento(id) {
     }
     else {
         asientosSeleccionados.push(variable)
-        if(asientosSeleccionados.length > 7)
-        {
+        if (asientosSeleccionados.length > 5) {
             const asientoADeseleccionar = document.getElementById(`asiento_${asientosSeleccionados[0]}`)
             asientoADeseleccionar.classList.toggle('selected')
             asientosSeleccionados.shift()
@@ -95,7 +100,7 @@ function ComprarAsientos() {
             localStorage.setItem('asientosComprados', JSON.stringify(arrayAsientosComprados))
             console.log('Success:', data);
             asientosSeleccionados = []
-            window.location.href="../html/infoEntrada.html"
+            window.location.href = "../html/infoEntrada.html"
         })
         .catch(error => {
             console.error('Problema con el fetch para la seleccion de entradas', error);

@@ -30,6 +30,8 @@ window.onload = function () {
     cargarPrecioTotal()
 }
 function recogidaInfoEntradas() {
+    let divTablas = document.createElement('div')
+    divTablas.className = 'info-entradas__tablas'
     entradas.forEach(entrada => {
         let tablaEntradas = document.createElement('table')
         tablaEntradas.className = "info-entradas__entradas-table"
@@ -47,9 +49,10 @@ function recogidaInfoEntradas() {
                 </tr>
                 <tr class="info-entradas__entradas-table__info" style="border: none;">
                     <td class="info-entradas__entradas-table__ref"><b>Precio de la entrada</b></td>
-                    <td class="info-entradas__entradas-table__dato">${entrada.precio}</td>
+                    <td class="info-entradas__entradas-table__dato">${entrada.precio.toFixed(2)} €</td>
                 </tr>`
-        document.querySelector('.info-entradas__entradas').appendChild(tablaEntradas)
+                divTablas.appendChild(tablaEntradas)
+        document.querySelector('.info-entradas__entradas').appendChild(divTablas)
     })
 }
 
