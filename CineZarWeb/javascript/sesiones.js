@@ -31,17 +31,25 @@ fetch(`https://localhost:7165/api/Pelicula/${peliculaSeleccionada.id}/VerSesione
     .then(res => res.json())
     .then(data => {
         console.log(data);
-        data.forEach(fecha => {
-            let date = new Date(fecha.horaSesion)
+        data.forEach(datosSesion => {
+            let date = new Date(datosSesion.horaSesion)
             let dia = date.toLocaleString('es-ES', { weekday: 'long' }).toUpperCase();
             let diaNumerico = date.toLocaleString('es-ES', { day: 'numeric', month: 'short' })
             let hora = date.toLocaleString('es-ES', {hour: '2-digit', minute: '2-digit' })
-            // console.log(`${dia} a las ${hora}`);
+            let result = 0;
+            datosSesion.asientos.forEach(asiento => {
+                if (asiento.comprado === false)
+                {
+                    result++
+                }
+            })
 
             let datosDia = {
-                idSesion: fecha.id,
+                idSesion: datosSesion.id,
                     horaPelicula: hora,
-                    diaNumericoPelicula: diaNumerico
+                    diaNumericoPelicula: diaNumerico,
+                    precioSesion: datosSesion.precioEntrada.toFixed(2),
+                    asientosLibres: result
             }
             switch (dia) {
                 case "LUNES":
@@ -101,7 +109,7 @@ function cargarSesiones(dia) {
         const card = document.createElement("div");
         card.className = "session-card";
         card.id = horario.idSesion;
-        card.textContent = horario.horaPelicula;
+        card.textContent = `Hora: ${horario.horaPelicula}  -  Precio: ${horario.precioSesion}€  -  Asientos libres: ${horario.asientosLibres}`;
         card.setAttribute('onclick', `seleccionarSesion(${card.id})`)
         sessionCards.appendChild(card);
         diaActualHorario = horario.diaNumericoPelicula;

@@ -1,5 +1,7 @@
 let asientosSeleccionados = [];
 const idSesion = localStorage.getItem('idSesion')
+let dataAsientos = []
+let arrayAsientosComprados = []
 window.onload = function (e) {
     imprimirAsientos()
     const pelicula = JSON.parse(localStorage.getItem('selectedMovie'))
@@ -14,26 +16,27 @@ window.onload = function (e) {
 
     })
 }
-function verFecha(id) {
-    let promise = fetch(`https://localhost:7165/api/Sesion/${id}`)
-    promise.then(res => res.json())
-        .then(data => {
-            let fechaSesion = new Date(data.horaSesion)
-            fechaSesion = fechaSesion.toLocaleString('es-ES', { weekday: 'long', day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' }).toUpperCase()
-            let divFecha = document.querySelector('.date-pelicula')
-            divFecha.innerHTML = `<h3>${fechaSesion}</h3>`
-        })
-}
 function imprimirAsientos() {
-    const mapa = document.querySelector('.mapa-asientos');
+    const mapa = document.querySelector('.mapa-asientos__asientos');
+    if (asientosSeleccionados.length < 1) {
+        let asientosSeleccionadosDiv = document.getElementById('asientos-cards')
+        asientosSeleccionadosDiv.style.display = 'none'
+    }
 
     console.log(idSesion)
     try {
         let promise = fetch(`https://localhost:7165/api/Sesion/${idSesion}`)
         promise.then(response => response.json())
             .then(data => {
+                localStorage.setItem('sesionSeleccionada', JSON.stringify(data));
+                console.log(data)
+                let fechaSesion = new Date(data.horaSesion)
+                fechaSesion = fechaSesion.toLocaleString('es-ES', { weekday: 'long', day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' }).toUpperCase()
+                let divFecha = document.querySelector('.date-pelicula')
+                divFecha.innerHTML = `<h3>${fechaSesion}</h3>`
                 console.log(data)
                 console.log(data.asientos)
+                dataAsientos = data.asientos
                 data.asientos.forEach(asiento => {
                     let circulo = document.createElement('div')
                     circulo.setAttribute("id", `asiento_${asiento.id}`)
@@ -45,6 +48,9 @@ function imprimirAsientos() {
                     if (asiento.comprado === true) {
                         circulo.style.backgroundColor = "#1F293D"
                         circulo.style.cursor = "not-allowed"
+                        circulo.style.color = "#FFFFFF"
+                        circulo.style.pointerEvents = "none"
+
                     }
                 });
             })
@@ -53,6 +59,9 @@ function imprimirAsientos() {
     }
 }
 function seleccionarAsiento(id) {
+    arrayAsientosComprados = []
+        let asientosSeleccionadosDiv = document.getElementById('asientos-cards')
+        asientosSeleccionadosDiv.style.display = 'grid'
     const asientosCards = document.getElementById('asientos-cards')
     asientosCards.innerHTML = ""
     let asientoSeleccionado = document.getElementById(id)
@@ -63,6 +72,11 @@ function seleccionarAsiento(id) {
     }
     else {
         asientosSeleccionados.push(variable)
+        if (asientosSeleccionados.length > 5) {
+            const asientoADeseleccionar = document.getElementById(`asiento_${asientosSeleccionados[0]}`)
+            asientoADeseleccionar.classList.toggle('selected')
+            asientosSeleccionados.shift()
+        }
     }
     asientoSeleccionado.classList.toggle('selected')
     asientosSeleccionados.forEach(id => verAsientosSeleccionados(id))
@@ -83,27 +97,24 @@ function ComprarAsientos() {
     })
     promise.then(response => { response.json() })
         .then(data => {
+            localStorage.setItem('asientosComprados', JSON.stringify(arrayAsientosComprados))
             console.log('Success:', data);
             asientosSeleccionados = []
-            window.location.reload()
+            window.location.href = "../html/infoEntrada.html"
         })
         .catch(error => {
             console.error('Problema con el fetch para la seleccion de entradas', error);
         });
 }
 function verAsientosSeleccionados(idAsiento) {
-    let promise = fetch(`https://localhost:7165/api/Asiento/VerInfoAsiento/${idAsiento}`)
-    promise.then(response => response.json())
-        .then(data => {
-            const asientosCards = document.getElementById('asientos-cards')
-            const card = document.createElement("div");
-            card.className = "asiento-card";
-            card.id = `asiento_${data.id}`;
-            card.textContent = `Fila ${data.fila}, número ${data.numero}`;
-            card.setAttribute('onclick', `seleccionarSesion(${card.id})`)
-            asientosCards.appendChild(card)
-            console.log(data)
-        })
-        .catch(error => console.error("Problema con el fetch para ver los asientos seleccionados", error))
-
+    const asientoSeleccionado = dataAsientos.find(function (asiento) { return asiento.id == idAsiento; });
+    arrayAsientosComprados.push(asientoSeleccionado)
+    console.log(asientoSeleccionado)
+    const asientosCards = document.getElementById('asientos-cards')
+    const card = document.createElement("div");
+    card.className = "asiento-card";
+    card.id = `asiento_${asientoSeleccionado.id}`;
+    card.textContent = `Fila ${asientoSeleccionado.fila}, número ${asientoSeleccionado.numero}`;
+    card.setAttribute('onclick', `seleccionarSesion(${card.id})`)
+    asientosCards.appendChild(card)
 }
