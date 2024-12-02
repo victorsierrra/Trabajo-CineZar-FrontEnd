@@ -466,3 +466,11 @@ body {
         }
     }
 }
+@media screen and (min-width: 1440px){
+    .movies-section {
+        &__movies-list {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+    }
+}

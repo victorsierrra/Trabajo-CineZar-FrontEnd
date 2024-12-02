@@ -9,7 +9,7 @@ let dias = [Lunes, Martes, Miercoles, Jueves, Viernes, Sabado, Domingo];
 let diasLetra = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"]
 let diaActual = 0;
 const peliculaSeleccionada = JSON.parse(localStorage.getItem('selectedMovie'));
-// console.log("clog--------------" + peliculaSeleccionada.sesiones.horaSesion)
+
 
 window.onload = function () {
 
@@ -17,9 +17,7 @@ window.onload = function () {
     if (peliculaSeleccionada) {
         console.log(peliculaSeleccionada)
         document.getElementById('titulo-pelicula').innerText = peliculaSeleccionada.titulo
-        document.getElementById('movie-poster').src = peliculaSeleccionada.portada
-        // document.getElementsByClassName("titulo-pelicula").innerText = peliculaSeleccionada.titulo;
-        // document.getElementByClassName("movie-poster").src = peliculaSeleccionada.portada;
+        document.getElementById('sesiones__movie-poster').src = peliculaSeleccionada.portada
 
     } else {
         document.getElementByClassName("titulo-pelicula").textContent = "Película no encontrada";
