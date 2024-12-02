@@ -21,7 +21,6 @@ body {
 .container-sesiones {
     width: 100%;
     max-width: 1200px;
-    /* Tamaño máximo para desktop */
     padding: 1rem;
     background-color: #0F645C;
     border-radius: 10px;
@@ -61,7 +60,8 @@ header {
     font-size: 26px;
     margin-left: 2%;
     max-width: 100%;
-    text-align: center;;
+    text-align: center;
+    ;
 }
 
 /* Controles para cambiar de día */
@@ -152,7 +152,7 @@ header {
 
     header {
         grid-column: 1;
-        /* Imagen y título en la izquierda */
+
     }
 
     .session-controls,
@@ -163,9 +163,9 @@ header {
 
     .sessions {
         grid-template-columns: repeat(1, 1fr);
-        /* Mostrar tarjetas en dos columnas */
+
         width: 200%;
-        //margin-left: -50%;
+
     }
 
     .columna-derecha {
@@ -198,6 +198,7 @@ header {
     }
 
 }
+
 @media (min-width: 600px) and (max-width: 1024px) {
     .container-sesiones {
         padding: 1.5rem;
@@ -208,7 +209,7 @@ header {
 
     header {
         h1 {
-            font-size: 1.8rem; /* Reducir el tamaño para tablets */
+            font-size: 1.8rem;
         }
 
         img {
@@ -217,7 +218,7 @@ header {
     }
 
     #titulo-pelicula {
-        font-size: 1.6rem; /* Ajuste para tablets */
+        font-size: 1.6rem;
         margin: 1rem auto;
         text-align: center;
     }
@@ -225,6 +226,7 @@ header {
     .session-controls {
         flex-direction: row;
         justify-content: space-between;
+
         button {
             font-size: 1.2rem;
             padding: 0.5rem 1rem;
@@ -232,7 +234,7 @@ header {
     }
 
     .sessions {
-        grid-template-columns: repeat(2, 1fr); /* Mostrar dos columnas en tablet */
+        grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
     }
 
@@ -242,7 +244,7 @@ header {
     }
 
     .back-button {
-        margin: 0 auto; /* Centrar en tablets */
+        margin: 0 auto;
         width: 100px;
         font-size: 0.9rem;
     }
@@ -252,5 +254,3 @@ header {
         margin: 0 auto;
     }
 }
-
-

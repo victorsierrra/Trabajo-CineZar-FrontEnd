@@ -101,7 +101,6 @@ body {
 
         &__title {
             font-size: 2.2rem;
-            /* Aumentar tamaño de fuente */
         }
 
         &__description {
@@ -119,7 +118,6 @@ body {
 
     .movie-info {
         font-size: 1.1rem;
-        /* Aumentar tamaño de fuente */
         width: 100%;
         margin-top: 100px;
         margin-right: 125px;
@@ -133,29 +131,29 @@ body {
 @media (min-width: 600px) and (max-width: 1024px) {
     .movie-details {
         padding: 2rem;
-        text-align: center; /* Alinear elementos centrados en tablets */
-        flex-direction: column; /* Cambiar disposición a columnas */
+        text-align: center; 
+        flex-direction: column; 
         align-items: center;
 
         &__poster {
-            max-width: 300px; /* Ajuste intermedio para tablets */
+            max-width: 300px; 
             margin-bottom: 1rem;
         }
 
         &__title {
-            font-size: 1.8rem; /* Reducir un poco para tablets */
+            font-size: 1.8rem; 
             margin-bottom: 1.5rem;
         }
 
         &__description {
             font-size: 1rem;
             margin-bottom: 1.5rem;
-            line-height: 1.5; /* Ajuste para mejor legibilidad */
+            line-height: 1.5; 
             margin-left: 10%;
         }
 
         &__button {
-            width: 90%; /* Más ancho para tablet */
+            width: 90%; 
             font-size: 1rem;
             padding: 0.8rem 1.2rem;
             width: 50%;
@@ -167,7 +165,7 @@ body {
     .movie-info {
         font-size: 1rem;
         margin-top: 2rem;
-        width: 90%; /* Ocupa casi todo el ancho */
+        width: 90%; 
         text-align: left;
 
         &__item {
@@ -175,7 +173,7 @@ body {
         }
 
         &__label {
-            margin-bottom: 0.5rem; /* Espacio adicional entre label y value */
+            margin-bottom: 0.5rem; 
             color: #9EB3B0;
             font-size: 0.9rem;
         }
