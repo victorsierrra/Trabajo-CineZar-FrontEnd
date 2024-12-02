@@ -364,11 +364,15 @@ body {
     margin-bottom: 4%;
     font-size: 40px;
   }
+  .container-oferta .imagen__oferta img {
+    width: 80%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 5%;
+    max-height: 850px;
+  }
   .container-oferta {
-    padding: 2rem;
-    text-align: center;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
     display: flex;
   }
   .footer {
