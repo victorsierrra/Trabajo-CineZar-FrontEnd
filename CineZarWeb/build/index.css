@@ -441,6 +441,7 @@ body {
   .container-oferta .imagen__oferta img {
     width: 70%;
     margin: 0 auto;
+    margin-right: -20%;
   }
   .footer {
     font-size: 14px;
@@ -797,6 +798,8 @@ body {
   border-radius: 10px;
   text-align: center;
   color: #FFF;
+  margin-bottom: 1rem; /* Separación del footer */
+  padding: 1rem; /* Añade espacio interno */
 }
 
 /* Estilo del header con título e imagen de la película */

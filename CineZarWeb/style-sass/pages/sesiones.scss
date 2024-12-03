@@ -29,7 +29,23 @@ body {
     border-radius: 10px;
     text-align: center;
     color: #FFF;
+    margin-bottom: 1rem; /* Separación del footer */
+    padding: 1rem; /* Añade espacio interno */
 }
+
+
+
+/* arregla movil pero jode desktop
+.container-sesiones {
+    width: 100%;
+    max-width: 768px;
+    padding: 1rem; 
+    margin-bottom: 1rem; 
+}
+/*
+
+
+
 
 /* Estilo del header con título e imagen de la película */
 .sesiones-pelicula {
@@ -148,7 +164,7 @@ justify-items: center;}
         width: 550px;
     }
 
-}@import '../base/variables';
+}
 
 /* Estilos generales */
 * {
