@@ -4,22 +4,9 @@ const asientosComprados = JSON.parse(localStorage.getItem('asientosComprados'))
 let entradas = []
 
 
-fetch(`https://localhost:7165/api/Sesion/${sesion.id}`)
-    .then(res => res.json())
-    .then(data => {
-        asientosComprados.forEach(element => {
-            let entradaAsientoComprado = data.entradas.find(function (item) {
-                return item.asiento.id === element.id
-            })
-            entradas.push(entradaAsientoComprado)
-        })
-    })
-    .catch(error => alert(error))
 
 
 window.onload = function () {
-    recogidaInfoEntradas()
-    cargarPrecioTotal()
     const divPelicula = document.querySelector('.info-pelicula')
     let fechaSesion = new Date(sesion.horaSesion).toLocaleString('es-ES', { weekday: 'long', day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' }).toUpperCase()
     divPelicula.innerHTML = `
@@ -28,6 +15,7 @@ window.onload = function () {
 <div class ="info-entradas__image-pelicula"></div>
 `
     document.querySelector(".info-entradas__image-pelicula").style.backgroundImage = `url(${movie.portada})`
+    fetchSesiones()
 
 }
 function recogidaInfoEntradas() {
@@ -52,9 +40,10 @@ function recogidaInfoEntradas() {
                     <td class="info-entradas__entradas-table__ref"><b>Precio de la entrada</b></td>
                     <td class="info-entradas__entradas-table__dato">${entrada.precio.toFixed(2)} €</td>
                 </tr>`
-                divTablas.appendChild(tablaEntradas)
+        divTablas.appendChild(tablaEntradas)
         document.querySelector('.info-entradas__entradas').appendChild(divTablas)
     })
+    cargarPrecioTotal()
 }
 
 function cargarPrecioTotal() {
@@ -71,4 +60,18 @@ function cargarPrecioTotal() {
     divCosteTotal.innerText = `TOTAL:  ${precioTotal}`
     document.querySelector('.info-entradas__entradas').appendChild(divCosteTotal)
 
+}
+function fetchSesiones() {
+    let promise = fetch(`http://44.207.239.20:8080/api/Sesion/${sesion.id}`)
+    promise.then(res => res.json())
+        .then(data => {
+            asientosComprados.forEach(element => {
+                let entradaAsientoComprado = data.entradas.find(function (item) {
+                    return item.asiento.id === element.id
+                })
+                entradas.push(entradaAsientoComprado)
+            })
+            recogidaInfoEntradas()
+        })
+        .catch(error => alert(error))
 }
