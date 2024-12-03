@@ -18,6 +18,8 @@ fetch(`https://localhost:7165/api/Sesion/${sesion.id}`)
 
 
 window.onload = function () {
+    recogidaInfoEntradas()
+    cargarPrecioTotal()
     const divPelicula = document.querySelector('.info-pelicula')
     let fechaSesion = new Date(sesion.horaSesion).toLocaleString('es-ES', { weekday: 'long', day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' }).toUpperCase()
     divPelicula.innerHTML = `
@@ -26,8 +28,7 @@ window.onload = function () {
 <div class ="info-entradas__image-pelicula"></div>
 `
     document.querySelector(".info-entradas__image-pelicula").style.backgroundImage = `url(${movie.portada})`
-    recogidaInfoEntradas()
-    cargarPrecioTotal()
+
 }
 function recogidaInfoEntradas() {
     let divTablas = document.createElement('div')
