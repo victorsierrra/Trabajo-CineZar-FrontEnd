@@ -62,7 +62,7 @@ function cargarPrecioTotal() {
 
 }
 function fetchSesiones() {
-    let promise = fetch(`http://44.207.239.20:8080/api/Sesion/${sesion.id}`)
+    let promise = fetch(`http://localhost:8080/api/Sesion/${sesion.id}`)
     promise.then(res => res.json())
         .then(data => {
             asientosComprados.forEach(element => {

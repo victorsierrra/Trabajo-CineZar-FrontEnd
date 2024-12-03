@@ -4,7 +4,7 @@ window.onload = function () {
     console.log("Documento Cargado");
 
     // Fetch de las películas
-    fetch("http://44.207.239.20:8080/api/Pelicula")
+    fetch("http://localhost:8080/api/Pelicula")
         .then(res => res.json())
         .then(data => {
             console.log(data);

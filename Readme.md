@@ -1,0 +1,1 @@
+Aqui para ver el front bien hay que ejecutar antes un docker run -d -p 8080:8080 a27300/api-cinezar
