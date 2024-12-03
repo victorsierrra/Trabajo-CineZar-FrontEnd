@@ -53,6 +53,7 @@ header h1 {
   font-size: 1.5rem;
   color: #FFB800;
   margin-bottom: 1rem;
+  margin-top: 12px;
 }
 header #movie-poster {
   width: 50%;
@@ -97,8 +98,10 @@ body {
   box-sizing: border-box;
   justify-content: center;
 }
-.header__logo {
-  font-size: 2.5rem;
+.header__logo img {
+  width: 50px;
+  height: auto;
+  display: block;
 }
 
 .banner__carousel-slide {
@@ -343,6 +346,10 @@ body {
   text-align: center;
 }
 
+h2#modal-title {
+  color: #E5A800;
+}
+
 #modal-description {
   margin-top: 5%;
 }
@@ -412,17 +419,17 @@ body {
       padding: 1rem;
   }*/
   /*
-      .header {
-          justify-content: center;
-          padding: 10px 20px;
-          width: 106%;
-          margin-left: -2%;
-          margin-top: -2%;
+  .header {
+      justify-content: center;
+      padding: 10px 20px;
+      width: 106%;
+      margin-left: -2%;
+      margin-top: -2%;
 
-          &__logo {
-              font-size: 2rem;
-          }
-      }*/
+      &__logo {
+          font-size: 2rem;
+      }
+  }*/
   .banner__carousel-slide {
     width: 100%;
     height: 400px;
@@ -801,6 +808,18 @@ body {
   margin-bottom: 1rem; /* Separación del footer */
   padding: 1rem; /* Añade espacio interno */
 }
+
+/* arregla movil pero jode desktop
+.container-sesiones {
+    width: 100%;
+    max-width: 768px;
+    padding: 1rem; 
+    margin-bottom: 1rem; 
+}
+/*
+
+
+
 
 /* Estilo del header con título e imagen de la película */
 .sesiones-pelicula {
