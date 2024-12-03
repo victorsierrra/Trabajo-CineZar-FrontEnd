@@ -797,25 +797,28 @@ body {
 }
 
 /* Contenedor principal de las sesiones */
-.container-sesiones {
-  width: 100%;
-  height: 63vh;
-  margin-bottom: 50px;
-  background-color: #0F645C;
-  border-radius: 10px;
-  text-align: center;
-  color: #FFF;
-  margin-bottom: 1rem; /* Separación del footer */
-  padding: 1rem; /* Añade espacio interno */
-}
-
-/* arregla movil pero jode desktop
+/*
 .container-sesiones {
     width: 100%;
-    max-width: 768px;
-    padding: 1rem; 
-    margin-bottom: 1rem; 
+    height: 63vh;
+    margin-bottom: 50px;
+    // max-width: 400px;
+    // padding: 1rem;
+    background-color:#0F645C;
+    border-radius: 10px;
+    text-align: center;
+    color: #FFF;
+    margin-bottom: 1rem; //Separación del footer 
+    padding: 1rem; //Añade espacio interno 
 }
+*/
+.container-sesiones {
+  width: 94%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/*
 /*
 
 
@@ -823,6 +826,7 @@ body {
 
 /* Estilo del header con título e imagen de la película */
 .sesiones-pelicula {
+  text-align: center;
   margin-bottom: 1.5rem;
 }
 
@@ -957,15 +961,6 @@ body {
   min-height: 100vh;
 }
 
-/* Contenedor principal de las sesiones */
-.container-sesiones {
-  width: 100%;
-  background-color: #0F645C;
-  border-radius: 10px;
-  text-align: center;
-  color: #FFF;
-}
-
 /* Estilo del header con título e imagen de la película */
 .sesiones-pelicula {
   margin-bottom: 1.5rem;
@@ -1051,7 +1046,7 @@ body {
     width: 320px;
   }
   #titulo-pelicula {
-    font-size: 2em;
+    font-size: 1.7em;
     width: 350px;
   }
   .container-sesiones {
@@ -1061,7 +1056,15 @@ body {
 }
 @media screen and (min-width: 998px) {
   .session-card {
-    width: 550px;
+    width: 495px;
+  }
+  /* Contenedor principal de las sesiones */
+  .container-sesiones {
+    width: 100%;
+    background-color: #0F645C;
+    border-radius: 10px;
+    text-align: center;
+    color: #FFF;
   }
 }
 .container-info {

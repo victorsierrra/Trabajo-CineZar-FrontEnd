@@ -9,7 +9,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color:#0F645C;
+    background-color: #0F645C;
     color: #FFF;
     display: flex;
     flex-direction: column;
@@ -19,6 +19,7 @@ body {
 }
 
 /* Contenedor principal de las sesiones */
+/*
 .container-sesiones {
     width: 100%;
     height: 63vh;
@@ -29,19 +30,21 @@ body {
     border-radius: 10px;
     text-align: center;
     color: #FFF;
-    margin-bottom: 1rem; /* Separación del footer */
-    padding: 1rem; /* Añade espacio interno */
+    margin-bottom: 1rem; //Separación del footer 
+    padding: 1rem; //Añade espacio interno 
 }
+*/
 
 
 
-/* arregla movil pero jode desktop
 .container-sesiones {
-    width: 100%;
-    max-width: 768px;
-    padding: 1rem; 
-    margin-bottom: 1rem; 
+    width: 94%;
+    //max-width: 768px;
+    padding: 1rem;
+    margin-bottom: 1rem;
 }
+
+/*
 /*
 
 
@@ -49,9 +52,11 @@ body {
 
 /* Estilo del header con título e imagen de la película */
 .sesiones-pelicula {
+    text-align: center;
     margin-bottom: 1.5rem;
 }
-#sesiones__movie-poster{
+
+#sesiones__movie-poster {
     height: 400px;
 }
 
@@ -60,7 +65,8 @@ body {
     color: #FFB800;
     margin-bottom: 1rem;
 }
-.sesiones-info{
+
+.sesiones-info {
     display: grid;
     justify-items: center;
 }
@@ -102,8 +108,11 @@ body {
     gap: 1rem;
     // margin-bottom: 2rem;
 }
-#session-cards{
-justify-items: center;}
+
+#session-cards {
+    justify-items: center;
+}
+
 .session-card {
     background-color: #1A535C;
     padding: 1rem;
@@ -141,26 +150,31 @@ justify-items: center;}
 .back-button:hover {
     background-color: #E5A800;
 }
-@media screen and (min-width: 768px){
-    .sesiones-info{
+
+@media screen and (min-width: 768px) {
+    .sesiones-info {
         margin-left: 70px;
     }
-    .session-card{
+
+    .session-card {
         width: 320px;
     }
-    #titulo-pelicula{
+
+    #titulo-pelicula {
         font-size: 2em;
         width: 350px;
     }
-    .container-sesiones{
+
+    .container-sesiones {
         display: flex;
         justify-content: center;
         // margin: 20px;
     }
 
 }
-@media screen and (min-width: 998px){
-    .session-card{
+
+@media screen and (min-width: 998px) {
+    .session-card {
         width: 550px;
     }
 
@@ -175,7 +189,7 @@ justify-items: center;}
 
 body {
     font-family: Arial, sans-serif;
-    background-color:#0F645C;
+    background-color: #0F645C;
     color: #FFF;
     display: block;
     justify-content: center;
@@ -183,16 +197,7 @@ body {
     min-height: 100vh;
 }
 
-/* Contenedor principal de las sesiones */
-.container-sesiones {
-    width: 100%;
-    // max-width: 400px;
-    // padding: 1rem;
-    background-color:#0F645C;
-    border-radius: 10px;
-    text-align: center;
-    color: #FFF;
-}
+
 
 /* Estilo del header con título e imagen de la película */
 .sesiones-pelicula {
@@ -204,7 +209,8 @@ body {
     color: #FFB800;
     margin-bottom: 1rem;
 }
-.sesiones-info{
+
+.sesiones-info {
     display: grid;
     justify-items: center;
 }
@@ -246,8 +252,11 @@ body {
     gap: 1rem;
     // margin-bottom: 2rem;
 }
-#session-cards{
-justify-items: center;}
+
+#session-cards {
+    justify-items: center;
+}
+
 .session-card {
     background-color: #1A535C;
     padding: 1rem;
@@ -271,24 +280,39 @@ justify-items: center;}
 .back-button:hover {
     background-color: #E5A800;
 }
-@media screen and (min-width: 768px){
-    .session-card{
+
+@media screen and (min-width: 768px) {
+    .session-card {
         width: 320px;
     }
-    #titulo-pelicula{
-        font-size: 2em;
+
+    #titulo-pelicula {
+        font-size: 1.7em;
         width: 350px;
     }
-    .container-sesiones{
+
+    .container-sesiones {
         display: flex;
         justify-content: center;
         // margin: 20px;
     }
 
 }
-@media screen and (min-width: 998px){
-    .session-card{
-        width: 550px;
+
+@media screen and (min-width: 998px) {
+    .session-card {
+        width: 495px;
+    }
+
+    /* Contenedor principal de las sesiones */
+    .container-sesiones {
+        width: 100%;
+        // max-width: 400px;
+        // padding: 1rem;
+        background-color: #0F645C;
+        border-radius: 10px;
+        text-align: center;
+        color: #FFF;
     }
 
 }
