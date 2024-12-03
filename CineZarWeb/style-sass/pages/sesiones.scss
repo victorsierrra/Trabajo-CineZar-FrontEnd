@@ -39,6 +39,7 @@ body {
 
 .container-sesiones {
     width: 94%;
+    min-height: 72dvh;
     //max-width: 768px;
     padding: 1rem;
     margin-bottom: 1rem;
@@ -201,6 +202,7 @@ body {
 
 /* Estilo del header con título e imagen de la película */
 .sesiones-pelicula {
+    align-content: center;
     margin-bottom: 1.5rem;
 }
 
@@ -261,6 +263,7 @@ body {
     background-color: #1A535C;
     padding: 1rem;
     width: 300px;
+    height: 80px;
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);

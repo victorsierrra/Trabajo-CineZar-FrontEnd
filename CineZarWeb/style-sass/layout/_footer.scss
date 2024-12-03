@@ -10,10 +10,11 @@
 .footer {
     background-color: #083D38;
     color: #fff;
-    display: flex;
+    display: grid;
     justify-content: space-between;
     padding: 20px;
     width: 100%;
+    position:static;
     box-sizing: border-box;
     margin-top: 10%;
     font-size: 14px;
@@ -66,7 +67,7 @@
 
 
 // Diseño responsivo
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
     .footer-section {
         padding: 3rem;
         max-width: 60%;
@@ -86,6 +87,7 @@
     }
 
     .footer {
+        display: flex;
         font-size: 14px;
         padding: 10px;
         // width: 104%;

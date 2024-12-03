@@ -24,7 +24,7 @@
     margin-top: 15px;
 }
 .mapa-asientos__pantalla{
-    width: 100%;
+    width: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,11 +54,16 @@
         cursor: pointer;
     }
 }
-
+.mapa-asientos{
+    text-align: -webkit-center;
+}
+.container-mapa{
+    min-height: 72dvh;
+}
 #disponible,
 #ocupado,
 #seleccionado {
-    font-size: 15px;
+    font-size: 13px;
     align-items: center;
     display: flex;
     margin: 10px;

@@ -45,6 +45,7 @@ fetch(`http://44.207.239.20:8080/api/Pelicula/${peliculaSeleccionada.id}/VerSesi
             let datosDia = {
                 idSesion: datosSesion.id,
                     horaPelicula: hora,
+                    fechaInfo: date,
                     diaNumericoPelicula: diaNumerico,
                     precioSesion: datosSesion.precioEntrada.toFixed(2),
                     asientosLibres: result
@@ -106,17 +107,25 @@ function cargarSesiones(dia) {
     horarios.forEach(horario => {
         const card = document.createElement("div");
         card.className = "session-card";
+        card.dataset.fechaSesion = horario.fechaInfo
         card.id = horario.idSesion;
         card.textContent = `Hora: ${horario.horaPelicula}  -  Precio: ${horario.precioSesion}€  -  Asientos libres: ${horario.asientosLibres}`;
-        card.setAttribute('onclick', `seleccionarSesion(${card.id})`)
+        card.setAttribute('onclick', `seleccionarSesion(${card.id}, "${card.dataset.fechaSesion}")`)
         sessionCards.appendChild(card);
         diaActualHorario = horario.diaNumericoPelicula;
     });
 
     document.getElementById("dia-seleccionado").textContent = diaActualHorario + " - " + diasLetra[diaActual];
 }
-function seleccionarSesion(id)
+function seleccionarSesion(id, fecha)
 {
+    let date = Date.parse(fecha)
+    let diaHoy = Date.now() + 5000
+    if(date < diaHoy){
+       alert("La sesión ha expirado")
+    }
+    else{
     localStorage.setItem("idSesion", id);
     window.location.href = '../html/mapaAsientos.html'
+    }
 }
