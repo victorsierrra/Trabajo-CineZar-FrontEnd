@@ -14,3 +14,22 @@ header {
         margin-bottom: 1rem;
     }
 }
+
+.header {
+    background-color: #083D38;
+    color: #fff;
+    display: flex;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+
+    &__logo {
+        img {
+            width: 50px; // Tamaño ajustable para el logo
+            height: auto;
+            display: block; // Asegura que la imagen respete sus proporciones
+        }
+    }
+
+}

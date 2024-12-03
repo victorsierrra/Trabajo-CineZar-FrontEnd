@@ -1,12 +1,12 @@
-@import '../base/variables' as ;   // Variables globales
-@import '../base/mixins' as ;      // Mixins reutilizables
-@import '../base/reset';            // Reset de estilos
-@import '../layout/footer';         // Estilos del footer, si es necesario
+@import '../base/variables' as ;   
+@import '../base/mixins' as ;      
+@import '../base/reset';            
+@import '../layout/footer';         
 
 .footer-section {
     font-family: 'Arial', sans-serif;
-    background-color: #1a3c40; // Fondo oscuro
-    color: #ffffff;           // Texto blanco
+    background-color: #1a3c40; 
+    color: #ffffff;           
     padding: 2rem;
     border-radius: 8px;
     margin: 1rem auto;
@@ -16,7 +16,7 @@
     h3 {
       font-size: 2rem;
       margin-bottom: 1.5rem;
-      color: #FFB800; // Color dorado para los títulos
+      color: #FFB800; 
       text-align: center;
     }
   
@@ -24,7 +24,7 @@
       font-size: 1.3rem;
       margin-top: 1.5rem;
       margin-bottom: 1rem;
-      color: #9EB3B0; // Gris claro para subtítulos
+      color: #9EB3B0; 
     }
   
     p {
@@ -33,7 +33,7 @@
       margin-bottom: 1rem;
   
       strong {
-        color: #FFB800; // Resaltar palabras clave con dorado
+        color: #FFB800; 
       }
   
       a {
@@ -41,7 +41,7 @@
         text-decoration: underline;
   
         &:hover {
-          color: #FFFFFF; // Blanco al pasar el cursor
+          color: #FFFFFF; 
         }
       }
     }
@@ -59,7 +59,7 @@
     }
   }
   
-  // Diseño responsivo
+  
   @media (min-width: 768px) {
     .footer-section {
       padding: 3rem;
