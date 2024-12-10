@@ -87,6 +87,7 @@ function seleccionarAsiento(id) {
 
 function ComprarAsientos() {
     localStorage.setItem('idAsientos', asientosSeleccionados)
+    if(asientosSeleccionados.length > 0){
     let promise = fetch(`http://localhost:8080/api/Sesion/${idSesion}/ComprarEntrada`, {
         method: 'PUT',
         headers: {
@@ -105,6 +106,10 @@ function ComprarAsientos() {
         .catch(error => {
             console.error('Problema con el fetch para la seleccion de entradas', error);
         });
+    }
+    else{
+        alert('No hay asientos seleccionados')
+    }
 }
 function verAsientosSeleccionados(idAsiento) {
     const asientoSeleccionado = dataAsientos.find(function (asiento) { return asiento.id == idAsiento; });
