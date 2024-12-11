@@ -36,7 +36,7 @@ window.onload = function () {
                 movieFoto.style.backgroundImage = `url(${p.portada})`
 
                 movieItem.innerHTML = `
-                    <div class="movie-title">${p.titulo}</div>
+                    <div class="movie-title" style="margin-bottom: 50px">${p.titulo}<br>Val Media: ${p.opinionMedia}</div>
                 `;
 
                 // Añade el evento de clic para abrir la página de detalles
