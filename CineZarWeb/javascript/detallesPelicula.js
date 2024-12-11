@@ -20,7 +20,7 @@ function irASesiones() {
     window.location.href = 'sesiones.html';
 }
 function cargarPelicula() {
-    let promise = fetch(`https://localhost:7165/api/Pelicula/${movie.id}`)
+    let promise = fetch(`http://localhost:27301/api/Pelicula/${movie.id}`)
     promise.then(res => res.json())
         .then(movieFetch => {
             console.log(movieFetch)
@@ -35,28 +35,33 @@ function cargarPelicula() {
             movieFetch.opiniones.forEach(opinion => {
                 let divOpinion = document.createElement('div')
                 let fecha = new Date(opinion.fechaCreacion).toLocaleString('es-ES', { day: 'numeric', month: 'short', year: 'numeric' })
-                divOpinion.innerText = `El usuario: ${opinion.usuario}\n Numero de Valoracion: ${opinion.valoracion} Comentario: ${opinion.comentario} \nFecha de ${fecha}`
+                divOpinion.innerHTML = `<p>El usuario: ${opinion.usuario}<br> Numero de Valoracion: ${opinion.valoracion} <br>Comentario: ${opinion.comentario} <br>Fecha de ${fecha}</p>
+                <button id="borrar-Opinion" style="margin: 30px;" onclick="borrarOpinion(${opinion.id})">Borrar Comentario</button>`
                 document.getElementById('opiniones').appendChild(divOpinion)
             });
 
         })
 }
 function enviarOpinion(){
+    let texto = "faadad"
     let usuario = document.getElementById('form-usuario')
     let valoracion = document.getElementById('form-valo')
     let comentario = document.getElementById('form-comentario')
     console.log(`------------------- ${valoracion}`)
     if(valoracion.value < 1 || valoracion.value > 5){
-        alert('Error, la valoracion tiene que ser entre 1 y 5')
-    }else{
-    fetch(`https://localhost:7165/api/Pelicula/${movie.id}/CrearOpinion?iValoracion=${valoracion.value}&strComentario=${comentario.value}&strUsuario=${usuario.value}`, {
+        alert('La valoracion tiene que ser del 1 al 5')
+    }else if (comentario.value.trim() === "" || usuario.value.trim() === ""){
+        alert('Todos los campos tienen que estar rellenos')
+    }
+    else{
+    fetch(`http://localhost:27301/api/Pelicula/${movie.id}/CrearOpinion?iValoracion=${valoracion.value}&strComentario=${comentario.value}&strUsuario=${usuario.value}`, {
         method: 'POST',
         headers: {
             'Accept': '*/*',
             'Content-Type': 'text/plain'
         }
     })
-    promise.then(response => { response.json() })
+    .then(response => { response.json() })
         .then(data => {
             window.onload()
         })
@@ -64,4 +69,20 @@ function enviarOpinion(){
             console.error(error);
         });
     }
+}
+function borrarOpinion(id){
+    fetch(`http://localhost:27301/api/Pelicula/${movie.id}/BorrarOpinion?idOpinion=${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Accept': '*/*',
+            'Content-Type': 'text/plain'
+        }
+    })
+    .then(response => { response.json() })
+        .then(data => {
+            window.location.href = 'detallesPelicula.html';
+        })
+        .catch(error => {
+            console.error(error);
+        });
 }

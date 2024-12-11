@@ -25,7 +25,7 @@ function imprimirAsientos() {
 
     console.log(idSesion)
     try {
-        let promise = fetch(`https://localhost:7165/api/Sesion/${idSesion}`)
+        let promise = fetch(`http://localhost:27301/api/Sesion/${idSesion}`)
         promise.then(response => response.json())
             .then(data => {
                 localStorage.setItem('sesionSeleccionada', JSON.stringify(data));
@@ -88,7 +88,7 @@ function seleccionarAsiento(id) {
 function ComprarAsientos() {
     localStorage.setItem('idAsientos', asientosSeleccionados)
     if(asientosSeleccionados.length > 0){
-    let promise = fetch(`https://localhost:7165/api/Sesion/${idSesion}/ComprarEntrada`, {
+    let promise = fetch(`http://localhost:27301/api/Sesion/${idSesion}/ComprarEntrada`, {
         method: 'PUT',
         headers: {
             'Accept': '*/*',
