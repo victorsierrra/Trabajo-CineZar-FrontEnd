@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../build/index.css">
+    <script src="../javascript/mapaAsientos-Comprados.js"></script>
+    <title>Mapa Asientos</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__logo"><img src="../img/LogoCinezar.png" alt="LogoCine"></div>
+        <h1 class="header__title" onclick="window.location.href='../html/index.html'">CineZar</h1>
+
+    </header>
+    <div class="container-mapa">
+    <div class="title-pelicula"></div>
+    <div class="date-pelicula"></div>
+    <section id="mapa">
+        <div id="leyenda">
+            <div id="disponible">
+                <div class="asiento"></div> Comprado
+            </div>
+            <div id="seleccionado">
+                <div class="asiento selected"></div> Seleccionado
+            </div>
+            <div id="ocupado">
+                <div id="asiento__ocupado" class="asiento"></div> Libre
+            </div>
+        </div>
+        <div class="mapa-asientos__datos">
+            <div class="mapa-asientos">
+                <div class="mapa-asientos__pantalla">Pantalla</div>
+                <div class="mapa-asientos__asientos"></div>
+            </div>
+            <section class="mapa-asientos__seleccionados" id="asientos-cards">
+                <!-- Los asientos seleccionados se ponen aquí -->
+            </section>
+        </div>
+
+        <button id="volverAtras" onclick="window.location.href='../html/sesiones.html'">VOLVER</button>
+        <button id="ComprarAsientos" onclick="DevolverAsientos()">DEVOLVER</button>
+    </section>
+</div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__column">
+            <h3>Aviso Legal</h3>
+            <p>Política de privacidad, términos y condiciones.</p>
+        </div>
+        <div class="footer__column">
+            <h3>Contacto</h3>
+            <p>Email: contacto@cinezar.com</p>
+            <p>Teléfono: +34 123 456 789</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
