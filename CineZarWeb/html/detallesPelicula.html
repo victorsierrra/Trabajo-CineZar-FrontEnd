@@ -16,7 +16,7 @@
 
     </header>
 
-    <div class="movie-details">
+    <div class="movie-details" style="display: grid;">
         <div class="movie-details__datos" style="display: grid; justify-content: center;">
             <h1 class="movie-details__title" id="movie-title">Título de la película</h1>
             <img class="movie-details__poster" id="movie-details__poster" src="" alt="Poster de la película">
@@ -34,7 +34,22 @@
                     class="movie-info__value"></span></p>
             <p class="movie-info__item"><strong class="movie-info__label">Director:</strong> <span id="movie-director"
                     class="movie-info__value"></span></p>
+            <p class="movie-info__item"><strong class="movie-info__label">Valoracion media:</strong> <span id="movie-media"
+                    class="movie-info__value"></span></p>
             <button class="movie-details__button" onclick="irASesiones()">Sesiones</button>
+        </div>
+        <div id="opiniones" style="margin: 60px;">
+        </div>
+        <div class="formulario-opiniones" style="margin: 60px;">
+            <form id = "formulario" style="display: grid;">
+                <label>Nombre Usuario</label>
+                <input type="text" id="form-usuario"/>
+                <label>Valoracion del 1 al 5</label>
+                <input type="number" id="form-valo">
+                <label>Comentario</label>
+                <input type="text" id="form-comentario"/>
+                <button id="enviar-formulario" style="margin: 30px;" onclick="enviarOpinion()">Enviar Comentario</button>
+            </form>
         </div>
     </div>
 
